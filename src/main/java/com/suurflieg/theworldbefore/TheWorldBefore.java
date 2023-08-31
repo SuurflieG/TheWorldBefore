@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 @Mod(TheWorldBefore.MOD_ID)
 public class TheWorldBefore {
     public static final String MOD_ID = "theworldbefore";
+
     private static final Logger LOGGER = LogUtils.getLogger();
     public TheWorldBefore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
