@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xx ",
+    " n ",
+    " s "
+  ],
+  "key": {
+    "x": {
+      "item": "theworldbefore:titanium_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "n": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "theworldbefore:titanium_hoe",
+    "count": 1
+  }
+}

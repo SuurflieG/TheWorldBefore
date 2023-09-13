@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "theworldbefore:larch_log",
+    "theworldbefore:larch_wood",
+    "theworldbefore:stripped_larch_log",
+    "theworldbefore:stripped_larch_wood"
+  ]
+}

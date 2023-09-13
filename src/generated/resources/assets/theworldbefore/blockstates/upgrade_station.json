@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "theworldbefore:block/upgrade_station",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "theworldbefore:block/upgrade_station"
+    },
+    "facing=south": {
+      "model": "theworldbefore:block/upgrade_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theworldbefore:block/upgrade_station",
+      "y": 270
+    }
+  }
+}

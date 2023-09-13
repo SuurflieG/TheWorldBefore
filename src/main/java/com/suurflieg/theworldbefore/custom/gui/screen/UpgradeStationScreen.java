@@ -233,7 +233,7 @@ public class UpgradeStationScreen extends AbstractContainerScreen<UpgradeStation
 
             int index = 0;
             for (Upgrade upgrade : this.parent.menu.getUpgradesCache()) {
-                guiGraphics.renderItem(new ItemStack(upgrade.getCard().get()), x, y);
+                guiGraphics.renderItem(new ItemStack(upgrade.getCard()), x, y);
 
                 if (isMouseOver(mouseX, mouseY) && (mouseX > x && mouseX < x + 15 && mouseY > y && mouseY < y + 15))
                     currentUpgrade = upgrade;
@@ -263,8 +263,10 @@ public class UpgradeStationScreen extends AbstractContainerScreen<UpgradeStation
         public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
             super.render(guiGraphics, mouseX, mouseY, partialTicks);
 
-            if( this.upgrade != null  )
-                guiGraphics.renderTooltip(Minecraft.getInstance().font, Lists.transform(this.upgrade.getStack().getTooltipLines(this.parent.getMinecraft().player, TooltipFlag.Default.NORMAL), Component::getVisualOrderText), mouseX, mouseY);
+            if (this.upgrade != null){
+                guiGraphics.renderTooltip(Minecraft.getInstance().font,
+                        Lists.transform(new ItemStack(this.upgrade.getCard()).getTooltipLines(this.parent.getMinecraft().player, TooltipFlag.Default.NORMAL), Component::getVisualOrderText), mouseX, mouseY);
+            }
         }
 
         @Override

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.75,
+  "group": "titanium",
+  "ingredient": {
+    "item": "theworldbefore:titanium_raw_ore"
+  },
+  "result": "theworldbefore:titanium_ingot"
+}

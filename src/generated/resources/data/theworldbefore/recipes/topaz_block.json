@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "theworldbefore:topaz_shard"
+    }
+  },
+  "pattern": [
+    "SS ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "item": "theworldbefore:topaz_block"
+  },
+  "show_notification": true
+}

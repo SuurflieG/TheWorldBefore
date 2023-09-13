@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "theworldbefore:block/medium_unakite_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "theworldbefore:block/medium_unakite_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "theworldbefore:block/medium_unakite_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "theworldbefore:block/medium_unakite_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "theworldbefore:block/medium_unakite_bud"
+    },
+    "facing=west": {
+      "model": "theworldbefore:block/medium_unakite_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

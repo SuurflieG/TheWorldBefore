@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "theworldbefore:block/catalyzer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "theworldbefore:block/catalyzer"
+    },
+    "facing=south": {
+      "model": "theworldbefore:block/catalyzer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theworldbefore:block/catalyzer",
+      "y": 270
+    }
+  }
+}

@@ -83,9 +83,9 @@ public class UpgradeStationCommands {
 
             UpgradeTools.removeUpgrade(tool, upgrade);
 
-            boolean success = player.getInventory().add(new ItemStack(upgrade.getCard().get(), 1));
+            boolean success = player.getInventory().add(new ItemStack(upgrade.getCard(), 1));
             if (!success) {
-                player.drop(new ItemStack(upgrade.getCard().get(), 1), true);
+                player.drop(new ItemStack(upgrade.getCard(), 1), true);
             }
 
             removeUpgradeWhenRemoved(tool, upgrade);

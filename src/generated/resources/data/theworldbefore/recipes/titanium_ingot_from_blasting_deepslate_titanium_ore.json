@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.75,
+  "group": "titanium",
+  "ingredient": {
+    "item": "theworldbefore:deepslate_titanium_ore"
+  },
+  "result": "theworldbefore:titanium_ingot"
+}

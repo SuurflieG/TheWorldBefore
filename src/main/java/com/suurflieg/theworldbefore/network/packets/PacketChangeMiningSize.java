@@ -15,9 +15,13 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("InstantiationOfUtilityClass")
 public class PacketChangeMiningSize {
-    public PacketChangeMiningSize() {}
+    public PacketChangeMiningSize() {
 
-    public static void encode(PacketChangeMiningSize msg, FriendlyByteBuf buffer) {}
+    }
+
+    public static void encode(PacketChangeMiningSize msg, FriendlyByteBuf buffer) {
+
+    }
     public static PacketChangeMiningSize decode(FriendlyByteBuf buffer) { return new PacketChangeMiningSize(); }
 
     public static class Handler {

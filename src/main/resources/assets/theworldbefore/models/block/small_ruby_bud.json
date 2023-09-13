@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "theworldbefore:block/small_ruby_bud"
+  }
+}

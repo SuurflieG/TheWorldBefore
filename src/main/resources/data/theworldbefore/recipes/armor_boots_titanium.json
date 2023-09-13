@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "xxx",
+    "xnx"
+  ],
+  "key": {
+    "x": {
+      "item": "theworldbefore:titanium_ingot"
+    },
+    "n": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "theworldbefore:titanium_boots",
+    "count": 1
+  }
+}
