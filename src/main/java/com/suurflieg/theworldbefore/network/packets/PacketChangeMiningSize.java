@@ -2,10 +2,10 @@ package com.suurflieg.theworldbefore.network.packets;
 
 
 
-import com.suurflieg.theworldbefore.custom.item.tool.CustomAxeItem;
-import com.suurflieg.theworldbefore.custom.item.tool.CustomHoeItem;
-import com.suurflieg.theworldbefore.custom.item.tool.CustomPickaxeItem;
-import com.suurflieg.theworldbefore.custom.item.tool.CustomShovelItem;
+import com.suurflieg.theworldbefore.item.tool.CustomAxeItem;
+import com.suurflieg.theworldbefore.item.tool.CustomHoeItem;
+import com.suurflieg.theworldbefore.item.tool.CustomPickaxeItem;
+import com.suurflieg.theworldbefore.item.tool.CustomShovelItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;

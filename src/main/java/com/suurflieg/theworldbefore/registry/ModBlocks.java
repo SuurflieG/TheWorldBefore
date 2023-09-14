@@ -1,11 +1,11 @@
 package com.suurflieg.theworldbefore.registry;
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.custom.block.block.ModFlammableBlock;
-import com.suurflieg.theworldbefore.custom.block.block.UpgradeStationBlock;
-import com.suurflieg.theworldbefore.custom.block.block.geodes.*;
-import com.suurflieg.theworldbefore.custom.block.block.geodes.budding.*;
-import com.suurflieg.theworldbefore.custom.block.block.geodes.cluster.*;
+import com.suurflieg.theworldbefore.block.block.ModFlammableBlock;
+import com.suurflieg.theworldbefore.block.block.UpgradeStationBlock;
+import com.suurflieg.theworldbefore.block.block.geodes.*;
+import com.suurflieg.theworldbefore.block.block.geodes.budding.*;
+import com.suurflieg.theworldbefore.block.block.geodes.cluster.*;
 import com.suurflieg.theworldbefore.world.tree.LarchTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

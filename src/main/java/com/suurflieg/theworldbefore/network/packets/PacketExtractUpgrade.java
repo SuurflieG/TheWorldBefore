@@ -1,9 +1,9 @@
 package com.suurflieg.theworldbefore.network.packets;
 
 
-import com.suurflieg.theworldbefore.custom.block.entity.UpgradeStationBlockEntity;
-import com.suurflieg.theworldbefore.custom.gui.UpgradeStationCommands;
-import com.suurflieg.theworldbefore.custom.gui.menu.UpgradeStationMenu;
+import com.suurflieg.theworldbefore.block.entity.UpgradeStationBlockEntity;
+import com.suurflieg.theworldbefore.gui.UpgradeStationCommands;
+import com.suurflieg.theworldbefore.gui.menu.UpgradeStationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;

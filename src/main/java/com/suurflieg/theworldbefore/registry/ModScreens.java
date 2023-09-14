@@ -2,9 +2,9 @@ package com.suurflieg.theworldbefore.registry;
 
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomArmorScreen;
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomToolScreen;
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomWeaponScreen;
+import com.suurflieg.theworldbefore.gui.screen.CustomArmorScreen;
+import com.suurflieg.theworldbefore.gui.screen.CustomToolScreen;
+import com.suurflieg.theworldbefore.gui.screen.CustomWeaponScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;

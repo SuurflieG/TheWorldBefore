@@ -2,12 +2,11 @@ package com.suurflieg.theworldbefore;
 
 import com.mojang.logging.LogUtils;
 import com.suurflieg.theworldbefore.config.ClientConfigs;
-import com.suurflieg.theworldbefore.config.CommonConfigs;
-import com.suurflieg.theworldbefore.custom.gui.menu.UpgradeStationMenu;
-import com.suurflieg.theworldbefore.custom.gui.screen.UpgradeStationScreen;
-import com.suurflieg.theworldbefore.custom.util.TheWorldBeforeKeyBinding;
+import com.suurflieg.theworldbefore.gui.screen.UpgradeStationScreen;
+import com.suurflieg.theworldbefore.network.PacketHandler;
 import com.suurflieg.theworldbefore.registry.*;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.server.packs.repository.Pack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -31,12 +30,7 @@ public class TheWorldBefore {
 
         ModCreativeModeTab.register(modEventBus);
         ModItems.register(modEventBus);
-        ModUpgradeCards.register(modEventBus);
         ModBlocks.register(modEventBus);
-
-        ModArmorItems.register(modEventBus);
-        ModToolItems.register(modEventBus);
-        ModWeaponItems.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
@@ -54,6 +48,7 @@ public class TheWorldBefore {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
+        PacketHandler.register();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

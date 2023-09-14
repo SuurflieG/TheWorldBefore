@@ -2,7 +2,7 @@ package com.suurflieg.theworldbefore.registry;
 
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.custom.recipe.CatalyzerRecipe;
+import com.suurflieg.theworldbefore.recipe.CatalyzerRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,13 +1,13 @@
 package com.suurflieg.theworldbefore.network.packets;
 
 
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomArmorScreen;
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomToolScreen;
-import com.suurflieg.theworldbefore.custom.gui.screen.CustomWeaponScreen;
-import com.suurflieg.theworldbefore.custom.item.armor.CustomArmorItem;
-import com.suurflieg.theworldbefore.custom.item.tool.*;
-import com.suurflieg.theworldbefore.custom.item.upgradecards.Upgrade;
-import com.suurflieg.theworldbefore.custom.item.upgradecards.UpgradeTools;
+import com.suurflieg.theworldbefore.gui.screen.CustomArmorScreen;
+import com.suurflieg.theworldbefore.gui.screen.CustomToolScreen;
+import com.suurflieg.theworldbefore.gui.screen.CustomWeaponScreen;
+import com.suurflieg.theworldbefore.item.armor.CustomArmorItem;
+import com.suurflieg.theworldbefore.item.tool.*;
+import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
+import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;

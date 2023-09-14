@@ -2,7 +2,7 @@ package com.suurflieg.theworldbefore.registry;
 
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.custom.block.entity.UpgradeStationBlockEntity;
+import com.suurflieg.theworldbefore.block.entity.UpgradeStationBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -75,117 +75,117 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TITANIUM_INGOT);
         simpleItem(ModItems.TITANIUM_RAW_ORE);
 
-        simpleItem(ModArmorItems.TITANIUM_HELMET);
-        simpleItem(ModArmorItems.TITANIUM_CHESTPLATE);
-        simpleItem(ModArmorItems.TITANIUM_LEGGINGS);
-        simpleItem(ModArmorItems.TITANIUM_BOOTS);
+        simpleItem(ModItems.TITANIUM_HELMET);
+        simpleItem(ModItems.TITANIUM_CHESTPLATE);
+        simpleItem(ModItems.TITANIUM_LEGGINGS);
+        simpleItem(ModItems.TITANIUM_BOOTS);
 
-        handheldItem(ModToolItems.TITANIUM_AXE);
-        handheldItem(ModToolItems.TITANIUM_SHOVEL);
-        handheldItem(ModToolItems.TITANIUM_PICKAXE);
-        handheldItem(ModToolItems.TITANIUM_HOE);
+        handheldItem(ModItems.TITANIUM_AXE);
+        handheldItem(ModItems.TITANIUM_SHOVEL);
+        handheldItem(ModItems.TITANIUM_PICKAXE);
+        handheldItem(ModItems.TITANIUM_HOE);
 
-        handheldItem(ModWeaponItems.TITANIUM_SWORD);
+        handheldItem(ModItems.TITANIUM_SWORD);
 
-        simpleItem(ModUpgradeCards.BLANK);
-        simpleItem(ModUpgradeCards.MAGNET);
-        simpleItem(ModUpgradeCards.SILK);
-        simpleItem(ModUpgradeCards.EXPANDER);
-        simpleItem(ModUpgradeCards.DEPTH);
+        simpleItem(ModItems.BLANK);
+        simpleItem(ModItems.MAGNET);
+        simpleItem(ModItems.SILK);
+        simpleItem(ModItems.EXPANDER);
+        simpleItem(ModItems.DEPTH);
 
-        simpleItem(ModUpgradeCards.AQUA_AFFINITY);
+        simpleItem(ModItems.AQUA_AFFINITY);
 
-        simpleItem(ModUpgradeCards.BANE_OF_ARTHROPODS_1);
-        simpleItem(ModUpgradeCards.BANE_OF_ARTHROPODS_2);
-        simpleItem(ModUpgradeCards.BANE_OF_ARTHROPODS_3);
-        simpleItem(ModUpgradeCards.BANE_OF_ARTHROPODS_4);
-        simpleItem(ModUpgradeCards.BANE_OF_ARTHROPODS_5);
+        simpleItem(ModItems.BANE_OF_ARTHROPODS_1);
+        simpleItem(ModItems.BANE_OF_ARTHROPODS_2);
+        simpleItem(ModItems.BANE_OF_ARTHROPODS_3);
+        simpleItem(ModItems.BANE_OF_ARTHROPODS_4);
+        simpleItem(ModItems.BANE_OF_ARTHROPODS_5);
 
-        simpleItem(ModUpgradeCards.BLAST_PROTECTION_1);
-        simpleItem(ModUpgradeCards.BLAST_PROTECTION_2);
-        simpleItem(ModUpgradeCards.BLAST_PROTECTION_3);
-        simpleItem(ModUpgradeCards.BLAST_PROTECTION_4);
+        simpleItem(ModItems.BLAST_PROTECTION_1);
+        simpleItem(ModItems.BLAST_PROTECTION_2);
+        simpleItem(ModItems.BLAST_PROTECTION_3);
+        simpleItem(ModItems.BLAST_PROTECTION_4);
 
-        simpleItem(ModUpgradeCards.DEPTH_STRIDER_1);
-        simpleItem(ModUpgradeCards.DEPTH_STRIDER_2);
-        simpleItem(ModUpgradeCards.DEPTH_STRIDER_3);
+        simpleItem(ModItems.DEPTH_STRIDER_1);
+        simpleItem(ModItems.DEPTH_STRIDER_2);
+        simpleItem(ModItems.DEPTH_STRIDER_3);
 
-        simpleItem(ModUpgradeCards.EFFICIENCY_1);
-        simpleItem(ModUpgradeCards.EFFICIENCY_2);
-        simpleItem(ModUpgradeCards.EFFICIENCY_3);
-        simpleItem(ModUpgradeCards.EFFICIENCY_4);
-        simpleItem(ModUpgradeCards.EFFICIENCY_5);
+        simpleItem(ModItems.EFFICIENCY_1);
+        simpleItem(ModItems.EFFICIENCY_2);
+        simpleItem(ModItems.EFFICIENCY_3);
+        simpleItem(ModItems.EFFICIENCY_4);
+        simpleItem(ModItems.EFFICIENCY_5);
 
-        simpleItem(ModUpgradeCards.FEATHER_FALLING_1);
-        simpleItem(ModUpgradeCards.FEATHER_FALLING_2);
-        simpleItem(ModUpgradeCards.FEATHER_FALLING_3);
-        simpleItem(ModUpgradeCards.FEATHER_FALLING_4);
+        simpleItem(ModItems.FEATHER_FALLING_1);
+        simpleItem(ModItems.FEATHER_FALLING_2);
+        simpleItem(ModItems.FEATHER_FALLING_3);
+        simpleItem(ModItems.FEATHER_FALLING_4);
 
-        simpleItem(ModUpgradeCards.FIRE_ASPECT_1);
-        simpleItem(ModUpgradeCards.FIRE_ASPECT_2);
+        simpleItem(ModItems.FIRE_ASPECT_1);
+        simpleItem(ModItems.FIRE_ASPECT_2);
 
-        simpleItem(ModUpgradeCards.FIRE_PROTECTION_1);
-        simpleItem(ModUpgradeCards.FIRE_PROTECTION_2);
-        simpleItem(ModUpgradeCards.FIRE_PROTECTION_3);
-        simpleItem(ModUpgradeCards.FIRE_PROTECTION_4);
+        simpleItem(ModItems.FIRE_PROTECTION_1);
+        simpleItem(ModItems.FIRE_PROTECTION_2);
+        simpleItem(ModItems.FIRE_PROTECTION_3);
+        simpleItem(ModItems.FIRE_PROTECTION_4);
 
-        simpleItem(ModUpgradeCards.FORTUNE_1);
-        simpleItem(ModUpgradeCards.FORTUNE_2);
-        simpleItem(ModUpgradeCards.FORTUNE_3);
+        simpleItem(ModItems.FORTUNE_1);
+        simpleItem(ModItems.FORTUNE_2);
+        simpleItem(ModItems.FORTUNE_3);
 
-        simpleItem(ModUpgradeCards.FROST_WALKER_1);
-        simpleItem(ModUpgradeCards.FROST_WALKER_2);
+        simpleItem(ModItems.FROST_WALKER_1);
+        simpleItem(ModItems.FROST_WALKER_2);
 
-        simpleItem(ModUpgradeCards.KNOCKBACK_1);
-        simpleItem(ModUpgradeCards.KNOCKBACK_2);
+        simpleItem(ModItems.KNOCKBACK_1);
+        simpleItem(ModItems.KNOCKBACK_2);
 
-        simpleItem(ModUpgradeCards.MOB_LOOTING_1);
-        simpleItem(ModUpgradeCards.MOB_LOOTING_2);
-        simpleItem(ModUpgradeCards.MOB_LOOTING_3);
+        simpleItem(ModItems.MOB_LOOTING_1);
+        simpleItem(ModItems.MOB_LOOTING_2);
+        simpleItem(ModItems.MOB_LOOTING_3);
 
-        simpleItem(ModUpgradeCards.MENDING);
+        simpleItem(ModItems.MENDING);
 
-        simpleItem(ModUpgradeCards.PROJECTILE_PROTECTION_1);
-        simpleItem(ModUpgradeCards.PROJECTILE_PROTECTION_2);
-        simpleItem(ModUpgradeCards.PROJECTILE_PROTECTION_3);
-        simpleItem(ModUpgradeCards.PROJECTILE_PROTECTION_4);
+        simpleItem(ModItems.PROJECTILE_PROTECTION_1);
+        simpleItem(ModItems.PROJECTILE_PROTECTION_2);
+        simpleItem(ModItems.PROJECTILE_PROTECTION_3);
+        simpleItem(ModItems.PROJECTILE_PROTECTION_4);
 
-        simpleItem(ModUpgradeCards.PROTECTION_1);
-        simpleItem(ModUpgradeCards.PROTECTION_2);
-        simpleItem(ModUpgradeCards.PROTECTION_3);
-        simpleItem(ModUpgradeCards.PROTECTION_4);
+        simpleItem(ModItems.PROTECTION_1);
+        simpleItem(ModItems.PROTECTION_2);
+        simpleItem(ModItems.PROTECTION_3);
+        simpleItem(ModItems.PROTECTION_4);
 
-        simpleItem(ModUpgradeCards.RESPIRATION_1);
-        simpleItem(ModUpgradeCards.RESPIRATION_2);
-        simpleItem(ModUpgradeCards.RESPIRATION_3);
+        simpleItem(ModItems.RESPIRATION_1);
+        simpleItem(ModItems.RESPIRATION_2);
+        simpleItem(ModItems.RESPIRATION_3);
 
-        simpleItem(ModUpgradeCards.SHARPNESS_1);
-        simpleItem(ModUpgradeCards.SHARPNESS_2);
-        simpleItem(ModUpgradeCards.SHARPNESS_3);
-        simpleItem(ModUpgradeCards.SHARPNESS_4);
-        simpleItem(ModUpgradeCards.SHARPNESS_5);
+        simpleItem(ModItems.SHARPNESS_1);
+        simpleItem(ModItems.SHARPNESS_2);
+        simpleItem(ModItems.SHARPNESS_3);
+        simpleItem(ModItems.SHARPNESS_4);
+        simpleItem(ModItems.SHARPNESS_5);
 
-        simpleItem(ModUpgradeCards.SMITE_1);
-        simpleItem(ModUpgradeCards.SMITE_2);
-        simpleItem(ModUpgradeCards.SMITE_3);
-        simpleItem(ModUpgradeCards.SMITE_4);
-        simpleItem(ModUpgradeCards.SMITE_5);
+        simpleItem(ModItems.SMITE_1);
+        simpleItem(ModItems.SMITE_2);
+        simpleItem(ModItems.SMITE_3);
+        simpleItem(ModItems.SMITE_4);
+        simpleItem(ModItems.SMITE_5);
 
-        simpleItem(ModUpgradeCards.SOUL_SPEED_1);
-        simpleItem(ModUpgradeCards.SOUL_SPEED_2);
-        simpleItem(ModUpgradeCards.SOUL_SPEED_3);
+        simpleItem(ModItems.SOUL_SPEED_1);
+        simpleItem(ModItems.SOUL_SPEED_2);
+        simpleItem(ModItems.SOUL_SPEED_3);
 
-        simpleItem(ModUpgradeCards.SWEEPING_EDGE_1);
-        simpleItem(ModUpgradeCards.SWEEPING_EDGE_2);
-        simpleItem(ModUpgradeCards.SWEEPING_EDGE_3);
+        simpleItem(ModItems.SWEEPING_EDGE_1);
+        simpleItem(ModItems.SWEEPING_EDGE_2);
+        simpleItem(ModItems.SWEEPING_EDGE_3);
 
-        simpleItem(ModUpgradeCards.THORNS_1);
-        simpleItem(ModUpgradeCards.THORNS_2);
-        simpleItem(ModUpgradeCards.THORNS_3);
+        simpleItem(ModItems.THORNS_1);
+        simpleItem(ModItems.THORNS_2);
+        simpleItem(ModItems.THORNS_3);
 
-        simpleItem(ModUpgradeCards.UNBREAKING_1);
-        simpleItem(ModUpgradeCards.UNBREAKING_2);
-        simpleItem(ModUpgradeCards.UNBREAKING_3);
+        simpleItem(ModItems.UNBREAKING_1);
+        simpleItem(ModItems.UNBREAKING_2);
+        simpleItem(ModItems.UNBREAKING_3);
 
         simpleItem(ModItems.AVENTURINE_SHARD);
         simpleItem(ModItems.PYRITE_SHARD);

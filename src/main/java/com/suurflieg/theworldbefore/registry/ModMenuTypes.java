@@ -2,7 +2,10 @@ package com.suurflieg.theworldbefore.registry;
 
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.custom.gui.menu.*;
+import com.suurflieg.theworldbefore.gui.menu.CustomArmorMenu;
+import com.suurflieg.theworldbefore.gui.menu.CustomToolMenu;
+import com.suurflieg.theworldbefore.gui.menu.CustomWeaponMenu;
+import com.suurflieg.theworldbefore.gui.menu.UpgradeStationMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;

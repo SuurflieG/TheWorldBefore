@@ -1,6 +1,6 @@
 package com.suurflieg.theworldbefore.network.packets;
 
-import com.suurflieg.theworldbefore.custom.gui.slot.ModGhostSlot;
+import com.suurflieg.theworldbefore.gui.slot.ModGhostSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.inventory.AbstractContainerMenu;
