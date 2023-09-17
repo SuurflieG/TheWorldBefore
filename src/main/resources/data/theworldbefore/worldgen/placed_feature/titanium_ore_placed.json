@@ -1,5 +1,5 @@
 {
-  "feature": "theworldbefore:overworld_titanium_ore",
+  "feature": "theworldbefore:titanium_ore",
   "placement": [
     {
       "type": "minecraft:count",
@@ -12,13 +12,16 @@
       "type": "minecraft:height_range",
       "height": {
         "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 80
+        },
         "min_inclusive": {
           "absolute": -64
-        },
-        "max_inclusive": {
-          "absolute": -5
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

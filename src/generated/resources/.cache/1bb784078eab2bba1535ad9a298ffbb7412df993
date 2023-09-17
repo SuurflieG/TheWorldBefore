@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-10T13:23:17.3640884	Block States: theworldbefore
+// 1.20.1	2023-09-15T11:32:16.3031916	Block States: theworldbefore
 3ae4b7ec89fa810db4f8b00ef560ed00cd621522 assets/theworldbefore/blockstates/aventurine_block.json
 8b2ffe9085cf323a2ef197f8f9a1e6757b5e1ba7 assets/theworldbefore/blockstates/budding_aventurine.json
 f0d00aae3e2e1c37bf597c690d106321df554753 assets/theworldbefore/blockstates/budding_pyrite.json
@@ -6,7 +6,6 @@ f0d00aae3e2e1c37bf597c690d106321df554753 assets/theworldbefore/blockstates/buddi
 7f9078db4ae15f23419f4e8cd85b91a4e83c5839 assets/theworldbefore/blockstates/budding_spectrolite.json
 a1d1917f4271a019af80ff812d9e6ec329f35ead assets/theworldbefore/blockstates/budding_topaz.json
 cd8abd8f4bc209bb06a48a146934d4fa4bacf116 assets/theworldbefore/blockstates/budding_unakite.json
-cd68bc1b1d171b99a96e6c14763363136025e7f6 assets/theworldbefore/blockstates/catalyzer.json
 d1da6e2c3d4bcd0e451aa64e75c3a0d739f61e7a assets/theworldbefore/blockstates/deepslate_titanium_ore.json
 57c0ade03d7e34c16a09c2e9d91ee3fb89b24986 assets/theworldbefore/blockstates/larch_leaves.json
 10e89b9212611b87f924b4ce10e60e2548202f61 assets/theworldbefore/blockstates/larch_log.json

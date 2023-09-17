@@ -2,6 +2,7 @@ package com.suurflieg.theworldbefore;
 
 import com.mojang.logging.LogUtils;
 import com.suurflieg.theworldbefore.config.ClientConfigs;
+import com.suurflieg.theworldbefore.config.CommonConfigs;
 import com.suurflieg.theworldbefore.gui.screen.UpgradeStationScreen;
 import com.suurflieg.theworldbefore.network.PacketHandler;
 import com.suurflieg.theworldbefore.registry.*;
@@ -37,13 +38,12 @@ public class TheWorldBefore {
         ModMenuTypes.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfigs.SPEC, "theworldbefore-client.toml");
-        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfigs.SPEC, "theworldbefore-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfigs.SPEC, "theworldbefore-common.toml");
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

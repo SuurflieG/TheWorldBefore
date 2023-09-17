@@ -34,6 +34,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));
 
+
+/*    public static final RegistryObject<Block> AVENTURINE_GEM_ORE = registerBlock("aventurine_gem_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));*/
+
+
     public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> UPGRADE_STATION = registerBlock("upgrade_station",

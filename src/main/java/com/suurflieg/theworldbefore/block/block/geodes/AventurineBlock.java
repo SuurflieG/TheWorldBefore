@@ -23,4 +23,6 @@ public class AventurineBlock extends Block {
             pLevel.playSound(null, blockpos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + pLevel.random.nextFloat() * 1.2F);
         }
     }
+
+
 }

@@ -23,4 +23,5 @@ public class ModOreGeneration {
 
         base.add(ModPlacedFeatures.DEEPSLATE_TITANIUM_ORE_PLACED.getHolder().get());
     }
-}*/
+}
+*/
