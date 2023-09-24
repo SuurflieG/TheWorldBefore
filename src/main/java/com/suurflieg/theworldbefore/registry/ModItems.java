@@ -47,6 +47,11 @@ public class ModItems {
     public static final RegistryObject<Item> DEPTH = ITEMS.register("upgrade_depth", () -> Upgrade.DEPTH.getCard());
     public static final RegistryObject<Item> AQUA_AFFINITY = ITEMS.register("upgrade_aqua_affinity", () -> Upgrade.AQUA_AFFINITY.getCard());
 
+    public static final RegistryObject<Item> FIRE_ELEMENT = ITEMS.register("upgrade_fire_element", () -> Upgrade.FIRE_ELEMENT.getCard());
+    public static final RegistryObject<Item> ICE_ELEMENT = ITEMS.register("upgrade_ice_element", () -> Upgrade.ICE_ELEMENT.getCard());
+    public static final RegistryObject<Item> WIND_ELEMENT = ITEMS.register("upgrade_wind_element", () -> Upgrade.WIND_ELEMENT.getCard());
+    public static final RegistryObject<Item> ELECTRIC_ELEMENT = ITEMS.register("upgrade_electric_element", () -> Upgrade.ELECTRIC_ELEMENT.getCard());
+
     public static final RegistryObject<Item> BANE_OF_ARTHROPODS_1 = ITEMS.register("upgrade_bane_of_arthropods_1", () -> Upgrade.BANE_OF_ARTHROPODS_1.getCard());
     public static final RegistryObject<Item> BANE_OF_ARTHROPODS_2 = ITEMS.register("upgrade_bane_of_arthropods_2", () -> Upgrade.BANE_OF_ARTHROPODS_2.getCard());
     public static final RegistryObject<Item> BANE_OF_ARTHROPODS_3 = ITEMS.register("upgrade_bane_of_arthropods_3", () -> Upgrade.BANE_OF_ARTHROPODS_3.getCard());

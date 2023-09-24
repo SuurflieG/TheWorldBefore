@@ -20,6 +20,10 @@ public enum Upgrade {
     MAGNET("magnet", true),
     MENDING("mending",true),
     AQUA_AFFINITY("aqua_affinity",true),
+    FIRE_ELEMENT("fire_element", true),
+    ICE_ELEMENT("ice_element", true),
+    WIND_ELEMENT("wind_element", true),
+    ELECTRIC_ELEMENT("electric_element", true),
 
     // Tiered
 

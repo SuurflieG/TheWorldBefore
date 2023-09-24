@@ -1,7 +1,8 @@
+/*
 package com.suurflieg.theworldbefore.block.block.geodes.cluster;
 
 
-import com.suurflieg.theworldbefore.block.block.geodes.RubyBlock;
+import com.suurflieg.theworldbefore.block.block.RubyBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -102,4 +103,4 @@ public class RubyClusterBlock extends RubyBlock implements SimpleWaterloggedBloc
     public PushReaction getPistonPushReaction(BlockState pState) {
         return PushReaction.DESTROY;
     }
-}
+}*/

@@ -48,6 +48,8 @@ public class CustomPickaxeItem extends PickaxeItem {
         return true;
     }
 
+
+
     private void miningSize(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
 
         Player pPlayer = (Player) pEntityLiving;

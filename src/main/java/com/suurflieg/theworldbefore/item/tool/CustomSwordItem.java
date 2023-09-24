@@ -52,6 +52,7 @@ public class CustomSwordItem extends SwordItem {
         UpgradeTools.setUpgrade(tool, upgradeCardItem);
     }
 
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);

@@ -1,6 +1,6 @@
-// 1.20.1	2023-09-10T13:32:14.4058073	Tags for minecraft:block mod id theworldbefore
+// 1.20.1	2023-09-18T17:01:42.4671236	Tags for minecraft:block mod id theworldbefore
 2c722ba5378cff3558d058b08438b632a083a246 data/minecraft/tags/blocks/mineable/axe.json
-14ad956d1818532769efdb5c065c9acb56fa2b28 data/minecraft/tags/blocks/mineable/pickaxe.json
-c96498a844e42f1a0b0c49005edc539769288008 data/minecraft/tags/blocks/needs_diamond_tool.json
-bcf390c82e8603873829f61c0df283a9f55115e2 data/minecraft/tags/blocks/needs_iron_tool.json
+0fe7d151653d420391b9b6f7ffcfc19b59e3658e data/minecraft/tags/blocks/mineable/pickaxe.json
+ead5c2240c2af259813263e5cb5701e88594446a data/minecraft/tags/blocks/needs_diamond_tool.json
+a0393653ba78bf3aab9d245fc0678d0823a2fb01 data/minecraft/tags/blocks/needs_iron_tool.json
 e0b83e53310a2880d3189f4d95e483fe6d81fc60 data/minecraft/tags/blocks/needs_stone_tool.json

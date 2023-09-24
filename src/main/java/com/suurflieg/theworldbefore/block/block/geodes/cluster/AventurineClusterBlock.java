@@ -1,7 +1,8 @@
+/*
 package com.suurflieg.theworldbefore.block.block.geodes.cluster;
 
 
-import com.suurflieg.theworldbefore.block.block.geodes.AventurineBlock;
+import com.suurflieg.theworldbefore.block.block.AventurineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -102,4 +103,4 @@ public class AventurineClusterBlock extends AventurineBlock implements SimpleWat
     public PushReaction getPistonPushReaction(BlockState pState) {
         return PushReaction.DESTROY;
     }
-}
+}*/

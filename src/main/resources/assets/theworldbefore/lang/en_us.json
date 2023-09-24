@@ -18,43 +18,6 @@
   "item.theworldbefore.titanium_ingot": "Titanium Ingot",
   "block.theworldbefore.titanium_block": "Block of Titanium",
 
-  "block.theworldbefore.catalyzer": "Catalyzer",
-
-  "block.theworldbefore.aventurine_cluster": "Aventurine Cluster",
-  "block.theworldbefore.pyrite_cluster": "Pyrite Cluster",
-  "block.theworldbefore.ruby_cluster": "Ruby Cluster",
-  "block.theworldbefore.spectrolite_cluster": "Spectrolite Cluster",
-  "block.theworldbefore.topaz_cluster": "Topaz Cluster",
-  "block.theworldbefore.unakite_cluster": "Unakite Cluster",
-
-  "block.theworldbefore.large_aventurine_bud": "Large Aventurine Bud",
-  "block.theworldbefore.large_pyrite_bud": "Large Pyrite Bud",
-  "block.theworldbefore.large_ruby_bud": "Large Ruby Bud",
-  "block.theworldbefore.large_spectrolite_bud": "Large Spectrolite Bud",
-  "block.theworldbefore.large_topaz_bud": "Large Topaz Bud",
-  "block.theworldbefore.large_unakite_bud": "Large Unakite Bud",
-
-  "block.theworldbefore.medium_aventurine_bud": "Medium Aventurine Bud",
-  "block.theworldbefore.medium_pyrite_bud": "Medium Pyrite Bud",
-  "block.theworldbefore.medium_ruby_bud": "Medium Ruby Bud",
-  "block.theworldbefore.medium_spectrolite_bud": "Medium Spectrolite Bud",
-  "block.theworldbefore.medium_topaz_bud": "Medium Topaz Bud",
-  "block.theworldbefore.medium_unakite_bud": "Medium Unakite Bud",
-
-  "block.theworldbefore.small_aventurine_bud": "Small Aventurine Bud",
-  "block.theworldbefore.small_pyrite_bud": "Small Pyrite Bud",
-  "block.theworldbefore.small_ruby_bud": "Small Ruby Bud",
-  "block.theworldbefore.small_spectrolite_bud": "Small Spectrolite Bud",
-  "block.theworldbefore.small_topaz_bud": "Small Topaz Bud",
-  "block.theworldbefore.small_unakite_bud": "Small Unakite Bud",
-
-  "item.theworldbefore.aventurine_bud": "Aventurine Bud",
-  "item.theworldbefore.pyrite_bud": "Pyrite Bud",
-  "item.theworldbefore.ruby_bud": "Ruby Bud",
-  "item.theworldbefore.spectrolite_bud": "Spectrolite Bud",
-  "item.theworldbefore.topaz_bud": "Topaz Bud",
-  "item.theworldbefore.unakite_bud": "Unakite Bud",
-
   "item.theworldbefore.titanium_sword": "Titanium Sword",
   "item.theworldbefore.titanium_axe": "Titanium Axe",
   "item.theworldbefore.titanium_shovel": "Titanium Shovel",

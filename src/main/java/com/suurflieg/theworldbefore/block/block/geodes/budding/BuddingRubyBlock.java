@@ -1,7 +1,8 @@
+/*
 package com.suurflieg.theworldbefore.block.block.geodes.budding;
 
 
-import com.suurflieg.theworldbefore.block.block.geodes.RubyBlock;
+import com.suurflieg.theworldbefore.block.block.RubyBlock;
 import com.suurflieg.theworldbefore.block.block.geodes.cluster.RubyClusterBlock;
 import com.suurflieg.theworldbefore.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -29,9 +30,11 @@ public class BuddingRubyBlock extends RubyBlock {
         return PushReaction.DESTROY;
     }
 
-    /**
+    */
+/**
      * Performs a random tick on a block.
-     */
+     *//*
+
 
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRandom) {
         if (pRandom.nextInt(5) == 0) {
@@ -62,3 +65,4 @@ public class BuddingRubyBlock extends RubyBlock {
     }
 
 }
+*/

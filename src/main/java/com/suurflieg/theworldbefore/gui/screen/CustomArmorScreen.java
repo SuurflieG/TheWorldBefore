@@ -4,18 +4,15 @@ import com.suurflieg.theworldbefore.TheWorldBefore;
 import com.suurflieg.theworldbefore.gui.widgets.ToggleButton;
 import com.suurflieg.theworldbefore.item.tool.CustomPickaxeItem;
 import com.suurflieg.theworldbefore.item.tool.CustomShovelItem;
-import com.suurflieg.theworldbefore.item.tool.ToolProperties;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeHelper;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
 import com.suurflieg.theworldbefore.network.PacketHandler;
-import com.suurflieg.theworldbefore.network.packets.PacketChangeMiningSize;
 import com.suurflieg.theworldbefore.network.packets.PacketUpdateUpgrade;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
 import net.minecraft.client.renderer.GameRenderer;
@@ -33,17 +30,17 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings("InstantiationOfUtilityClass")
 public class CustomArmorScreen extends Screen {
-    private final ItemStack customToolItem;
+    private final ItemStack customArmorItem;
 
-    private int currentSize = 1;
+    //private int currentSize = 1;
     public List<Upgrade> toggleableList = new ArrayList<>();
     public static HashMap<Upgrade, ToggleButton> toggleButton = new HashMap<>();
     public static ToggleButton Btn;
 
-    public CustomArmorScreen(ItemStack customToolItem) {
+    public CustomArmorScreen(ItemStack customArmorItem) {
         super(Component.literal("title"));
 
-        this.customToolItem = customToolItem;
+        this.customArmorItem = customArmorItem;
     }
 
     @Override
@@ -55,7 +52,7 @@ public class CustomArmorScreen extends Screen {
 
         // Filters out the non-toggleable options
         toggleableList.clear();
-        toggleableList = UpgradeTools.getUpgrades(this.customToolItem).stream().filter(Upgrade::isToggleable).collect(Collectors.toList());
+        toggleableList = UpgradeTools.getUpgrades(this.customArmorItem).stream().filter(Upgrade::isToggleable).collect(Collectors.toList());
 
         // Bottom Row
         // Remove 6 from x to center it as the padding on the right pushes off center
@@ -74,21 +71,7 @@ public class CustomArmorScreen extends Screen {
             }
         }
 
-        // Top Row
-        currentSize = ToolProperties.getMiningSize(customToolItem);
-
-        Button sizeButton;
-
-        leftWidgets.add(sizeButton = Button.builder(Component.translatable("theworldbefore.tooltip.screen.size", currentSize), (button) -> {
-            currentSize = currentSize == 1 ? 3 : 1;
-            button.setMessage(getTrans("tooltip.screen.size", currentSize));
-            PacketHandler.sendToServer(new PacketChangeMiningSize());
-        }).pos(baseX + 12, baseY + 20).size(60, 20).build());
-
         // Button logic
-        if(!UpgradeTools.containsActiveUpgrade(customToolItem, Upgrade.EXPANDER))
-            sizeButton.active = false;
-
         // Lay the buttons out, too lazy to figure out the math every damn time.
         // Ordered by where you add them.
         for(int i = 0; i < leftWidgets.size(); i ++) {
@@ -102,7 +85,7 @@ public class CustomArmorScreen extends Screen {
     public boolean toggleUpgrade(Upgrade upgrade, boolean update) {
         // When the button is clicked we toggle
         if(update){
-            updateButtons(upgrade, customToolItem);
+            updateButtons(upgrade, customArmorItem);
             PacketHandler.sendToServer(new PacketUpdateUpgrade(upgrade.getName()));
         }
         // When we're just init the gui, we check if it's on or off.
@@ -205,27 +188,10 @@ public class CustomArmorScreen extends Screen {
         int y = (height / 2 ) - (imageHeight / 2);
 
         pGuiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
-        if(isPickaxe(customToolItem)){
-            pGuiGraphics.drawString(getMinecraft().font, "tooltip.screen.pickaxe_settings", x + 12, y + 10, Color.ORANGE.getRGB());
-            pGuiGraphics.drawString(getMinecraft().font, "tooltip.screen.toggle_upgrades", x + 12, y + 75, Color.ORANGE.getRGB());
-        }
-
-        if(isShovel(customToolItem)){
-            pGuiGraphics.drawString(getMinecraft().font, "tooltip.screen.shovel_settings", x + 12, y + 10, Color.ORANGE.getRGB());
-            pGuiGraphics.drawString(getMinecraft().font, "tooltip.screen.toggle_upgrades", x + 12, y + 75, Color.ORANGE.getRGB());
-        }
 
         if(toggleableList.isEmpty())
             pGuiGraphics.drawString(getMinecraft().font, "tooltip.screen.no_upgrades", x + 12, y + 85, Color.RED.brighter().getRGB());
 
-    }
-
-    private static boolean isPickaxe(ItemStack tool) {
-        return tool.getItem() instanceof CustomPickaxeItem;
-    }
-
-    private static boolean isShovel(ItemStack tool) {
-        return tool.getItem() instanceof CustomShovelItem;
     }
 
     @Override

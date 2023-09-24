@@ -1,6 +1,7 @@
+/*
 package com.suurflieg.theworldbefore.block.block.geodes.cluster;
 
-import com.suurflieg.theworldbefore.block.block.geodes.TopazBlock;
+import com.suurflieg.theworldbefore.block.block.TopazBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -101,4 +102,4 @@ public class TopazClusterBlock extends TopazBlock implements SimpleWaterloggedBl
     public PushReaction getPistonPushReaction(BlockState pState) {
         return PushReaction.DESTROY;
     }
-}
+}*/

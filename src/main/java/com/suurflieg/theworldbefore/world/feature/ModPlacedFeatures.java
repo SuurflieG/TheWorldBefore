@@ -19,6 +19,13 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE_PLACED_KEY = registerKey("titanium_ore_placed");
 
+    public static final ResourceKey<PlacedFeature> AVENTURINE_ORE_PLACED_KEY = registerKey("aventurine_ore_placed");
+    public static final ResourceKey<PlacedFeature> PYRITE_ORE_PLACED_KEY = registerKey("pyrite_ore_placed");
+    public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
+    public static final ResourceKey<PlacedFeature> TOPAZ_ORE_PLACED_KEY = registerKey("topaz_ore_placed");
+    public static final ResourceKey<PlacedFeature> SPECTROLITE_ORE_PLACED_KEY = registerKey("spectrolite_ore_placed");
+    public static final ResourceKey<PlacedFeature> UNAKITE_ORE_PLACED_KEY = registerKey("unakite_ore_placed");
+
     public static final ResourceKey<PlacedFeature> AVENTURINE_GEODE_PLACED_KEY = registerKey("aventurine_geode_placed");
     public static final ResourceKey<PlacedFeature> PYRITE_GEODE_PLACED_KEY = registerKey("pyrite_geode_placed");
     public static final ResourceKey<PlacedFeature> RUBY_GEODE_PLACED_KEY = registerKey("ruby_geode_placed");
@@ -38,7 +45,7 @@ public class ModPlacedFeatures {
                 ModOrePlacement.commonOrePlacement(12,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
-        register(context, AVENTURINE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeature.AVENTURINE_GEODE_KEY),
+/*        register(context, AVENTURINE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeature.AVENTURINE_GEODE_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(24)),
                         BiomeFilter.biome()));
@@ -66,7 +73,7 @@ public class ModPlacedFeatures {
         register(context, UNAKITE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeature.UNAKITE_GEODE_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(24)),
-                        BiomeFilter.biome()));
+                        BiomeFilter.biome()));*/
 
     }
 

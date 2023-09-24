@@ -23,21 +23,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.TITANIUM_BLOCK);
 
         blockWithItem(ModBlocks.TITANIUM_ORE);
+        blockWithItem(ModBlocks.AVENTURINE_ORE);
+        blockWithItem(ModBlocks.PYRITE_ORE);
+        blockWithItem(ModBlocks.RUBY_ORE);
+        blockWithItem(ModBlocks.TOPAZ_ORE);
+        blockWithItem(ModBlocks.SPECTROLITE_ORE);
+        blockWithItem(ModBlocks.UNAKITE_ORE);
 
         blockWithItem(ModBlocks.DEEPSLATE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_AVENTURINE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_PYRITE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_TOPAZ_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_SPECTROLITE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_UNAKITE_ORE);
 
         blockWithItem(ModBlocks.AVENTURINE_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_AVENTURINE);
         blockWithItem(ModBlocks.PYRITE_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_PYRITE);
         blockWithItem(ModBlocks.RUBY_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_RUBY);
         blockWithItem(ModBlocks.TOPAZ_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_TOPAZ);
         blockWithItem(ModBlocks.SPECTROLITE_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_SPECTROLITE);
         blockWithItem(ModBlocks.UNAKITE_BLOCK);
-        blockWithItem(ModBlocks.BUDDING_UNAKITE);
 
         horizontalBlock(ModBlocks.UPGRADE_STATION.get(), new ModelFile.UncheckedModelFile(modLoc("block/upgrade_station")));
 

@@ -26,50 +26,29 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("titanium_ore", modLoc("block/titanium_ore"));
         withExistingParent("deepslate_titanium_ore", modLoc("block/deepslate_titanium_ore"));
 
+        withExistingParent("aventurine_ore", modLoc("block/aventurine_ore"));
+        withExistingParent("pyrite_ore", modLoc("block/pyrite_ore"));
+        withExistingParent("ruby_ore", modLoc("block/ruby_ore"));
+        withExistingParent("topaz_ore", modLoc("block/topaz_ore"));
+        withExistingParent("spectrolite_ore", modLoc("block/spectrolite_ore"));
+        withExistingParent("unakite_ore", modLoc("block/unakite_ore"));
+
+        withExistingParent("deepslate_aventurine_ore", modLoc("block/deepslate_aventurine_ore"));
+        withExistingParent("deepslate_pyrite_ore", modLoc("block/deepslate_pyrite_ore"));
+        withExistingParent("deepslate_ruby_ore", modLoc("block/deepslate_ruby_ore"));
+        withExistingParent("deepslate_topaz_ore", modLoc("block/deepslate_topaz_ore"));
+        withExistingParent("deepslate_spectrolite_ore", modLoc("block/deepslate_spectrolite_ore"));
+        withExistingParent("deepslate_unakite_ore", modLoc("block/deepslate_unakite_ore"));
+
         withExistingParent("upgrade_station", modLoc("block/upgrade_station"));
         withExistingParent("catalyzer", modLoc("block/catalyzer"));
 
         withExistingParent("aventurine_block", modLoc("block/aventurine_block"));
-        withExistingParent("aventurine_cluster", modLoc("block/aventurine_cluster"));
-        withExistingParent("budding_aventurine", modLoc("block/budding_aventurine"));
-        withExistingParent("large_aventurine_bud", modLoc("block/large_aventurine_bud"));
-        withExistingParent("medium_aventurine_bud", modLoc("block/medium_aventurine_bud"));
-        withExistingParent("small_aventurine_bud", modLoc("block/small_aventurine_bud"));
-
         withExistingParent("pyrite_block", modLoc("block/pyrite_block"));
-        withExistingParent("pyrite_cluster", modLoc("block/pyrite_cluster"));
-        withExistingParent("budding_pyrite", modLoc("block/budding_pyrite"));
-        withExistingParent("large_pyrite_bud", modLoc("block/large_pyrite_bud"));
-        withExistingParent("medium_pyrite_bud", modLoc("block/medium_pyrite_bud"));
-        withExistingParent("small_pyrite_bud", modLoc("block/small_pyrite_bud"));
-
         withExistingParent("ruby_block", modLoc("block/ruby_block"));
-        withExistingParent("ruby_cluster", modLoc("block/ruby_cluster"));
-        withExistingParent("budding_ruby", modLoc("block/budding_ruby"));
-        withExistingParent("large_ruby_bud", modLoc("block/large_ruby_bud"));
-        withExistingParent("medium_ruby_bud", modLoc("block/medium_ruby_bud"));
-        withExistingParent("small_ruby_bud", modLoc("block/small_ruby_bud"));
-        
         withExistingParent("topaz_block", modLoc("block/topaz_block"));
-        withExistingParent("topaz_cluster", modLoc("block/topaz_cluster"));
-        withExistingParent("budding_topaz", modLoc("block/budding_topaz"));
-        withExistingParent("large_topaz_bud", modLoc("block/large_topaz_bud"));
-        withExistingParent("medium_topaz_bud", modLoc("block/medium_topaz_bud"));
-        withExistingParent("small_topaz_bud", modLoc("block/small_topaz_bud"));
-
         withExistingParent("spectrolite_block", modLoc("block/spectrolite_block"));
-        withExistingParent("spectrolite_cluster", modLoc("block/spectrolite_cluster"));
-        withExistingParent("budding_spectrolite", modLoc("block/budding_spectrolite"));
-        withExistingParent("large_spectrolite_bud", modLoc("block/large_spectrolite_bud"));
-        withExistingParent("medium_spectrolite_bud", modLoc("block/medium_spectrolite_bud"));
-        withExistingParent("small_spectrolite_bud", modLoc("block/small_spectrolite_bud"));
-
         withExistingParent("unakite_block", modLoc("block/unakite_block"));
-        withExistingParent("unakite_cluster", modLoc("block/unakite_cluster"));
-        withExistingParent("budding_unakite", modLoc("block/budding_unakite"));
-        withExistingParent("large_unakite_bud", modLoc("block/large_unakite_bud"));
-        withExistingParent("medium_unakite_bud", modLoc("block/medium_unakite_bud"));
-        withExistingParent("small_unakite_bud", modLoc("block/small_unakite_bud"));
 
         simpleItem(ModItems.TITANIUM_NUGGET);
         simpleItem(ModItems.TITANIUM_INGOT);
@@ -94,6 +73,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DEPTH);
 
         simpleItem(ModItems.AQUA_AFFINITY);
+
+        simpleItem(ModItems.FIRE_ELEMENT);
+        simpleItem(ModItems.ICE_ELEMENT);
+        simpleItem(ModItems.WIND_ELEMENT);
+        simpleItem(ModItems.ELECTRIC_ELEMENT);
 
         simpleItem(ModItems.BANE_OF_ARTHROPODS_1);
         simpleItem(ModItems.BANE_OF_ARTHROPODS_2);

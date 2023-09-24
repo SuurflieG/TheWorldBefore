@@ -32,6 +32,13 @@ public class ModConfiguredFeature {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TITANIUM_ORE_KEY = registerKey("titanium_ore");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_AVENTURINE_ORE_KEY = registerKey("aventurine_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PYRITE_ORE_KEY = registerKey("pyrite_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TOPAZ_ORE_KEY = registerKey("topaz_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SPECTROLITE_ORE_KEY = registerKey("spectrolite_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_UNAKITE_ORE_KEY = registerKey("unakite_ore");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> AVENTURINE_GEODE_KEY = registerKey("aventurine_geode");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PYRITE_GEODE_KEY = registerKey("pyrite_geode");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_GEODE_KEY = registerKey("ruby_geode");
@@ -42,12 +49,34 @@ public class ModConfiguredFeature {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceabeles = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceabeles = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest netherrackReplaceabeles = new BlockMatchTest(Blocks.NETHERRACK);
-        RuleTest endReplaceabeles = new BlockMatchTest(Blocks.END_STONE);
 
         List<OreConfiguration.TargetBlockState> overworldTitaniumOres =
                 List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.TITANIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldAventurineOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.AVENTURINE_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_AVENTURINE_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldPyriteOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.PYRITE_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_PYRITE_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldRubyOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.RUBY_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldTopazOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.TOPAZ_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_TOPAZ_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldSpectroliteOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.SPECTROLITE_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldUnakiteOres =
+                List.of(OreConfiguration.target(stoneReplaceabeles, ModBlocks.UNAKITE_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_UNAKITE_ORE.get().defaultBlockState()));
 
         register(context, LARCH_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.LARCH_LOG.get()),
@@ -58,7 +87,19 @@ public class ModConfiguredFeature {
 
         register(context, OVERWORLD_TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 9));
 
-        register(context, AVENTURINE_GEODE_KEY, Feature.GEODE,
+        register(context, OVERWORLD_AVENTURINE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldAventurineOres, 9));
+        register(context, OVERWORLD_PYRITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldPyriteOres, 9));
+        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 9));
+        register(context, OVERWORLD_TOPAZ_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTopazOres, 9));
+        register(context, OVERWORLD_SPECTROLITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSpectroliteOres, 9));
+        register(context, OVERWORLD_UNAKITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUnakiteOres, 9));
+
+
+
+
+
+
+/*        register(context, AVENTURINE_GEODE_KEY, Feature.GEODE,
                 new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(ModBlocks.AVENTURINE_BLOCK.get()),
                         BlockStateProvider.simple(ModBlocks.BUDDING_AVENTURINE.get()),
@@ -158,7 +199,7 @@ public class ModConfiguredFeature {
                         new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D,
                         0.083D, true, UniformInt.of(4, 6),
                         UniformInt.of(3, 4),
-                        UniformInt.of(1, 2), -16, 16, 0.05D, 1));
+                        UniformInt.of(1, 2), -16, 16, 0.05D, 1));*/
     }
 
 

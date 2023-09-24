@@ -27,45 +27,27 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.AVENTURINE_BLOCK.get(),
-                     ModBlocks.SMALL_AVENTURINE_BUD.get(),
-                     ModBlocks.MEDIUM_AVENTURINE_BUD.get(),
-                     ModBlocks.LARGE_AVENTURINE_BUD.get(),
-                     ModBlocks.AVENTURINE_CLUSTER.get(),
-                     ModBlocks.BUDDING_AVENTURINE.get(),
                      ModBlocks.PYRITE_BLOCK.get(),
-                     ModBlocks.SMALL_PYRITE_BUD.get(),
-                     ModBlocks.MEDIUM_PYRITE_BUD.get(),
-                     ModBlocks.LARGE_PYRITE_BUD.get(),
-                     ModBlocks.PYRITE_CLUSTER.get(),
-                     ModBlocks.BUDDING_PYRITE.get(),
                      ModBlocks.RUBY_BLOCK.get(),
-                     ModBlocks.SMALL_RUBY_BUD.get(),
-                     ModBlocks.MEDIUM_RUBY_BUD.get(),
-                     ModBlocks.LARGE_RUBY_BUD.get(),
-                     ModBlocks.RUBY_CLUSTER.get(),
-                     ModBlocks.BUDDING_RUBY.get(),
                      ModBlocks.TOPAZ_BLOCK.get(),
-                     ModBlocks.SMALL_TOPAZ_BUD.get(),
-                     ModBlocks.MEDIUM_TOPAZ_BUD.get(),
-                     ModBlocks.LARGE_TOPAZ_BUD.get(),
-                     ModBlocks.TOPAZ_CLUSTER.get(),
-                     ModBlocks.BUDDING_TOPAZ.get(),
                      ModBlocks.SPECTROLITE_BLOCK.get(),
-                     ModBlocks.SMALL_SPECTROLITE_BUD.get(),
-                     ModBlocks.MEDIUM_SPECTROLITE_BUD.get(),
-                     ModBlocks.LARGE_SPECTROLITE_BUD.get(),
-                     ModBlocks.SPECTROLITE_CLUSTER.get(),
-                     ModBlocks.BUDDING_SPECTROLITE.get(),
                      ModBlocks.UNAKITE_BLOCK.get(),
-                     ModBlocks.SMALL_UNAKITE_BUD.get(),
-                     ModBlocks.MEDIUM_UNAKITE_BUD.get(),
-                     ModBlocks.LARGE_UNAKITE_BUD.get(),
-                     ModBlocks.UNAKITE_CLUSTER.get(),
-                     ModBlocks.BUDDING_UNAKITE.get(),
                      ModBlocks.UPGRADE_STATION.get(),
                      ModBlocks.TITANIUM_ORE.get(),
                      ModBlocks.DEEPSLATE_TITANIUM_ORE.get(),
-                     ModBlocks.TITANIUM_BLOCK.get());
+                     ModBlocks.TITANIUM_BLOCK.get(),
+                     ModBlocks.AVENTURINE_ORE.get(),
+                     ModBlocks.PYRITE_ORE.get(),
+                     ModBlocks.RUBY_ORE.get(),
+                     ModBlocks.TOPAZ_ORE.get(),
+                     ModBlocks.SPECTROLITE_ORE.get(),
+                     ModBlocks.UNAKITE_ORE.get(),
+                     ModBlocks.DEEPSLATE_AVENTURINE_ORE.get(),
+                     ModBlocks.DEEPSLATE_PYRITE_ORE.get(),
+                     ModBlocks.DEEPSLATE_RUBY_ORE.get(),
+                     ModBlocks.DEEPSLATE_TOPAZ_ORE.get(),
+                     ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get(),
+                     ModBlocks.DEEPSLATE_UNAKITE_ORE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.LARCH_WOOD.get(),
@@ -76,51 +58,29 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.AVENTURINE_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_AVENTURINE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_AVENTURINE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_AVENTURINE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.AVENTURINE_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_AVENTURINE.get());
-        
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.PYRITE_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_PYRITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_PYRITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_PYRITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.PYRITE_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_PYRITE.get());
-        
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.RUBY_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_RUBY_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_RUBY_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_RUBY_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.RUBY_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_RUBY.get());
-        
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.TOPAZ_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_TOPAZ_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_TOPAZ_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_TOPAZ_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.TOPAZ_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_TOPAZ.get());
-        
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SPECTROLITE_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_SPECTROLITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_SPECTROLITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_SPECTROLITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SPECTROLITE_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_SPECTROLITE.get());
-        
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.UNAKITE_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SMALL_UNAKITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MEDIUM_UNAKITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.LARGE_UNAKITE_BUD.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.UNAKITE_CLUSTER.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BUDDING_UNAKITE.get());
+
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.UPGRADE_STATION.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TITANIUM_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.AVENTURINE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.PYRITE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.RUBY_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TOPAZ_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.SPECTROLITE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.UNAKITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_AVENTURINE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_PYRITE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_RUBY_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_TOPAZ_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_UNAKITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TITANIUM_BLOCK.get());
     }
 }

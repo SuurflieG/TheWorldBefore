@@ -43,12 +43,32 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //region Ore Blocks that drop raw ores
         this.add(ModBlocks.TITANIUM_ORE.get(), (Block) -> createOreDrop(ModBlocks.TITANIUM_ORE.get(), ModItems.TITANIUM_RAW_ORE.get()));
         this.add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModItems.TITANIUM_RAW_ORE.get()));
+
+        this.add(ModBlocks.AVENTURINE_ORE.get(), (Block) -> createOreDrop(ModBlocks.AVENTURINE_ORE.get(), ModItems.AVENTURINE_SHARD.get()));
+        this.add(ModBlocks.PYRITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.PYRITE_SHARD.get()));
+        this.add(ModBlocks.RUBY_ORE.get(), (Block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY_SHARD.get()));
+        this.add(ModBlocks.TOPAZ_ORE.get(), (Block) -> createOreDrop(ModBlocks.TOPAZ_ORE.get(), ModItems.TOPAZ_SHARD.get()));
+        this.add(ModBlocks.SPECTROLITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.SPECTROLITE_ORE.get(), ModItems.SPECTROLITE_SHARD.get()));
+        this.add(ModBlocks.UNAKITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.UNAKITE_ORE.get(), ModItems.UNAKITE_SHARD.get()));
+
+        this.add(ModBlocks.DEEPSLATE_AVENTURINE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_AVENTURINE_ORE.get(), ModItems.AVENTURINE_SHARD.get()));
+        this.add(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModItems.PYRITE_SHARD.get()));
+        this.add(ModBlocks.DEEPSLATE_RUBY_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModItems.RUBY_SHARD.get()));
+        this.add(ModBlocks.DEEPSLATE_TOPAZ_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_TOPAZ_ORE.get(), ModItems.TOPAZ_SHARD.get()));
+        this.add(ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get(), ModItems.SPECTROLITE_SHARD.get()));
+        this.add(ModBlocks.DEEPSLATE_UNAKITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_UNAKITE_ORE.get(), ModItems.UNAKITE_SHARD.get()));
         //endregion
 
         this.add(ModBlocks.LARCH_LEAVES.get(), (Block) -> createLeavesDrops(Block, ModBlocks.LARCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.dropSelf(ModBlocks.AVENTURINE_BLOCK.get());
-        this.add(ModBlocks.AVENTURINE_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.AVENTURINE_SHARD.get())
+        this.dropSelf(ModBlocks.PYRITE_BLOCK.get());
+        this.dropSelf(ModBlocks.RUBY_BLOCK.get());
+        this.dropSelf(ModBlocks.TOPAZ_BLOCK.get());
+        this.dropSelf(ModBlocks.SPECTROLITE_BLOCK.get());
+        this.dropSelf(ModBlocks.UNAKITE_BLOCK.get());
+
+/*        this.add(ModBlocks.AVENTURINE_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.AVENTURINE_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
                 .otherwise(applyExplosionDecay(p_176063_, LootItem.lootTableItem(ModItems.AVENTURINE_SHARD.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))));
@@ -57,7 +77,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.LARGE_AVENTURINE_BUD.get());
         this.add(ModBlocks.BUDDING_AVENTURINE.get(), noDrop());
 
-        this.dropSelf(ModBlocks.PYRITE_BLOCK.get());
+
         this.add(ModBlocks.PYRITE_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.PYRITE_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
@@ -67,7 +87,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.LARGE_PYRITE_BUD.get());
         this.add(ModBlocks.BUDDING_PYRITE.get(), noDrop());
 
-        this.dropSelf(ModBlocks.RUBY_BLOCK.get());
+
         this.add(ModBlocks.RUBY_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.RUBY_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
@@ -77,7 +97,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.LARGE_RUBY_BUD.get());
         this.add(ModBlocks.BUDDING_RUBY.get(), noDrop());
 
-        this.dropSelf(ModBlocks.TOPAZ_BLOCK.get());
+
         this.add(ModBlocks.TOPAZ_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.TOPAZ_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
@@ -87,7 +107,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.LARGE_TOPAZ_BUD.get());
         this.add(ModBlocks.BUDDING_TOPAZ.get(), noDrop());
 
-        this.dropSelf(ModBlocks.SPECTROLITE_BLOCK.get());
+
         this.add(ModBlocks.SPECTROLITE_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.SPECTROLITE_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
@@ -97,7 +117,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.LARGE_SPECTROLITE_BUD.get());
         this.add(ModBlocks.BUDDING_SPECTROLITE.get(), noDrop());
 
-        this.dropSelf(ModBlocks.UNAKITE_BLOCK.get());
+
         this.add(ModBlocks.UNAKITE_CLUSTER.get(), (p_176063_) -> createSilkTouchDispatchTable(p_176063_, LootItem.lootTableItem(ModItems.UNAKITE_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES)))
@@ -105,7 +125,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropWhenSilkTouch(ModBlocks.SMALL_UNAKITE_BUD.get());
         this.dropWhenSilkTouch(ModBlocks.MEDIUM_UNAKITE_BUD.get());
         this.dropWhenSilkTouch(ModBlocks.LARGE_UNAKITE_BUD.get());
-        this.add(ModBlocks.BUDDING_UNAKITE.get(), noDrop());
+        this.add(ModBlocks.BUDDING_UNAKITE.get(), noDrop());*/
 
     }
 

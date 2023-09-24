@@ -1,6 +1,7 @@
+/*
 package com.suurflieg.theworldbefore.block.block.geodes.cluster;
 
-import com.suurflieg.theworldbefore.block.block.geodes.SpectroliteBlock;
+import com.suurflieg.theworldbefore.block.block.SpectroliteBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -102,4 +103,4 @@ public class SpectroliteClusterBlock extends SpectroliteBlock implements SimpleW
     public PushReaction getPistonPushReaction(BlockState pState) {
         return PushReaction.DESTROY;
     }
-}
+}*/

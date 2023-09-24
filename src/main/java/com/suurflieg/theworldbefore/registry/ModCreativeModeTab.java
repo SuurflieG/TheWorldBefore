@@ -44,6 +44,11 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModItems.MENDING.get());
                         pOutput.accept(ModItems.AQUA_AFFINITY.get());
 
+                        pOutput.accept(ModItems.FIRE_ELEMENT.get());
+                        pOutput.accept(ModItems.ICE_ELEMENT.get());
+                        pOutput.accept(ModItems.WIND_ELEMENT.get());
+                        pOutput.accept(ModItems.ELECTRIC_ELEMENT.get());
+
                         pOutput.accept(ModItems.BANE_OF_ARTHROPODS_1.get());
                         pOutput.accept(ModItems.BANE_OF_ARTHROPODS_2.get());
                         pOutput.accept(ModItems.BANE_OF_ARTHROPODS_3.get());
@@ -134,7 +139,14 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModItems.UNBREAKING_2.get());
                         pOutput.accept(ModItems.UNBREAKING_3.get());
 
-                        pOutput.accept(ModBlocks.SMALL_AVENTURINE_BUD.get());
+                        pOutput.accept(ModBlocks.AVENTURINE_ORE.get());
+                        pOutput.accept(ModBlocks.PYRITE_ORE.get());
+                        pOutput.accept(ModBlocks.RUBY_ORE.get());
+                        pOutput.accept(ModBlocks.TOPAZ_ORE.get());
+                        pOutput.accept(ModBlocks.SPECTROLITE_ORE.get());
+                        pOutput.accept(ModBlocks.UNAKITE_ORE.get());
+
+/*                        pOutput.accept(ModBlocks.SMALL_AVENTURINE_BUD.get());
                         pOutput.accept(ModBlocks.SMALL_RUBY_BUD.get());
                         pOutput.accept(ModBlocks.SMALL_PYRITE_BUD.get());
                         pOutput.accept(ModBlocks.SMALL_TOPAZ_BUD.get());
@@ -160,7 +172,7 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModBlocks.PYRITE_CLUSTER.get());
                         pOutput.accept(ModBlocks.TOPAZ_CLUSTER.get());
                         pOutput.accept(ModBlocks.SPECTROLITE_CLUSTER.get());
-                        pOutput.accept(ModBlocks.UNAKITE_CLUSTER.get());
+                        pOutput.accept(ModBlocks.UNAKITE_CLUSTER.get());*/
 
                         pOutput.accept(ModBlocks.AVENTURINE_BLOCK.get());
                         pOutput.accept(ModBlocks.RUBY_BLOCK.get());
@@ -169,12 +181,12 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModBlocks.SPECTROLITE_BLOCK.get());
                         pOutput.accept(ModBlocks.UNAKITE_BLOCK.get());
 
-                        pOutput.accept(ModBlocks.BUDDING_AVENTURINE.get());
+/*                        pOutput.accept(ModBlocks.BUDDING_AVENTURINE.get());
                         pOutput.accept(ModBlocks.BUDDING_RUBY.get());
                         pOutput.accept(ModBlocks.BUDDING_PYRITE.get());
                         pOutput.accept(ModBlocks.BUDDING_TOPAZ.get());
                         pOutput.accept(ModBlocks.BUDDING_SPECTROLITE.get());
-                        pOutput.accept(ModBlocks.BUDDING_UNAKITE.get());
+                        pOutput.accept(ModBlocks.BUDDING_UNAKITE.get());*/
 
                         pOutput.accept(ModItems.AVENTURINE_SHARD.get());
                         pOutput.accept(ModItems.PYRITE_SHARD.get());
