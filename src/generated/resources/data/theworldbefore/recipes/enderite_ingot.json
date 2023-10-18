@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "theworldbefore:enderite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "theworldbefore:enderite_ingot"
+  }
+}

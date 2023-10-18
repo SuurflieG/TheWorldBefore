@@ -1,33 +1,59 @@
 {
   "item.theworldbefore.upgrade_blank": "Blank Upgrade",
-  "item.theworldbefore.upgrade_fortune_1": "Fortune 1",
-  "item.theworldbefore.upgrade_fortune_2": "Fortune 2",
-  "item.theworldbefore.upgrade_fortune_3": "Fortune 3",
-  "item.theworldbefore.upgrade_efficiency_1": "Efficiency 1",
-  "item.theworldbefore.upgrade_efficiency_2": "Efficiency 2",
-  "item.theworldbefore.upgrade_efficiency_3": "Efficiency 3",
-  "item.theworldbefore.upgrade_efficiency_4": "Efficiency 4",
-  "item.theworldbefore.upgrade_efficiency_5": "Efficiency 5",
-  "item.theworldbefore.upgrade_expander": "Expander",
-  "item.theworldbefore.upgrade_silk": "Silk Touch Upgrade",
 
-  "block.theworldbefore.titanium_ore": "Titanium Ore",
-  "block.theworldbefore.deepslate_titanium_ore": "Deepslate Titanium Ore",
-  "item.theworldbefore.titanium_raw_ore": "Titanium Raw Ore",
-  "item.theworldbefore.titanium_nugget": "Titanium Nugget",
-  "item.theworldbefore.titanium_ingot": "Titanium Ingot",
-  "block.theworldbefore.titanium_block": "Block of Titanium",
+  "item.theworldbefore.upgrade_silk": "§aSilk Touch Upgrade",
+  "item.theworldbefore.upgrade_expander": "§aExpander",
+  "item.theworldbefore.upgrade_depth": "§aDepth",
 
-  "item.theworldbefore.titanium_sword": "Titanium Sword",
-  "item.theworldbefore.titanium_axe": "Titanium Axe",
-  "item.theworldbefore.titanium_shovel": "Titanium Shovel",
-  "item.theworldbefore.titanium_pickaxe": "Titanium Pickaxe",
-  "item.theworldbefore.titanium_hoe": "Titanium Hoe",
+  "item.theworldbefore.upgrade_magnet": "§aMagnet",
+  "item.theworldbefore.upgrade_mending": "§aMending",
+  "item.theworldbefore.upgrade_aqua_affinity": "§aAqua Affinity",
 
-  "item.theworldbefore.titanium_boots": "Titanium Boots",
-  "item.theworldbefore.titanium_leggings": "Titanium Leggings",
-  "item.theworldbefore.titanium_chestplate": "Titanium Chestplate",
-  "item.theworldbefore.titanium_helmet": "Titanium Helmet",
+  "item.theworldbefore.upgrade_bane_of_arthropods_1": "§aBane of Arthropods 1",
+  "item.theworldbefore.upgrade_bane_of_arthropods_2": "§9Bane of Arthropods 2",
+  "item.theworldbefore.upgrade_bane_of_arthropods_3": "§6Bane of Arthropods 3",
+  "item.theworldbefore.upgrade_bane_of_arthropods_4": "§5Bane of Arthropods 4",
+  "item.theworldbefore.upgrade_bane_of_arthropods_5": "§cBane of Arthropods 5",
+
+  "item.theworldbefore.upgrade_blast_protection_1": "§aBlast Protection 1",
+  "item.theworldbefore.upgrade_blast_protection_2": "§aBlast Protection 2",
+  "item.theworldbefore.upgrade_blast_protection_3": "§aBlast Protection 3",
+  "item.theworldbefore.upgrade_blast_protection_4": "§aBlast Protection 4",
+
+  "item.theworldbefore.upgrade_depth_strider_1": "§aDepth Strider 1",
+  "item.theworldbefore.upgrade_depth_strider_2": "§9Depth Strider 2",
+  "item.theworldbefore.upgrade_depth_strider_3": "§6Depth Strider 3",
+
+  "item.theworldbefore.upgrade_efficiency_1": "§aEfficiency 1",
+  "item.theworldbefore.upgrade_efficiency_2": "§9Efficiency 2",
+  "item.theworldbefore.upgrade_efficiency_3": "§6Efficiency 3",
+  "item.theworldbefore.upgrade_efficiency_4": "§5Efficiency 4",
+  "item.theworldbefore.upgrade_efficiency_5": "§cEfficiency 5",
+
+  "item.theworldbefore.upgrade_fortune_1": "§aFortune 1",
+  "item.theworldbefore.upgrade_fortune_2": "§9Fortune 2",
+  "item.theworldbefore.upgrade_fortune_3": "§6Fortune 3",
+
+
+
+
+  "block.theworldbefore.enderite_ore": "Enderite Ore",
+  "block.theworldbefore.deepslate_enderite_ore": "Deepslate Enderite Ore",
+  "item.theworldbefore.enderite_raw_ore": "Enderite Raw Ore",
+  "item.theworldbefore.enderite_nugget": "Enderite Nugget",
+  "item.theworldbefore.enderite_ingot": "Enderite Ingot",
+  "block.theworldbefore.enderite_block": "Block of Enderite",
+
+  "item.theworldbefore.enderite_sword": "Enderite Sword",
+  "item.theworldbefore.enderite_axe": "Enderite Axe",
+  "item.theworldbefore.enderite_shovel": "Enderite Shovel",
+  "item.theworldbefore.enderite_pickaxe": "Enderite Pickaxe",
+  "item.theworldbefore.enderite_hoe": "Enderite Hoe",
+
+  "item.theworldbefore.enderite_boots": "Enderite Boots",
+  "item.theworldbefore.enderite_leggings": "Enderite Leggings",
+  "item.theworldbefore.enderite_chestplate": "Enderite Chestplate",
+  "item.theworldbefore.enderite_helmet": "Enderite Helmet",
 
   "theworldbefore.text.empty_table_helper": "Insert upgrades by shift clicking \nor dropping into the screen.\n\nClick or shift click to remove them.",
   "theworldbefore.text.modification_table": "Upgrade Station",
@@ -48,13 +74,32 @@
   "theworldbefore.tooltip.single.insert": "Insert",
   "theworldbefore.upgrade.replacement": "Upgrade: ",
 
-  "theworldbefore.tooltip.upgrades.fortune_1": "Fortune 1",
-  "theworldbefore.tooltip.upgrades.fortune_2": "Fortune 2",
-  "theworldbefore.tooltip.upgrades.fortune_3": "Fortune 3",
-  "theworldbefore.tooltip.upgrades.silk_touch": "Mines blocks themselves",
-
   "key.category.theworldbefore.theworldbefore": "The World Before",
   "key.theworldbefore.open_gui": "Open Equipment Menu",
-  "creativetab.theworldbefore_tab": "The World Before"
+  "creativetab.theworldbefore_tab": "The World Before",
+
+  "theworldbefore.tooltip.upgrades.fortune_1": "Gives you more for less",
+  "theworldbefore.tooltip.upgrades.fortune_2": "Gives you even more for less",
+  "theworldbefore.tooltip.upgrades.fortune_3": "Gives you the most for less",
+  "theworldbefore.tooltip.upgrades.silk_touch": "Did someone say Stone?",
+  "theworldbefore.tooltip.upgrades.aqua_affinity": "Breathe easy",
+  "theworldbefore.tooltip.upgrades.bane_of_arthropods_1": "Bane of Arthropods 1",
+  "theworldbefore.tooltip.upgrades.expander": "Expand your mining up,down,left,right",
+  "theworldbefore.tooltip.upgrades.blank": "Blank Upgrade",
+  "theworldbefore.tooltip.upgrades.depth": "How deep do you want to mine?",
+  "theworldbefore.tooltip.upgrades.mending": "Repairio!",
+  "theworldbefore.tooltip.upgrades.fire_element": "Fire Element",
+  "theworldbefore.tooltip.upgrades.ice_element": "Ice Element",
+  "theworldbefore.tooltip.upgrades.wind_element": "Wind Element",
+  "theworldbefore.tooltip.upgrades.electric_element": "Electric Element",
+  "theworldbefore.tooltip.upgrades.bane_of_arthropods_2": "Bane of Arthropods 2",
+  "theworldbefore.tooltip.upgrades.bane_of_arthropods_3": "Bane of Arthropods 3",
+  "theworldbefore.tooltip.upgrades.bane_of_arthropods_4": "Bane of Arthropods 4",
+  "theworldbefore.tooltip.upgrades.bane_of_arthropods_5": "Bane of Arthropods 5",
+  "theworldbefore.tooltip.upgrades.unknown": "Please let the Developer know about a non description item",
+  "theworldbefore.tooltip.upgrades.blast_protection_1": "Blast Protection 1",
+  "theworldbefore.tooltip.upgrades.blast_protection_2": "Blast Protection 2",
+  "theworldbefore.tooltip.upgrades.blast_protection_3": "Blast Protection 3",
+  "theworldbefore.tooltip.upgrades.blast_protection_4": "Blast Protection 4"
 
 }

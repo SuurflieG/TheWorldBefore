@@ -125,7 +125,6 @@ public enum Upgrade {
     private boolean inactive = false;
 
     private final boolean isToggleable;
-    private final String toolTip;
     //private final ItemStack upgradeStack;
 
     Upgrade(String name, int tier, boolean isToggleable) {
@@ -135,7 +134,7 @@ public enum Upgrade {
         //this.upgradeStack = new ItemStack(this.upgradeCardItem);
         this.baseName = tier == -1 ? name : name.substring(0, name.lastIndexOf('_'));
         this.isToggleable = isToggleable;
-        this.toolTip = "tooltip.aventuria." + this.baseName;
+        String toolTip = "tooltip.theworldbefore." + this.baseName;
     }
 
     Upgrade(String name, boolean isToggleable) {
@@ -196,9 +195,9 @@ public enum Upgrade {
         return isToggleable;
     }
 
-    public String getToolTip() {
+/*    public String getToolTip() {
         return toolTip;
-    }
+    }*/
 
     /**
      * Compares only the base name of the upgrade

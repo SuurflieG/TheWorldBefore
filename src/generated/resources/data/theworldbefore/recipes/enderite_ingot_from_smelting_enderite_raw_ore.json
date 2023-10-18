@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.75,
+  "group": "enderite",
+  "ingredient": {
+    "item": "theworldbefore:enderite_raw_ore"
+  },
+  "result": "theworldbefore:enderite_ingot"
+}

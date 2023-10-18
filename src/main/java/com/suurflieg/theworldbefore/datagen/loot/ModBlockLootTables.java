@@ -2,17 +2,9 @@ package com.suurflieg.theworldbefore.datagen.loot;
 
 import com.suurflieg.theworldbefore.registry.ModBlocks;
 import com.suurflieg.theworldbefore.registry.ModItems;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -29,7 +21,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
 
         //region Blocks that drop them self
-        this.dropSelf(ModBlocks.TITANIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.ENDERITE_BLOCK.get());
         this.dropSelf(ModBlocks.UPGRADE_STATION.get());
         this.dropSelf(ModBlocks.LARCH_LOG.get());
         this.dropSelf(ModBlocks.LARCH_PLANKS.get());
@@ -41,8 +33,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //endregion
 
         //region Ore Blocks that drop raw ores
-        this.add(ModBlocks.TITANIUM_ORE.get(), (Block) -> createOreDrop(ModBlocks.TITANIUM_ORE.get(), ModItems.TITANIUM_RAW_ORE.get()));
-        this.add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModItems.TITANIUM_RAW_ORE.get()));
+        this.add(ModBlocks.ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.ENDERITE_ORE.get(), ModItems.ENDERITE_RAW_ORE.get()));
+        this.add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), ModItems.ENDERITE_RAW_ORE.get()));
 
         this.add(ModBlocks.AVENTURINE_ORE.get(), (Block) -> createOreDrop(ModBlocks.AVENTURINE_ORE.get(), ModItems.AVENTURINE_SHARD.get()));
         this.add(ModBlocks.PYRITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.PYRITE_SHARD.get()));

@@ -33,9 +33,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                      ModBlocks.SPECTROLITE_BLOCK.get(),
                      ModBlocks.UNAKITE_BLOCK.get(),
                      ModBlocks.UPGRADE_STATION.get(),
-                     ModBlocks.TITANIUM_ORE.get(),
-                     ModBlocks.DEEPSLATE_TITANIUM_ORE.get(),
-                     ModBlocks.TITANIUM_BLOCK.get(),
+                     ModBlocks.ENDERITE_ORE.get(),
+                     ModBlocks.DEEPSLATE_ENDERITE_ORE.get(),
+                     ModBlocks.ENDERITE_BLOCK.get(),
                      ModBlocks.AVENTURINE_ORE.get(),
                      ModBlocks.PYRITE_ORE.get(),
                      ModBlocks.RUBY_ORE.get(),
@@ -67,20 +67,20 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.UPGRADE_STATION.get());
 
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TITANIUM_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.ENDERITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.AVENTURINE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.PYRITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.RUBY_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TOPAZ_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.SPECTROLITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.UNAKITE_ORE.get());
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_AVENTURINE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_PYRITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_RUBY_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_TOPAZ_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_SPECTROLITE_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.DEEPSLATE_UNAKITE_ORE.get());
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.TITANIUM_BLOCK.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.ENDERITE_BLOCK.get());
     }
 }

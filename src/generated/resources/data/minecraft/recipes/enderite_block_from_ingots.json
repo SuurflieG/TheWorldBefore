@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "enderite_block",
+  "key": {
+    "#": {
+      "item": "theworldbefore:enderite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "theworldbefore:enderite_block"
+  },
+  "show_notification": true
+}

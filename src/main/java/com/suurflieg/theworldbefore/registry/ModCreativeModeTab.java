@@ -17,22 +17,22 @@ public class ModCreativeModeTab {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SPECTROLITE_SHARD.get())).
                     title(Component.translatable("creativetab.theworldbefore_tab"))
                     .displayItems(((pParameters, pOutput) ->{
-                        pOutput.accept(ModBlocks.TITANIUM_ORE.get());
-                        pOutput.accept(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
-                        pOutput.accept(ModItems.TITANIUM_RAW_ORE.get());
-                        pOutput.accept(ModItems.TITANIUM_NUGGET.get());
-                        pOutput.accept(ModItems.TITANIUM_INGOT.get());
-                        pOutput.accept(ModBlocks.TITANIUM_BLOCK.get());
+                        pOutput.accept(ModBlocks.ENDERITE_ORE.get());
+                        pOutput.accept(ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
+                        pOutput.accept(ModItems.ENDERITE_RAW_ORE.get());
+                        pOutput.accept(ModItems.ENDERITE_NUGGET.get());
+                        pOutput.accept(ModItems.ENDERITE_INGOT.get());
+                        pOutput.accept(ModBlocks.ENDERITE_BLOCK.get());
 
-                        pOutput.accept(ModItems.TITANIUM_AXE.get());
-                        pOutput.accept(ModItems.TITANIUM_PICKAXE.get());
-                        pOutput.accept(ModItems.TITANIUM_SHOVEL.get());
-                        pOutput.accept(ModItems.TITANIUM_HOE.get());
-                        pOutput.accept(ModItems.TITANIUM_SWORD.get());
-                        pOutput.accept(ModItems.TITANIUM_BOOTS.get());
-                        pOutput.accept(ModItems.TITANIUM_LEGGINGS.get());
-                        pOutput.accept(ModItems.TITANIUM_CHESTPLATE.get());
-                        pOutput.accept(ModItems.TITANIUM_HELMET.get());
+                        pOutput.accept(ModItems.ENDERITE_AXE.get());
+                        pOutput.accept(ModItems.ENDERITE_PICKAXE.get());
+                        pOutput.accept(ModItems.ENDERITE_SHOVEL.get());
+                        pOutput.accept(ModItems.ENDERITE_HOE.get());
+                        pOutput.accept(ModItems.ENDERITE_SWORD.get());
+                        pOutput.accept(ModItems.ENDERITE_BOOTS.get());
+                        pOutput.accept(ModItems.ENDERITE_LEGGINGS.get());
+                        pOutput.accept(ModItems.ENDERITE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.ENDERITE_HELMET.get());
 
                         pOutput.accept(ModBlocks.UPGRADE_STATION.get());
 

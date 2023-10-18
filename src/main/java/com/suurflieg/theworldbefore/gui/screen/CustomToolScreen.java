@@ -13,6 +13,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
 import net.minecraft.client.renderer.GameRenderer;
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings("InstantiationOfUtilityClass")
 public class CustomToolScreen extends Screen {
+    private static final ResourceLocation SIZE_BUTTON = new ResourceLocation("textures/gui/recipe_button.png");
     private final ItemStack customToolItem;
     
     private int currentSize = 1;
@@ -78,20 +80,24 @@ public class CustomToolScreen extends Screen {
         Button sizeButton;
         Button depthButton;
 
-        leftWidgets.add(sizeButton = Button.builder(Component.translatable("theworldbefore.tooltip.screen.size", currentSize), (button) -> {
-            if(currentSize == 1) currentSize = 3;
-            else if(currentSize == 3) currentSize = 5;
-            else if(currentSize == 5) currentSize = 7;
-            else currentSize = 1;
+        leftWidgets.add(sizeButton = ImageButton.builder(Component.translatable("theworldbefore.tooltip.screen.size", currentSize), (button) -> {
+            switch (currentSize) {
+                case 1 -> currentSize = 3;
+                case 3 -> currentSize = 5;
+                case 5 -> currentSize = 7;
+                default -> currentSize = 1;
+            }
             button.setMessage(getTrans("tooltip.screen.size", currentSize));
             PacketHandler.sendToServer(new PacketChangeMiningSize());
         }).pos(baseX + 12, baseY + 20).size(60, 20).build());
 
-        leftWidgets.add(depthButton = Button.builder(Component.translatable("theworldbefore.tooltip.screen.depth", currentDepth), (button) -> {
-            if(currentDepth == 1) currentDepth = 3;
-            else if(currentDepth == 3) currentDepth = 5;
-            else if(currentDepth == 5) currentDepth = 7;
-            else currentDepth = 1;
+        leftWidgets.add(depthButton = ImageButton.builder(Component.translatable("theworldbefore.tooltip.screen.depth", currentDepth), (button) -> {
+            switch (currentDepth) {
+                case 1 -> currentDepth = 3;
+                case 3 -> currentDepth = 5;
+                case 5 -> currentDepth = 7;
+                default -> currentDepth = 1;
+            }
             button.setMessage(getTrans("tooltip.screen.depth", currentDepth));
             PacketHandler.sendToServer(new PacketChangeMiningDepth());
         }).pos(baseX + 12, baseY + 20).size(60, 20).build());
@@ -182,7 +188,7 @@ public class CustomToolScreen extends Screen {
         }
     }
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/tool_pickaxe_screen.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/tool_pickaxe_screen_new.png");
 
     int imageHeight = 121;
     int imageWidth = 186;

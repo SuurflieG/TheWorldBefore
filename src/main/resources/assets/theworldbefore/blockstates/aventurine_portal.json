@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "axis=z": { "model": "theworldbefore:block/aventurine_portal_ew" },
-    "axis=x": { "model": "theworldbefore:block/aventurine_portal_ns" }
-  }
-}

@@ -20,9 +20,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.TITANIUM_BLOCK);
+        blockWithItem(ModBlocks.ENDERITE_BLOCK);
 
-        blockWithItem(ModBlocks.TITANIUM_ORE);
+        blockWithItem(ModBlocks.ENDERITE_ORE);
         blockWithItem(ModBlocks.AVENTURINE_ORE);
         blockWithItem(ModBlocks.PYRITE_ORE);
         blockWithItem(ModBlocks.RUBY_ORE);
@@ -30,7 +30,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SPECTROLITE_ORE);
         blockWithItem(ModBlocks.UNAKITE_ORE);
 
-        blockWithItem(ModBlocks.DEEPSLATE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_ENDERITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_AVENTURINE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_PYRITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
@@ -55,7 +55,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.LARCH_PLANKS.get());
         simpleBlock(ModBlocks.LARCH_LEAVES.get());
 
-        //simpleBlock(ModBlocks.LARCH_SAPLING.get(), models().cross(ModBlocks.LARCH_SAPLING.get().getRegistryName().getPath(), blockTexture(ModBlocks.LARCH_SAPLING.get())));
+        //simpleBlock(ModBlocks.LARCH_SAPLING.get(), models().cross(ModBlocks.LARCH_SAPLING.get(), blockTexture(ModBlocks.LARCH_SAPLING.get())));
 
     }
 

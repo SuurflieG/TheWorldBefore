@@ -40,8 +40,8 @@ public class ToolProperties {
         return !compound.contains(KEY_MINING_DEPTH) ? setMiningDepth(tool, 1) : compound.getInt(KEY_MINING_DEPTH);
     }
 
-    // mostly stolen from ItemStackHandler
-    public static List<ItemStack> deserializeItemStackList(CompoundTag nbt) {
+
+/*    public static List<ItemStack> deserializeItemStackList(CompoundTag nbt) {
         List<ItemStack> stacks = new ArrayList<>();
         ListTag tagList = nbt.getList("Items", Tag.TAG_COMPOUND);
 
@@ -51,7 +51,7 @@ public class ToolProperties {
         }
 
         return stacks;
-    }
+    }*/
 
     public static CompoundTag serializeItemStackList(List<ItemStack> stacks) {
         ListTag nbtTagList = new ListTag();

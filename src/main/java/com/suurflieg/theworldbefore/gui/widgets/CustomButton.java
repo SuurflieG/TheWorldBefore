@@ -1,12 +1,12 @@
 /*
-package com.suurflieg.theworldbefore.custom.gui.widgets;
+package com.suurflieg.theworldbefore.gui.widgets;
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -16,7 +16,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class CustomButton extends Button {
+public class CustomButton extends ImageButton {
 
     private static final ResourceLocation WIDGET = new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/widgets.png");
 
@@ -33,7 +33,17 @@ public class CustomButton extends Button {
 
     public final OnPress onPress;
 
-    public CustomButton(int pX, int pY, int pWidth, int pHeight, Component pMessage, OnPress pOnPress) {
+    public CustomButton(int pX, int pY, int pWidth, int pHeight, int pXTexStart, int pYTexStart, ResourceLocation pResourceLocation, OnPress pOnPress) {
+        super(pX, pY, pWidth, pHeight, pXTexStart, pYTexStart, pResourceLocation, pOnPress);
+        this.x = pX;
+        this.y = pY;
+        this.width = pWidth;
+        this.height = pHeight;
+        this.onPress = pOnPress;
+    }
+
+*/
+/*    public CustomButton(int pX, int pY, int pWidth, int pHeight, Component pMessage, OnPress pOnPress) {
         super(pX, pY, pWidth, pHeight, pMessage, pOnPress);
         this.x = pX;
         this.y = pY;
@@ -41,7 +51,8 @@ public class CustomButton extends Button {
         this.height = pHeight;
         this.message = pMessage;
         this.onPress = pOnPress;
-    }
+    }*//*
+
 
     @Override
     public void renderButton(PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
@@ -54,7 +65,7 @@ public class CustomButton extends Button {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.enableDepthTest();
-        this.blit(pPoseStack, this.x, this.y, 0, 46 + i * 20, this.width / 2, this.height);
+        this.(pPoseStack, this.x, this.y, 0, 46 + i * 20, this.width / 2, this.height);
         this.blit(pPoseStack, this.x + this.width / 2, this.y, 200 - this.width / 2, 46 + i * 20, this.width / 2, this.height);
         this.renderBg(pPoseStack, minecraft, pMouseX, pMouseY);
         int j = getFGColor();

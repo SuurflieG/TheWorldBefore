@@ -16,29 +16,30 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TheWorldBefore.MOD_ID);
 
-    private static final Item.Properties STACKS_TO = new Item.Properties().stacksTo(1);
+    private static final Item.Properties STACKS_TO_1 = new Item.Properties().stacksTo(1);
+    private static final Item.Properties STACKS_TO_64 = new Item.Properties().stacksTo(64);
 
-    public static final RegistryObject<Item> TITANIUM_RAW_ORE = ITEMS.register("titanium_raw_ore", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDERITE_RAW_ORE = ITEMS.register("enderite_raw_ore", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> ENDERITE_NUGGET = ITEMS.register("enderite_nugget", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> ENDERITE_INGOT = ITEMS.register("enderite_ingot", () -> new Item(STACKS_TO_64));
 
-    public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register("titanium_sword", () -> new CustomSwordItem(ModItemTier.TITANIUM, 7, 0f, STACKS_TO));
-    public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register("titanium_axe", () -> new CustomAxeItem(ModItemTier.TITANIUM, 5, 0f, STACKS_TO));
-    public static final RegistryObject<Item> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", () -> new CustomPickaxeItem(ModItemTier.TITANIUM, 5, 0f, STACKS_TO));
-    public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel", () -> new CustomShovelItem(ModItemTier.TITANIUM, 2, 0f, STACKS_TO));
-    public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register("titanium_hoe", () -> new CustomHoeItem(ModItemTier.TITANIUM, 2, 0f, STACKS_TO));
+    public static final RegistryObject<Item> ENDERITE_SWORD = ITEMS.register("enderite_sword", () -> new CustomSwordItem(ModItemTier.ENDERITE, 6, 0f, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_AXE = ITEMS.register("enderite_axe", () -> new CustomAxeItem(ModItemTier.ENDERITE, 7, 0f, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_PICKAXE = ITEMS.register("enderite_pickaxe", () -> new CustomPickaxeItem(ModItemTier.ENDERITE, 5, 0f, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_SHOVEL = ITEMS.register("enderite_shovel", () -> new CustomShovelItem(ModItemTier.ENDERITE, 2, 0f, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_HOE = ITEMS.register("enderite_hoe", () -> new CustomHoeItem(ModItemTier.ENDERITE, 0, 0f, STACKS_TO_1));
 
-    public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet", () -> new CustomArmorItem(ModArmorMaterial.TITANIUM, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final RegistryObject<Item> TITANIUM_CHESTPLATE = ITEMS.register("titanium_chestplate", () -> new CustomArmorItem(ModArmorMaterial.TITANIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<Item> TITANIUM_LEGGINGS = ITEMS.register("titanium_leggings", () -> new CustomArmorItem(ModArmorMaterial.TITANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots", () -> new CustomArmorItem(ModArmorMaterial.TITANIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERITE_HELMET = ITEMS.register("enderite_helmet", () -> new CustomArmorItem(ModArmorMaterial.ENDERITE, ArmorItem.Type.HELMET, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_CHESTPLATE = ITEMS.register("enderite_chestplate", () -> new CustomArmorItem(ModArmorMaterial.ENDERITE, ArmorItem.Type.CHESTPLATE, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_LEGGINGS = ITEMS.register("enderite_leggings", () -> new CustomArmorItem(ModArmorMaterial.ENDERITE, ArmorItem.Type.LEGGINGS, STACKS_TO_1));
+    public static final RegistryObject<Item> ENDERITE_BOOTS = ITEMS.register("enderite_boots", () -> new CustomArmorItem(ModArmorMaterial.ENDERITE, ArmorItem.Type.BOOTS, STACKS_TO_1));
 
-    public static final RegistryObject<Item> AVENTURINE_SHARD = ITEMS.register("aventurine_shard", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> PYRITE_SHARD = ITEMS.register("pyrite_shard", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TOPAZ_SHARD = ITEMS.register("topaz_shard", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SPECTROLITE_SHARD = ITEMS.register("spectrolite_shard", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> UNAKITE_SHARD = ITEMS.register("unakite_shard", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AVENTURINE_SHARD = ITEMS.register("aventurine_shard", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> PYRITE_SHARD = ITEMS.register("pyrite_shard", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> TOPAZ_SHARD = ITEMS.register("topaz_shard", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> SPECTROLITE_SHARD = ITEMS.register("spectrolite_shard", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> UNAKITE_SHARD = ITEMS.register("unakite_shard", () -> new Item(STACKS_TO_64));
 
     public static final RegistryObject<Item> BLANK = ITEMS.register("upgrade_blank",() -> Upgrade.BLANK.getCard());
     public static final RegistryObject<Item> SILK = ITEMS.register("upgrade_silk", () -> Upgrade.SILK.getCard());

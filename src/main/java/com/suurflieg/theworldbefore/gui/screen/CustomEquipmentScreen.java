@@ -4,22 +4,23 @@ import com.suurflieg.theworldbefore.TheWorldBefore;
 import com.suurflieg.theworldbefore.gui.widgets.EquipmentSelectButton;
 import com.suurflieg.theworldbefore.gui.widgets.ToggleButton;
 import com.suurflieg.theworldbefore.item.armor.CustomArmorItem;
-import com.suurflieg.theworldbefore.item.tool.CustomHoeItem;
-import com.suurflieg.theworldbefore.item.tool.CustomShovelItem;
-import com.suurflieg.theworldbefore.item.tool.CustomSwordItem;
+import com.suurflieg.theworldbefore.item.tool.*;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeHelper;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
-import com.suurflieg.theworldbefore.item.tool.CustomAxeItem;
 import com.suurflieg.theworldbefore.network.PacketHandler;
+import com.suurflieg.theworldbefore.network.packets.PacketChangeMiningSize;
 import com.suurflieg.theworldbefore.network.packets.PacketUpdateUpgrade;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -30,21 +31,35 @@ import java.util.Map;
 
 public class CustomEquipmentScreen extends Screen {
 
-    private final ItemStack equipment;
+    private final ItemStack itemStack;
     private static final ResourceLocation TEXTURE = new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/equipment_gui.png");
+
     public List<EquipmentSelectButton> equipmentSelectButton = new ArrayList<>();
     public List<Upgrade> toggleableList = new ArrayList<>();
+
     public static HashMap<Upgrade, ToggleButton> toggleButton = new HashMap<>();
     public static HashMap<ItemStack, EquipmentSelectButton> equipButton = new HashMap<>();
+
     public static ToggleButton Btn;
     public static EquipmentSelectButton equipBtn;
+
+    public static CustomToolScreen customToolScreen;
+
+    Button pickaxe;
+    EquipmentSelectButton shovel;
+    EquipmentSelectButton axe;
+    EquipmentSelectButton hoe;
+    EquipmentSelectButton helmet;
+    EquipmentSelectButton chestplate;
+    EquipmentSelectButton leggings;
+    EquipmentSelectButton boots;
 
     int imageHeight = 157;
     int imageWidth = 255;
 
-    public CustomEquipmentScreen(Component pTitle, ItemStack equipment) {
+    public CustomEquipmentScreen(Component pTitle, ItemStack itemStack) {
         super(pTitle);
-        this.equipment = equipment;
+        this.itemStack = itemStack;
     }
 
 
@@ -57,50 +72,43 @@ public class CustomEquipmentScreen extends Screen {
         int baseX = (width / 2 )  - (imageWidth / 2);/* find center of screen */ /*move image over by half its width */
         int baseY = (height / 2 ) - (imageHeight / 2);
 
-/*        EquipmentSelectButton pickaxe;
-        EquipmentSelectButton shovel;
-        EquipmentSelectButton axe;
-        EquipmentSelectButton hoe;
-        EquipmentSelectButton helmet;
-        EquipmentSelectButton chestplate;
-        EquipmentSelectButton leggings;
-        EquipmentSelectButton boots;*/
+        rightWidgets.add(pickaxe = ImageButton.builder(Component.translatable("theworldbefore.tooltip.screen.size", pickaxe), (button) -> {
+            button.setMessage(getTrans("tooltip.screen.size", pickaxe));
+            PacketHandler.sendToServer(new PacketChangeMiningSize());
+        }).pos(baseX + 12, baseY + 20).size(60, 20).build());
 
-        for (EquipmentSelectButton equipButtonBtn : equipmentSelectButton) {
-            equipButtonBtn = new EquipmentSelectButton(baseX + 203,baseY + 12, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send));
-            addRenderableWidget(equipButtonBtn);
-            equipButton.put(equipment, equipBtn);
+        for (EquipmentSelectButton equipmentSelectButton : equipmentSelectButton) {
+            equipmentSelectButton = new EquipmentSelectButton(baseX + 203,baseY + 12, this.getName(itemStack), (new ResourceLocation(TheWorldBefore.MOD_ID,
+                    "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send));
+            addRenderableWidget(equipmentSelectButton);
+            equipButton.put(itemStack, equipBtn);
         }
 
-/*
-        rightWidgets.add(shovel = new EquipmentSelectButton(baseX + 203,baseY + 27, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(axe = new EquipmentSelectButton(baseX + 203,baseY + 42, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(hoe = new EquipmentSelectButton(baseX + 203,baseY + 57, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(helmet = new EquipmentSelectButton(baseX + 203,baseY + 72, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(chestplate = new EquipmentSelectButton(baseX + 203,baseY + 87, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(leggings = new EquipmentSelectButton(baseX + 203,baseY + 102, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-        rightWidgets.add(boots = new EquipmentSelectButton(baseX + 203,baseY + 117, this.getName(equipment), (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(equipment, send)));
-*/
+/*        rightWidgets.add(pickaxe = new EquipmentSelectButton(baseX + 203,baseY + 27, this.getName(CustomPickaxeItem.getPickaxe(getMinecraft().player)),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(shovel = new EquipmentSelectButton(baseX + 203,baseY + 27, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(axe = new EquipmentSelectButton(baseX + 203,baseY + 42, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(hoe = new EquipmentSelectButton(baseX + 203,baseY + 57, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(helmet = new EquipmentSelectButton(baseX + 203,baseY + 72, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(chestplate = new EquipmentSelectButton(baseX + 203,baseY + 87, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(leggings = new EquipmentSelectButton(baseX + 203,baseY + 102, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));
+
+        rightWidgets.add(boots = new EquipmentSelectButton(baseX + 203,baseY + 117, this.getName(itemStack),
+                (new ResourceLocation(TheWorldBefore.MOD_ID, "textures/gui/select_button.png")), send -> this.selectEquipment(itemStack, send)));*/
 
         super.init();
-    }
-
-    private void pickaxeScreen(int baseX, int baseY) {
-        // Bottom Row
-        // Remove 6 from x to center it as the padding on the right pushes off center
-        int index = 0, x = baseX + 13, y = baseY + 98;
-        for (Upgrade upgrade : toggleableList) {
-            Btn = new ToggleButton(x + (index * 18), y, UpgradeTools.getName(upgrade), new ResourceLocation(TheWorldBefore.MOD_ID, "textures/item/upgrade_" + upgrade.getName() + ".png"), send -> this.toggleUpgrade(upgrade, send));
-            addRenderableWidget(Btn);
-            toggleButton.put(upgrade, Btn);
-
-            // Spaces the upgrades
-            index ++;
-            if( index % 9 == 0 ) {
-                index = 0;
-                y += 20;
-            }
-        }
     }
 
     public boolean selectEquipment(ItemStack equipment, boolean select){
@@ -110,21 +118,8 @@ public class CustomEquipmentScreen extends Screen {
         return select;
     }
 
-    //TODO work on adding the EquipmentSelectButton when equipment is in inventory or when armor is equipped and draw buttons for each
-
-    @Override
-    public void renderBackground(GuiGraphics guiGraphics) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.setShaderTexture(0, TEXTURE);
-
-        int x = (width / 2 )  - (imageWidth / 2);/* find center of screen */ /*move image over by half its width */
-        int y = (height / 2 ) - (imageHeight / 2);
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
-    }
-
-    private static void isPickaxe(ItemStack tool) {
-        tool.getItem();
+    private static boolean isPickaxe(ItemStack tool) {
+        return tool.getItem() instanceof CustomPickaxeItem;
     }
     private static boolean isShovel(ItemStack tool) {
         return tool.getItem() instanceof CustomShovelItem;
@@ -141,6 +136,21 @@ public class CustomEquipmentScreen extends Screen {
     private static boolean isSword(ItemStack tool) {
         return tool.getItem() instanceof CustomSwordItem;
     }
+
+    //TODO work on adding the EquipmentSelectButton when equipment is in inventory or when armor is equipped and draw buttons for each
+
+    @Override
+    public void renderBackground(GuiGraphics guiGraphics) {
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderTexture(0, TEXTURE);
+
+        int x = (width / 2 )  - (imageWidth / 2);/* find center of screen */ /*move image over by half its width */
+        int y = (height / 2 ) - (imageHeight / 2);
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+    }
+
+
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -165,76 +175,9 @@ public class CustomEquipmentScreen extends Screen {
         return Component.literal("test" + equipment);
     }
 
-    public boolean toggleUpgrade(Upgrade upgrade, boolean update) {
-        // When the button is clicked we toggle
-        if(update){
-            updateButtons(upgrade, equipment);
-            PacketHandler.sendToServer(new PacketUpdateUpgrade(upgrade.getName()));
-        }
-        // When we're just init the gui, we check if it's on or off.
-        return upgrade.isEnabled();
+    private static MutableComponent getTrans(String key, Object... args) {
+        return Component.translatable(TheWorldBefore.MOD_ID + "." + key, args);
     }
 
-    public static void updateButtons(Upgrade upgrade, ItemStack tool) {
-        for(Map.Entry<Upgrade, ToggleButton> btn : toggleButton.entrySet()) {
-            Upgrade btnUpgrade = btn.getKey();
-
-            if((btnUpgrade.lazyIs(Upgrade.FORTUNE_1) && btn.getValue().isEnabled() && upgrade.lazyIs(Upgrade.SILK)) || ((btnUpgrade.lazyIs(Upgrade.SILK)) && btn.getValue().isEnabled() && upgrade.lazyIs(Upgrade.FORTUNE_1))) {
-                toggleButton.get(btn.getKey()).setEnabled(false);
-            }
-            toggleUpgradeEnchants(tool, btn, btnUpgrade);
-        }
-    }
-
-    private static void toggleUpgradeEnchants(ItemStack tool, Map.Entry<Upgrade, ToggleButton> btn, Upgrade btnUpgrade) {
-        if((btnUpgrade.lazyIs(Upgrade.BANE_OF_ARTHROPODS_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applyBaneOfArthropods(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.BANE_OF_ARTHROPODS_1) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeBaneOfArthropods(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.EFFICIENCY_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applyEfficiency(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.EFFICIENCY_3) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeEfficiency(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.FORTUNE_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applyFortune(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.FORTUNE_1) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeFortune(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.MENDING) && btn.getValue().isEnabled())){
-            UpgradeHelper.applyMending(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.MENDING) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeMending(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SHARPNESS_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applySharpness(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SHARPNESS_1) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeSharpness(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SMITE_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applySmite(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SMITE_1) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeSmite(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SILK) && btn.getValue().isEnabled())){
-            UpgradeHelper.applySilkTouch(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.SILK) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeSilkTouch(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.UNBREAKING_1) && btn.getValue().isEnabled())){
-            UpgradeHelper.applyUnbreaking(tool);
-        }
-        if((btnUpgrade.lazyIs(Upgrade.UNBREAKING_1) && !btn.getValue().isEnabled())){
-            UpgradeHelper.removeUnbreaking(tool);
-        }
-    }
 
 }

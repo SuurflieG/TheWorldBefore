@@ -1,19 +1,19 @@
 {
   "values": [
-    "theworldbefore:titanium_ore",
+    "theworldbefore:enderite_ore",
     "theworldbefore:aventurine_ore",
     "theworldbefore:pyrite_ore",
     "theworldbefore:ruby_ore",
     "theworldbefore:topaz_ore",
     "theworldbefore:spectrolite_ore",
     "theworldbefore:unakite_ore",
-    "theworldbefore:deepslate_titanium_ore",
+    "theworldbefore:deepslate_enderite_ore",
     "theworldbefore:deepslate_aventurine_ore",
     "theworldbefore:deepslate_pyrite_ore",
     "theworldbefore:deepslate_ruby_ore",
     "theworldbefore:deepslate_topaz_ore",
     "theworldbefore:deepslate_spectrolite_ore",
     "theworldbefore:deepslate_unakite_ore",
-    "theworldbefore:titanium_block"
+    "theworldbefore:enderite_block"
   ]
 }

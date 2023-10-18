@@ -22,9 +22,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        withExistingParent("titanium_block", modLoc("block/titanium_block"));
-        withExistingParent("titanium_ore", modLoc("block/titanium_ore"));
-        withExistingParent("deepslate_titanium_ore", modLoc("block/deepslate_titanium_ore"));
+        withExistingParent("enderite_block", modLoc("block/enderite_block"));
+        withExistingParent("enderite_ore", modLoc("block/enderite_ore"));
+        withExistingParent("deepslate_enderite_ore", modLoc("block/deepslate_enderite_ore"));
 
         withExistingParent("aventurine_ore", modLoc("block/aventurine_ore"));
         withExistingParent("pyrite_ore", modLoc("block/pyrite_ore"));
@@ -50,21 +50,23 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("spectrolite_block", modLoc("block/spectrolite_block"));
         withExistingParent("unakite_block", modLoc("block/unakite_block"));
 
-        simpleItem(ModItems.TITANIUM_NUGGET);
-        simpleItem(ModItems.TITANIUM_INGOT);
-        simpleItem(ModItems.TITANIUM_RAW_ORE);
+        withExistingParent("larch_log", modLoc("block/larch_log"));
 
-        simpleItem(ModItems.TITANIUM_HELMET);
-        simpleItem(ModItems.TITANIUM_CHESTPLATE);
-        simpleItem(ModItems.TITANIUM_LEGGINGS);
-        simpleItem(ModItems.TITANIUM_BOOTS);
+        simpleItem(ModItems.ENDERITE_NUGGET);
+        simpleItem(ModItems.ENDERITE_INGOT);
+        simpleItem(ModItems.ENDERITE_RAW_ORE);
 
-        handheldItem(ModItems.TITANIUM_AXE);
-        handheldItem(ModItems.TITANIUM_SHOVEL);
-        handheldItem(ModItems.TITANIUM_PICKAXE);
-        handheldItem(ModItems.TITANIUM_HOE);
+        simpleItem(ModItems.ENDERITE_HELMET);
+        simpleItem(ModItems.ENDERITE_CHESTPLATE);
+        simpleItem(ModItems.ENDERITE_LEGGINGS);
+        simpleItem(ModItems.ENDERITE_BOOTS);
 
-        handheldItem(ModItems.TITANIUM_SWORD);
+        handheldItem(ModItems.ENDERITE_AXE);
+        handheldItem(ModItems.ENDERITE_SHOVEL);
+        handheldItem(ModItems.ENDERITE_PICKAXE);
+        handheldItem(ModItems.ENDERITE_HOE);
+
+        handheldItem(ModItems.ENDERITE_SWORD);
 
         simpleItem(ModItems.BLANK);
         simpleItem(ModItems.MAGNET);

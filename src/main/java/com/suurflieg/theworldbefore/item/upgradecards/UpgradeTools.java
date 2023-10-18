@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 /**
  * Credit goes to Direwolf20 and mining gadgets
- * https://github.com/Direwolf20-MC/MiningGadgets
+ * <a href="https://github.com/Direwolf20-MC/MiningGadgets">...</a>
  * With some changes from me.
  */
 

@@ -25,9 +25,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TheWorldBefore.MOD_ID);
 
-    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
+    public static final RegistryObject<Block> ENDERITE_ORE = registerBlock("enderite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));
-    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore",
+    public static final RegistryObject<Block> DEEPSLATE_ENDERITE_ORE = registerBlock("deepslate_enderite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));
 
     public static final RegistryObject<Block> AVENTURINE_ORE = registerBlock("aventurine_ore",
@@ -65,7 +65,7 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));*/
 
 
-    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
+    public static final RegistryObject<Block> ENDERITE_BLOCK = registerBlock("enderite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> UPGRADE_STATION = registerBlock("upgrade_station",
             () -> new UpgradeStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2f).requiresCorrectToolForDrops().noOcclusion()));
@@ -76,79 +76,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> TOPAZ_BLOCK = registerBlock("topaz_block", () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
     public static final RegistryObject<Block> SPECTROLITE_BLOCK = registerBlock("spectrolite_block", () -> new SpectroliteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
     public static final RegistryObject<Block> UNAKITE_BLOCK = registerBlock("unakite_block", () -> new UnakiteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
-
-  /*  public static final RegistryObject<Block> BUDDING_AVENTURINE = registerBlock("budding_aventurine",
-            () -> new BuddingAventurineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> AVENTURINE_CLUSTER = registerBlock("aventurine_cluster",
-            () -> new AventurineClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_AVENTURINE_BUD = registerBlock("large_aventurine_bud",
-            () -> new AventurineClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_AVENTURINE_BUD = registerBlock("medium_aventurine_bud",
-            () -> new AventurineClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_AVENTURINE_BUD = registerBlock("small_aventurine_bud",
-            () -> new AventurineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));
-
-
-    public static final RegistryObject<Block> BUDDING_PYRITE = registerBlock("budding_pyrite",
-            () -> new BuddingPyriteBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> PYRITE_CLUSTER = registerBlock("pyrite_cluster",
-            () -> new PyriteClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_PYRITE_BUD = registerBlock("large_pyrite_bud",
-            () -> new PyriteClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_PYRITE_BUD = registerBlock("medium_pyrite_bud",
-            () -> new PyriteClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_PYRITE_BUD = registerBlock("small_pyrite_bud",
-            () -> new PyriteClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));
-
-
-    public static final RegistryObject<Block> BUDDING_RUBY = registerBlock("budding_ruby",
-            () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> RUBY_CLUSTER = registerBlock("ruby_cluster",
-            () -> new RubyClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_RUBY_BUD = registerBlock("large_ruby_bud",
-            () -> new RubyClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_RUBY_BUD = registerBlock("medium_ruby_bud",
-            () -> new RubyClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_RUBY_BUD = registerBlock("small_ruby_bud",
-            () -> new RubyClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));
-
-
-    public static final RegistryObject<Block> BUDDING_TOPAZ = registerBlock("budding_topaz",
-            () -> new BuddingTopazBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TOPAZ_CLUSTER = registerBlock("topaz_cluster",
-            () -> new TopazClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_TOPAZ_BUD = registerBlock("large_topaz_bud",
-            () -> new TopazClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_TOPAZ_BUD = registerBlock("medium_topaz_bud",
-            () -> new TopazClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_TOPAZ_BUD = registerBlock("small_topaz_bud",
-            () -> new TopazClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));
-
-
-    public static final RegistryObject<Block> BUDDING_SPECTROLITE = registerBlock("budding_spectrolite",
-            () -> new BuddingSpectroliteBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> SPECTROLITE_CLUSTER = registerBlock("spectrolite_cluster",
-            () -> new SpectroliteClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_SPECTROLITE_BUD = registerBlock("large_spectrolite_bud",
-            () -> new SpectroliteClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_SPECTROLITE_BUD = registerBlock("medium_spectrolite_bud",
-            () -> new SpectroliteClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_SPECTROLITE_BUD = registerBlock("small_spectrolite_bud",
-            () -> new SpectroliteClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));
-
-
-    public static final RegistryObject<Block> BUDDING_UNAKITE = registerBlock("budding_unakite",
-            () -> new BuddingUnakiteBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> UNAKITE_CLUSTER = registerBlock("unakite_cluster",
-            () -> new UnakiteClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel( (pLightEmission) -> 8)));
-    public static final RegistryObject<Block> LARGE_UNAKITE_BUD = registerBlock("large_unakite_bud",
-            () -> new UnakiteClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((pLightEmission) -> 6)));
-    public static final RegistryObject<Block> MEDIUM_UNAKITE_BUD = registerBlock("medium_unakite_bud",
-            () -> new UnakiteClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((pLightEmission) -> 3)));
-    public static final RegistryObject<Block> SMALL_UNAKITE_BUD = registerBlock("small_unakite_bud",
-            () -> new UnakiteClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((pLightEmission) -> 2)));*/
-
-    //public static final RegistryObject<Block> AVENTURIA_PORTAL = registerBlockWithoutBlockItem("aventurine_portal", AventuriaPortalBlock::new);
 
     public static final RegistryObject<Block> LARCH_LOG = registerBlock("larch_log", () -> new ModFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> LARCH_WOOD = registerBlock("larch_wood", () -> new ModFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_enderite_raw_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "theworldbefore:enderite_raw_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "theworldbefore:enderite_ingot_from_blasting_enderite_raw_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_enderite_raw_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "theworldbefore:enderite_ingot_from_blasting_enderite_raw_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

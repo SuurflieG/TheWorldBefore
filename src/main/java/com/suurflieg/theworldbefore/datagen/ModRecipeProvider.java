@@ -6,7 +6,6 @@ import com.suurflieg.theworldbefore.registry.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -18,7 +17,7 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    private static final List<ItemLike> TITANIUM_SMELTABLES = List.of(ModItems.TITANIUM_RAW_ORE.get(), ModBlocks.TITANIUM_ORE.get(), ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
+    private static final List<ItemLike> ENDERITE_SMELTABLES = List.of(ModItems.ENDERITE_RAW_ORE.get(), ModBlocks.ENDERITE_ORE.get(), ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
 
 
     public ModRecipeProvider(PackOutput pOutput) {
@@ -28,22 +27,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> writer) {
 
-        oreSmelting(writer, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get(), 0.75f, 200, "titanium");
-        oreBlasting(writer, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get(), 0.75f, 100, "titanium");
+        oreSmelting(writer, ENDERITE_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), 0.75f, 200, "enderite");
+        oreBlasting(writer, ENDERITE_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), 0.75f, 100, "enderite");
 
         //region Shaped Ingot to Block Recipes
 
-        nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get(), "titanium_ingot_from_nuggets", "titanium_ingot");
-        nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get(), RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), "titanium_block_from_ingots", "titanium_block");
-        //nineBlockStorageRecipesRecipesWithCustomUnpacking(writer, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.TITANIUM_INGOT.get(), "titanium_ingot_from_titanium_block", "gold_ingot");
+        nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.ENDERITE_NUGGET.get(), RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), "enderite_ingot_from_nuggets", "enderite_ingot");
+        nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), RecipeCategory.MISC, ModBlocks.ENDERITE_BLOCK.get(), "enderite_block_from_ingots", "enderite_block");
 
         //endregion
 
         //region Block to Ingot Recipes
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC ,ModItems.TITANIUM_INGOT.get(), 9)
-                .requires(ModBlocks.TITANIUM_BLOCK.get())
-                .unlockedBy("has_titanium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.TITANIUM_BLOCK.get()).build()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC ,ModItems.ENDERITE_INGOT.get(), 9)
+                .requires(ModBlocks.ENDERITE_BLOCK.get())
+                .unlockedBy("has_enderite_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.ENDERITE_BLOCK.get()).build()))
                 .save(writer);
 
         //endregion
@@ -52,7 +50,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         /*ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), 9)
                 .requires(ModItems.TITANIUM_INGOT.get())
-                .unlockedBy("has_titanium_ingot_", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.TITANIUM_INGOT.get()).build()))
+                .unlockedBy("has_enderite_ingot_", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.TITANIUM_INGOT.get()).build()))
                 .save(writer);*/
 
         //endregion

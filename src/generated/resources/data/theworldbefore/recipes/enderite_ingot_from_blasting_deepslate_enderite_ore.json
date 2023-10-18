@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.75,
+  "group": "enderite",
+  "ingredient": {
+    "item": "theworldbefore:deepslate_enderite_ore"
+  },
+  "result": "theworldbefore:enderite_ingot"
+}
