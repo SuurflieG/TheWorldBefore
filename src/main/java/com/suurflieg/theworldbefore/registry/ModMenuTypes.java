@@ -2,10 +2,7 @@ package com.suurflieg.theworldbefore.registry;
 
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.gui.menu.CustomArmorMenu;
-import com.suurflieg.theworldbefore.gui.menu.CustomToolMenu;
-import com.suurflieg.theworldbefore.gui.menu.CustomWeaponMenu;
-import com.suurflieg.theworldbefore.gui.menu.UpgradeStationMenu;
+import com.suurflieg.theworldbefore.gui.menu.*;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -22,6 +19,7 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<CustomArmorMenu>> CUSTOM_ARMOR_MENU = registerMenuType(CustomArmorMenu::new, "custom_armor_menu");
     public static final RegistryObject<MenuType<CustomWeaponMenu>> CUSTOM_WEAPON_MENU = registerMenuType(CustomWeaponMenu::new, "custom_weapon_menu");
     public static final RegistryObject<MenuType<UpgradeStationMenu>> UPGRADE_STATION_MENU = registerMenuType(UpgradeStationMenu::new, "upgrade_station_menu");
+    public static final RegistryObject<MenuType<SmithingTablePlusMenu>> SMITHING_TABLE_PLUS_MENU = registerMenuType(SmithingTablePlusMenu::new, "smithing_table_plus_menu");
 
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {

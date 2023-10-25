@@ -22,6 +22,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         //region Blocks that drop them self
         this.dropSelf(ModBlocks.ENDERITE_BLOCK.get());
+        this.dropSelf(ModBlocks.TEST.get());
+        this.dropSelf(ModBlocks.SMITHING_TABLE_PLUS.get());
         this.dropSelf(ModBlocks.UPGRADE_STATION.get());
         this.dropSelf(ModBlocks.LARCH_LOG.get());
         this.dropSelf(ModBlocks.LARCH_PLANKS.get());
@@ -33,8 +35,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //endregion
 
         //region Ore Blocks that drop raw ores
-        this.add(ModBlocks.ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.ENDERITE_ORE.get(), ModItems.ENDERITE_RAW_ORE.get()));
-        this.add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), ModItems.ENDERITE_RAW_ORE.get()));
+        this.add(ModBlocks.ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.ENDERITE_ORE.get(), ModItems.ENDERITE_RAW.get()));
+        this.add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), ModItems.ENDERITE_RAW.get()));
 
         this.add(ModBlocks.AVENTURINE_ORE.get(), (Block) -> createOreDrop(ModBlocks.AVENTURINE_ORE.get(), ModItems.AVENTURINE_SHARD.get()));
         this.add(ModBlocks.PYRITE_ORE.get(), (Block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.PYRITE_SHARD.get()));

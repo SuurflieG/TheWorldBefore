@@ -38,7 +38,7 @@ public class PacketChangeMiningSize {
                 CustomShovelItem.changeRange(shovel);
 
                 ItemStack axe = CustomAxeItem.getAxe(player);
-                CustomAxeItem.changeRange(axe);
+                //CustomAxeItem.changeRange(axe);
 
                 ItemStack hoe = CustomHoeItem.getHoe(player);
                 CustomHoeItem.changeRange(hoe);

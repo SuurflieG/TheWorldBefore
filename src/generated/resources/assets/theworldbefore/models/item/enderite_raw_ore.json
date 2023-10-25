@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "theworldbefore:item/enderite_raw_ore"
-  }
-}

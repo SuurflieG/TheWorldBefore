@@ -70,6 +70,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> UPGRADE_STATION = registerBlock("upgrade_station",
             () -> new UpgradeStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2f).requiresCorrectToolForDrops().noOcclusion()));
 
+    public static final RegistryObject<Block> SMITHING_TABLE_PLUS = registerBlock("smithing_table_plus",
+            () -> new SmithingTablePlusBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final RegistryObject<Block> TEST = registerBlock("test",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> AVENTURINE_BLOCK = registerBlock("aventurine_block", () -> new AventurineBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(0.5f).sound(SoundType.BASALT)));
     public static final RegistryObject<Block> PYRITE_BLOCK = registerBlock("pyrite_block", () -> new PyriteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block", () -> new RubyBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));

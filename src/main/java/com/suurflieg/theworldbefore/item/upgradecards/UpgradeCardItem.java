@@ -35,7 +35,7 @@ public class UpgradeCardItem extends Item {
                 case BANE_OF_ARTHROPODS_2:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.bane_of_arthropods_2").withStyle(ChatFormatting.BLUE));break;
                 case BANE_OF_ARTHROPODS_3:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.bane_of_arthropods_3").withStyle(ChatFormatting.GOLD));break;
                 case BANE_OF_ARTHROPODS_4:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.bane_of_arthropods_4").withStyle(ChatFormatting.DARK_PURPLE));break;
-                case BANE_OF_ARTHROPODS_5:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.bane_of_arthropods_5").withStyle(ChatFormatting.DARK_RED));break;
+                case BANE_OF_ARTHROPODS_5:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.bane_of_arthropods_5").withStyle(ChatFormatting.RED));break;
                 case BLAST_PROTECTION_1:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.blast_protection_1").withStyle(ChatFormatting.GREEN));break;
                 case BLAST_PROTECTION_2:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.blast_protection_2").withStyle(ChatFormatting.BLUE));break;
                 case BLAST_PROTECTION_3:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.blast_protection_3").withStyle(ChatFormatting.GOLD));break;

@@ -75,7 +75,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
     }
     @OnlyIn(Dist.CLIENT)
     public String getName() {
-        return this.name;
+        return TheWorldBefore.MOD_ID + ":" + this.name;
     }
     @Override
     public float getToughness() {

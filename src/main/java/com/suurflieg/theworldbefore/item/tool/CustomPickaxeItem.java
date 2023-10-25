@@ -12,7 +12,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -24,15 +23,13 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.FakePlayer;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 
-public class CustomPickaxeItem extends PickaxeItem {
+public class CustomPickaxeItem extends PickaxeItem implements ToolHelper {
 
 
     public CustomPickaxeItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
@@ -58,159 +55,9 @@ public class CustomPickaxeItem extends PickaxeItem {
         return true;
     }
 
-
-
-    private void miningSize(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
-
-        Player pPlayer = (Player) pEntityLiving;
-
-
-        int miningSize = ToolProperties.getMiningSize(pStack);
-        int miningDepth = ToolProperties.getMiningDepth(pStack);
-        int blockX = pPos.getX();
-        int blockZ = pPos.getZ();
-        int blockY = pPos.getY();
-
-        int start = -1;
-        if(miningSize == 5){
-            start = -2;
-        }else if (miningSize == 7){
-            start = -3;
-        }else if(miningSize == 1){
-            start = 0;
-        }
-
-        int startD = 0;
-
-        int startX = start;
-        int startY = start;
-        int startZ = start;
-
-        int startxD = startD;
-        int startyD = startD;
-        int startzD = startD;
-
-        if(pPlayer.isCreative() || !pPlayer.isCreative()){
-            if (!pLevel.isClientSide && !(pEntityLiving instanceof FakePlayer) && ToolProperties.getMiningSize(pStack) > 2 || ToolProperties.getMiningDepth(pStack) > 2) {
-
-                if (pPlayer.getXRot() > 40) {
-                    for (int x = 0; x < miningSize; x++) {
-                        startZ = start;
-                        for (int z = 0; z < miningSize; z++) {
-                            startyD = startD;
-                            for (int y = 0; y < miningDepth; y++) {
-                                BlockPos blockPos = new BlockPos(blockX + startX, blockY - startyD, blockZ + startZ);
-                                if (isCorrectToolForDrops(pStack ,pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startyD++;
-                            }
-                            startZ++;
-                        }
-                        startX++;
-                    }
-                }
-
-                else if (pPlayer.getXRot() < -40) {
-                    for (int x = 0; x < miningSize; x++) {
-                        startZ = start;
-                        for (int z = 0; z < miningSize; z++) {
-                            startyD = startD;
-                            for (int y = 0; y < miningDepth; y++) {
-                                BlockPos blockPos = new BlockPos(blockX + startX, blockY + startyD, blockZ + startZ);
-                                if (isCorrectToolForDrops(pStack ,pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startyD++;
-                            }
-                            startZ++;
-                        }
-                        startX++;
-                    }
-                }
-
-                else if (pPlayer.getDirection() == Direction.NORTH) {
-                    for (int x = 0; x < miningSize; x++) {
-                        startY = start;
-                        for (int y = 0; y < miningSize; y++){
-                            startzD = startD;
-                            for(int z = 0; z < miningDepth; z++) {
-                                BlockPos blockPos = new BlockPos(blockX + startX, blockY + startY, blockZ - startzD);
-                                if (isCorrectToolForDrops(pStack, pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startzD++;
-                            }
-                            startY++;
-                        }
-                        startX++;
-                    }
-                }
-
-                else if (pPlayer.getDirection() == Direction.SOUTH) {
-                    for (int x = 0; x < miningSize; x++) {
-                        startY = start;
-                        for (int y = 0; y < miningSize; y++){
-                            startzD = startD;
-                            for(int z = 0; z < miningDepth; z++) {
-                                BlockPos blockPos = new BlockPos(blockX + startX, blockY + startY, blockZ + startzD);
-                                if (isCorrectToolForDrops(pStack, pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startzD++;
-                            }
-                            startY++;
-                        }
-                        startX++;
-                    }
-                }
-
-                else if (pPlayer.getDirection() == Direction.WEST) {
-                    for (int z = 0; z < miningSize; z++) {
-                        startY = start;
-                        for (int y = 0; y < miningSize; y++) {
-                            startxD = startD;
-                            for (int x = 0;x < miningDepth; x++) {
-                                BlockPos blockPos = new BlockPos(blockX - startxD, blockY + startY, blockZ + startZ);
-                                if (isCorrectToolForDrops(pStack, pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startxD++;
-                            }
-                            startY++;
-                        }
-                        startZ++;
-                    }
-                }
-
-                else if (pPlayer.getDirection() == Direction.EAST) {
-                    for (int z = 0; z < miningSize; z++) {
-                        startY = start;
-                        for (int y = 0; y < miningSize; y++) {
-                            startxD = startD;
-                            for (int x = 0;x < miningDepth; x++) {
-                                BlockPos blockPos = new BlockPos(blockX + startxD, blockY + startY, blockZ + startZ);
-                                if (isCorrectToolForDrops(pStack, pLevel.getBlockState(blockPos))) {
-                                    Block.dropResources(pLevel.getBlockState(blockPos), pLevel, blockPos);
-                                    pLevel.destroyBlock(blockPos, false);
-                                }
-                                startxD++;
-                            }
-                            startY++;
-                        }
-                        startZ++;
-                    }
-                }
-
-            }
-        }
-
-
+    @Override
+    public void miningSize(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
+        ToolHelper.super.miningSize(pStack, pLevel, pPos, pEntityLiving);
     }
 
     @Override

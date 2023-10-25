@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -21,6 +22,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.ENDERITE_BLOCK);
+        blockWithItem(ModBlocks.TEST);
+        blockWithItem(ModBlocks.SMITHING_TABLE_PLUS);
 
         blockWithItem(ModBlocks.ENDERITE_ORE);
         blockWithItem(ModBlocks.AVENTURINE_ORE);
@@ -55,11 +58,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.LARCH_PLANKS.get());
         simpleBlock(ModBlocks.LARCH_LEAVES.get());
 
-        //simpleBlock(ModBlocks.LARCH_SAPLING.get(), models().cross(ModBlocks.LARCH_SAPLING.get(), blockTexture(ModBlocks.LARCH_SAPLING.get())));
+        saplingBlock(ModBlocks.LARCH_SAPLING);
 
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

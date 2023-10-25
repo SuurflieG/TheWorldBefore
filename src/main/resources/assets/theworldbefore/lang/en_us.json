@@ -16,9 +16,9 @@
   "item.theworldbefore.upgrade_bane_of_arthropods_5": "§cBane of Arthropods 5",
 
   "item.theworldbefore.upgrade_blast_protection_1": "§aBlast Protection 1",
-  "item.theworldbefore.upgrade_blast_protection_2": "§aBlast Protection 2",
-  "item.theworldbefore.upgrade_blast_protection_3": "§aBlast Protection 3",
-  "item.theworldbefore.upgrade_blast_protection_4": "§aBlast Protection 4",
+  "item.theworldbefore.upgrade_blast_protection_2": "§9Blast Protection 2",
+  "item.theworldbefore.upgrade_blast_protection_3": "§6Blast Protection 3",
+  "item.theworldbefore.upgrade_blast_protection_4": "§5Blast Protection 4",
 
   "item.theworldbefore.upgrade_depth_strider_1": "§aDepth Strider 1",
   "item.theworldbefore.upgrade_depth_strider_2": "§9Depth Strider 2",
@@ -30,12 +30,70 @@
   "item.theworldbefore.upgrade_efficiency_4": "§5Efficiency 4",
   "item.theworldbefore.upgrade_efficiency_5": "§cEfficiency 5",
 
+  "item.theworldbefore.upgrade_feather_falling_1": "§aFeather Falling 1",
+  "item.theworldbefore.upgrade_feather_falling_2": "§9Feather Falling 2",
+  "item.theworldbefore.upgrade_feather_falling_3": "§6Feather Falling 3",
+  "item.theworldbefore.upgrade_feather_falling_4": "§5Feather Falling 4",
+
+  "item.theworldbefore.upgrade_fire_aspect_1": "§aFire Aspect 1",
+  "item.theworldbefore.upgrade_fire_aspect_2": "§9Fire Aspect 2",
+
+  "item.theworldbefore.upgrade_fire_protection_1": "§aFire Protection 1",
+  "item.theworldbefore.upgrade_fire_protection_2": "§9Fire Protection 2",
+  "item.theworldbefore.upgrade_fire_protection_3": "§6Fire Protection 3",
+  "item.theworldbefore.upgrade_fire_protection_4": "§5Fire Protection 4",
+
   "item.theworldbefore.upgrade_fortune_1": "§aFortune 1",
   "item.theworldbefore.upgrade_fortune_2": "§9Fortune 2",
   "item.theworldbefore.upgrade_fortune_3": "§6Fortune 3",
 
+  "item.theworldbefore.upgrade_frost_walker_1": "§aFrost Walker 1",
+  "item.theworldbefore.upgrade_frost_walker_2": "§9Frost Walker 2",
 
+  "item.theworldbefore.upgrade_knockback_1": "§aKnockback 1",
+  "item.theworldbefore.upgrade_knockback_2": "§9Knockback 2",
 
+  "item.theworldbefore.upgrade_mob_looting_1": "§aMob Looting 1",
+  "item.theworldbefore.upgrade_mob_looting_2": "§9Mob Looting 2",
+  "item.theworldbefore.upgrade_mob_looting_3": "§6Mob Looting 3",
+
+  "item.theworldbefore.upgrade_projectile_protection_1": "§aProjectile Protection 1",
+  "item.theworldbefore.upgrade_projectile_protection_2": "§9Projectile Protection 2",
+  "item.theworldbefore.upgrade_projectile_protection_3": "§6Projectile Protection 3",
+  "item.theworldbefore.upgrade_projectile_protection_4": "§5Projectile Protection 4",
+
+  "item.theworldbefore.upgrade_protection_1": "§aProtection 1",
+  "item.theworldbefore.upgrade_protection_2": "§9Protection 2",
+  "item.theworldbefore.upgrade_protection_3": "§6Protection 3",
+  "item.theworldbefore.upgrade_protection_4": "§5Protection 4",
+
+  "item.theworldbefore.upgrade_respiration_1": "§aRespiration 1",
+  "item.theworldbefore.upgrade_respiration_2": "§9Respiration 2",
+  "item.theworldbefore.upgrade_respiration_3": "§6Respiration 3",
+
+  "item.theworldbefore.upgrade_sharpness_1": "§aSharpness 1",
+  "item.theworldbefore.upgrade_sharpness_2": "§9Sharpness 2",
+  "item.theworldbefore.upgrade_sharpness_3": "§6Sharpness 3",
+  "item.theworldbefore.upgrade_sharpness_4": "§5Sharpness 4",
+  "item.theworldbefore.upgrade_sharpness_5": "§cSharpness 5",
+
+  "item.theworldbefore.upgrade_smite_1": "§aSmite 1",
+  "item.theworldbefore.upgrade_smite_2": "§9Smite 2",
+  "item.theworldbefore.upgrade_smite_3": "§6Smite 3",
+  "item.theworldbefore.upgrade_smite_4": "§5Smite 4",
+  "item.theworldbefore.upgrade_smite_5": "§cSmite 5",
+
+  "item.theworldbefore.upgrade_soul_speed_1": "§aSoul Speed 1",
+  "item.theworldbefore.upgrade_soul_speed_2": "§9Soul Speed 2",
+  "item.theworldbefore.upgrade_soul_speed_3": "§6Soul Speed 3",
+
+  "item.theworldbefore.upgrade_sweeping_edge_1": "§aSweeping Edge 1",
+  "item.theworldbefore.upgrade_sweeping_edge_2": "§9Sweeping Edge 2",
+  "item.theworldbefore.upgrade_sweeping_edge_3": "§6Sweeping Edge 3",
+
+  "item.theworldbefore.upgrade_thorns_1": "§aThorns 1",
+  "item.theworldbefore.upgrade_thorns_2": "§9Thorns 2",
+  "item.theworldbefore.upgrade_thorns_3": "§6Thorns 3",
 
   "block.theworldbefore.enderite_ore": "Enderite Ore",
   "block.theworldbefore.deepslate_enderite_ore": "Deepslate Enderite Ore",

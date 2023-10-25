@@ -19,9 +19,10 @@ public class ModItems {
     private static final Item.Properties STACKS_TO_1 = new Item.Properties().stacksTo(1);
     private static final Item.Properties STACKS_TO_64 = new Item.Properties().stacksTo(64);
 
-    public static final RegistryObject<Item> ENDERITE_RAW_ORE = ITEMS.register("enderite_raw_ore", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> ENDERITE_RAW = ITEMS.register("enderite_raw", () -> new Item(STACKS_TO_64));
     public static final RegistryObject<Item> ENDERITE_NUGGET = ITEMS.register("enderite_nugget", () -> new Item(STACKS_TO_64));
     public static final RegistryObject<Item> ENDERITE_INGOT = ITEMS.register("enderite_ingot", () -> new Item(STACKS_TO_64));
+    public static final RegistryObject<Item> ENDERITE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("enderite_upgrade_smithing_template", () -> new Item(STACKS_TO_64));
 
     public static final RegistryObject<Item> ENDERITE_SWORD = ITEMS.register("enderite_sword", () -> new CustomSwordItem(ModItemTier.ENDERITE, 6, 0f, STACKS_TO_1));
     public static final RegistryObject<Item> ENDERITE_AXE = ITEMS.register("enderite_axe", () -> new CustomAxeItem(ModItemTier.ENDERITE, 7, 0f, STACKS_TO_1));

@@ -1,0 +1,18 @@
+{
+  "type": "theworldbefore:smithing",
+  "addition": {
+    "item": "theworldbefore:enderite_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_axe"
+  },
+  "result": {
+    "item": "theworldbefore:enderite_axe"
+  },
+  "resultxp": {
+    "item": "theworldbefore:enderite_nugget"
+  },
+  "template": {
+    "item": "theworldbefore:enderite_upgrade_smithing_template"
+  }
+}

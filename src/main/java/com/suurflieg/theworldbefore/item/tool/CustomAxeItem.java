@@ -12,18 +12,28 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -61,12 +71,25 @@ public class CustomAxeItem extends AxeItem {
         return false;
     }
 
-    public static void changeRange(ItemStack tool) {
-        if (ToolProperties.getMiningSize(tool) == 1)
-            ToolProperties.setMiningSize(tool, 3);
-        else
-            ToolProperties.setMiningSize(tool, 1);
+    @Override
+    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
+        super.mineBlock(pStack, pLevel, pState, pPos, pEntityLiving);
+        treeExcavate(pStack, pLevel, pPos, pEntityLiving);
+        return true;
     }
+
+    private void treeExcavate(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
+
+        Player pPlayer = (Player) pEntityLiving;
+        int miningSize = ToolProperties.getMiningSize(pStack);
+        int blockX = pPos.getX();
+        int blockZ = pPos.getZ();
+        int blockY = pPos.getY();
+
+
+
+    }
+
 
     public static void applyUpgrade(ItemStack tool, UpgradeCardItem upgradeCardItem) {
         if (UpgradeTools.containsActiveUpgrade(tool, upgradeCardItem.getCard()))

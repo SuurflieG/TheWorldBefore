@@ -1,11 +1,14 @@
 package com.suurflieg.theworldbefore.datagen;
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
+import com.suurflieg.theworldbefore.recipe.ModSmithingTransformRecipeBuilder;
 import com.suurflieg.theworldbefore.registry.ModBlocks;
 import com.suurflieg.theworldbefore.registry.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -17,7 +20,7 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    private static final List<ItemLike> ENDERITE_SMELTABLES = List.of(ModItems.ENDERITE_RAW_ORE.get(), ModBlocks.ENDERITE_ORE.get(), ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
+    private static final List<ItemLike> ENDERITE_SMELTABLES = List.of(ModItems.ENDERITE_RAW.get(), ModBlocks.ENDERITE_ORE.get(), ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
 
 
     public ModRecipeProvider(PackOutput pOutput) {
@@ -35,6 +38,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.ENDERITE_NUGGET.get(), RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), "enderite_ingot_from_nuggets", "enderite_ingot");
         nineBlockStorageRecipesWithCustomPacking(writer, RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(), RecipeCategory.MISC, ModBlocks.ENDERITE_BLOCK.get(), "enderite_block_from_ingots", "enderite_block");
 
+        enderiteSmithing(writer, Items.NETHERITE_AXE, RecipeCategory.TOOLS, ModItems.ENDERITE_AXE.get(), ModItems.ENDERITE_NUGGET.get());
         //endregion
 
         //region Block to Ingot Recipes
@@ -44,16 +48,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_enderite_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.ENDERITE_BLOCK.get()).build()))
                 .save(writer);
 
-        //endregion
-
-        //region Ingot to Nugget Recipes
-
-        /*ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), 9)
-                .requires(ModItems.TITANIUM_INGOT.get())
-                .unlockedBy("has_enderite_ingot_", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.TITANIUM_INGOT.get()).build()))
-                .save(writer);*/
 
         //endregion
+
 
         //region shards to blocks
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AVENTURINE_BLOCK.get())
@@ -123,26 +120,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
 
     }
-}
 
+    protected static void enderiteSmithing(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem, Item pResultItemXP) {
 
-        //region Catalyzer Recipes
-/*        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_AVENTURINE.get(), ModItems.GEM_RAW_AVENTURINE.get(), ModItems.GEM_RAW_AVENTURINE.get(), ModItems.GEM_RAW_AVENTURINE.get(), ModItems.CATALYST.get(), ModItems.GEM_AVENTURINE.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_AVENTURINE.get()).build())).save(writer);
-        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_CALCITE.get(), ModItems.GEM_RAW_CALCITE.get(), ModItems.GEM_RAW_CALCITE.get(), ModItems.GEM_RAW_CALCITE.get(), ModItems.CATALYST.get(), ModItems.GEM_CALCITE.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_CALCITE.get()).build())).save(writer);
-        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_PYRITE.get(), ModItems.GEM_RAW_PYRITE.get(), ModItems.GEM_RAW_PYRITE.get(), ModItems.GEM_RAW_PYRITE.get(), ModItems.CATALYST.get(), ModItems.GEM_PYRITE.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_PYRITE.get()).build())).save(writer);
-        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_RUBY.get(), ModItems.GEM_RAW_RUBY.get(), ModItems.GEM_RAW_RUBY.get(), ModItems.GEM_RAW_RUBY.get(), ModItems.CATALYST.get(), ModItems.GEM_RUBY.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_RUBY.get()).build())).save(writer);
-        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_TOPAZ.get(), ModItems.GEM_RAW_TOPAZ.get(), ModItems.GEM_RAW_TOPAZ.get(), ModItems.GEM_RAW_TOPAZ.get(), ModItems.CATALYST.get(), ModItems.GEM_TOPAZ.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_TOPAZ.get()).build())).save(writer);
-        new CatalyzerRecipeBuilder(ModItems.GEM_RAW_UNAKITE.get(), ModItems.GEM_RAW_UNAKITE.get(), ModItems.GEM_RAW_UNAKITE.get(), ModItems.GEM_RAW_UNAKITE.get(), ModItems.CATALYST.get(), ModItems.GEM_UNAKITE.get(), 1,80)
-                .unlockedBy("has_gem_raw_aventurine", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.GEM_RAW_UNAKITE.get()).build())).save(writer);*//*
-
-        //endregion
-
-
+        ModSmithingTransformRecipeBuilder
+                .smithing(Ingredient.of(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(pIngredientItem),
+                        Ingredient.of(ModItems.ENDERITE_INGOT.get()),
+                        pCategory, pResultItem, pResultItemXP)
+                .unlocks("has_enderite_ingot",
+                        has(ModItems.ENDERITE_INGOT.get())).save(pFinishedRecipeConsumer,
+                        TheWorldBefore.MOD_ID + ":" + getItemName(pResultItem) + "_smithing");
     }
 }
-*/
+
+

@@ -38,7 +38,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "theworldbefore:enderite_raw_ore"
+              "name": "theworldbefore:enderite_raw"
             }
           ]
         }

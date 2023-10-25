@@ -19,10 +19,12 @@ public class ModCreativeModeTab {
                     .displayItems(((pParameters, pOutput) ->{
                         pOutput.accept(ModBlocks.ENDERITE_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
-                        pOutput.accept(ModItems.ENDERITE_RAW_ORE.get());
+                        pOutput.accept(ModItems.ENDERITE_RAW.get());
                         pOutput.accept(ModItems.ENDERITE_NUGGET.get());
                         pOutput.accept(ModItems.ENDERITE_INGOT.get());
                         pOutput.accept(ModBlocks.ENDERITE_BLOCK.get());
+                        pOutput.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get());
+                        pOutput.accept(ModBlocks.TEST.get());
 
                         pOutput.accept(ModItems.ENDERITE_AXE.get());
                         pOutput.accept(ModItems.ENDERITE_PICKAXE.get());
@@ -35,6 +37,7 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModItems.ENDERITE_HELMET.get());
 
                         pOutput.accept(ModBlocks.UPGRADE_STATION.get());
+                        pOutput.accept(ModBlocks.SMITHING_TABLE_PLUS.get());
 
                         pOutput.accept(ModItems.BLANK.get());
                         pOutput.accept(ModItems.SILK.get());

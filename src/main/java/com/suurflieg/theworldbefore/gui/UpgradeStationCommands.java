@@ -36,9 +36,6 @@ public class UpgradeStationCommands {
             }
 
             List<Upgrade> upgrades = UpgradeTools.getUpgrades(tool);
-
-            // Fortune has to be done slightly differently as it requires us to check
-            // against all fortune tiers and not just it's existence.
             boolean hasFortune = UpgradeTools.containsUpgradeFromList(upgrades, Upgrade.FORTUNE_1);
             boolean hasSilk = UpgradeTools.containsUpgradeFromList(upgrades, Upgrade.SILK);
 
@@ -87,9 +84,7 @@ public class UpgradeStationCommands {
             if (!success) {
                 player.drop(new ItemStack(upgrade.getCard(), 1), true);
             }
-
             removeUpgradeWhenRemoved(tool, upgrade);
-
         });
     }
 
