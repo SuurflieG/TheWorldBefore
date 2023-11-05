@@ -3,7 +3,6 @@ package com.suurflieg.theworldbefore.registry;
 import com.suurflieg.theworldbefore.TheWorldBefore;
 import com.suurflieg.theworldbefore.recipe.ModSmithingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

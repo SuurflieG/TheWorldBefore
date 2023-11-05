@@ -60,11 +60,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_UNAKITE_ORE = registerBlock("deepslate_unakite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));
 
-
-/*    public static final RegistryObject<Block> AVENTURINE_GEM_ORE = registerBlock("aventurine_gem_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2,4)));*/
-
-
     public static final RegistryObject<Block> ENDERITE_BLOCK = registerBlock("enderite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> UPGRADE_STATION = registerBlock("upgrade_station",
@@ -76,12 +71,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> TEST = registerBlock("test",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5f).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> AVENTURINE_BLOCK = registerBlock("aventurine_block", () -> new AventurineBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(0.5f).sound(SoundType.BASALT)));
-    public static final RegistryObject<Block> PYRITE_BLOCK = registerBlock("pyrite_block", () -> new PyriteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
-    public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block", () -> new RubyBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
-    public static final RegistryObject<Block> TOPAZ_BLOCK = registerBlock("topaz_block", () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
-    public static final RegistryObject<Block> SPECTROLITE_BLOCK = registerBlock("spectrolite_block", () -> new SpectroliteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
-    public static final RegistryObject<Block> UNAKITE_BLOCK = registerBlock("unakite_block", () -> new UnakiteBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> AVENTURINE_BLOCK = registerBlock("aventurine_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> PYRITE_BLOCK = registerBlock("pyrite_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> TOPAZ_BLOCK = registerBlock("topaz_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> SPECTROLITE_BLOCK = registerBlock("spectrolite_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> UNAKITE_BLOCK = registerBlock("unakite_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5f).sound(SoundType.BASALT)));
 
     public static final RegistryObject<Block> LARCH_LOG = registerBlock("larch_log", () -> new ModFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> LARCH_WOOD = registerBlock("larch_wood", () -> new ModFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));

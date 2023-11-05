@@ -12,18 +12,23 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-import net.minecraft.world.item.crafting.SmithingRecipe;
 import net.minecraft.world.level.Level;
 
 import java.util.stream.Stream;
 
-public class ModSmithingRecipe implements SmithingRecipe {
+public class ModSmithingRecipe implements IModSmithingRecipe {
     private final ResourceLocation id;
     final Ingredient template;
     final Ingredient base;
     final Ingredient addition;
     final ItemStack result;
     final ItemStack result2;
+
+    private static final int INPUT_SLOT_A = 0;
+    private static final int INPUT_SLOT_B = 1;
+    private static final int INPUT_SLOT_C = 2;
+    private static final int OUTPUT_SLOT_A = 3;
+    private static final int OUTPUT_SLOT_B = 4;
 
     public ModSmithingRecipe(ResourceLocation pId, Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, ItemStack pResult, ItemStack result2) {
         this.id = pId;
@@ -38,12 +43,12 @@ public class ModSmithingRecipe implements SmithingRecipe {
      * Used to check if a recipe matches current crafting inventory
      */
     public boolean matches(Container pContainer, Level pLevel) {
-        return this.template.test(pContainer.getItem(0)) && this.base.test(pContainer.getItem(1)) && this.addition.test(pContainer.getItem(2));
+        return this.template.test(pContainer.getItem(INPUT_SLOT_A)) && this.base.test(pContainer.getItem(INPUT_SLOT_B)) && this.addition.test(pContainer.getItem(INPUT_SLOT_C));
     }
 
     public ItemStack assemble(Container pContainer, RegistryAccess pRegistryAccess) {
         ItemStack itemstack = this.result.copy();
-        CompoundTag compoundtag = pContainer.getItem(1).getTag();
+        CompoundTag compoundtag = pContainer.getItem(INPUT_SLOT_B).getTag();
         if (compoundtag != null) {
             itemstack.setTag(compoundtag.copy());
         }
@@ -107,6 +112,7 @@ public class ModSmithingRecipe implements SmithingRecipe {
             pRecipe.base.toNetwork(pBuffer);
             pRecipe.addition.toNetwork(pBuffer);
             pBuffer.writeItem(pRecipe.result);
+            pBuffer.writeItem(pRecipe.result2);
         }
     }
 }

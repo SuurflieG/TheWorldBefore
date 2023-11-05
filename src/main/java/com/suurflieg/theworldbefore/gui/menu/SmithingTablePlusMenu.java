@@ -49,31 +49,26 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
 
     }
 
-    protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
-        return ItemCombinerMenuSlotDefinition.create().withSlot(TEMPLATE_SLOT, 8, 48, (itemStack) -> {
-            return this.recipes.stream().anyMatch((modSmithingRecipe) -> {
-                return modSmithingRecipe.isTemplateIngredient(itemStack);
-            });
-        }).withSlot(BASE_SLOT, 26, 48, (itemStack) -> {
-            return this.recipes.stream().anyMatch((modSmithingRecipe) -> {
-                return modSmithingRecipe.isBaseIngredient(itemStack);
-            });
-        }).withSlot(ADDITIONAL_SLOT, 44, 48, (itemStack) -> {
-            return this.recipes.stream().anyMatch((modSmithingRecipe) -> {
-                return modSmithingRecipe.isAdditionIngredient(itemStack);
-            });
-        }).withResultSlot(RESULT_SLOT, 98, 48).build();
+    public ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
+        return ItemCombinerMenuSlotDefinition.create().withSlot(TEMPLATE_SLOT, 8, 48, (itemStack) ->
+                        this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                modSmithingRecipe.isTemplateIngredient(itemStack))).withSlot(BASE_SLOT, 26, 48, (itemStack) ->
+                this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                        modSmithingRecipe.isBaseIngredient(itemStack)))
+                .withSlot(ADDITIONAL_SLOT, 44, 48, (itemStack) ->
+                this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                        modSmithingRecipe.isAdditionIngredient(itemStack))).withResultSlot(RESULT_SLOT, 98, 48).build();
     }
 
-    protected boolean isValidBlock(BlockState pState) {
+    public boolean isValidBlock(BlockState pState) {
         return pState.is(ModBlocks.SMITHING_TABLE_PLUS.get());
     }
 
-    protected boolean mayPickup(Player pPlayer, boolean pHasStack) {
+    public boolean mayPickup(Player pPlayer, boolean pHasStack) {
         return this.selectedRecipe != null && this.selectedRecipe.matches(this.inputSlots, this.level);
     }
 
-    protected void onTake(Player pPlayer, ItemStack pStack) {
+    public void onTake(Player pPlayer, ItemStack pStack) {
         pStack.onCraftedBy(pPlayer.level(), pPlayer, pStack.getCount());
         this.resultSlots.awardUsedRecipes(pPlayer, this.getRelevantItems());
         this.shrinkStackInSlot(TEMPLATE_SLOT);
@@ -98,7 +93,8 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public void createResult() {
-        List<ModSmithingRecipe> list = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.MOD_SMITHING.get(), this.inputSlots, this.level);
+        List<ModSmithingRecipe> list;
+        list = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.MOD_SMITHING.get(), this.inputSlots, this.level);
         if (list.isEmpty()) {
             this.resultSlots.setItem(0, ItemStack.EMPTY);
         } else {
@@ -114,9 +110,8 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public int getSlotToQuickMoveTo(ItemStack pStack) {
-        return this.recipes.stream().map((modSmithingRecipe) -> {
-            return findSlotMatchingIngredient(modSmithingRecipe, pStack);
-        }).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
+        return this.recipes.stream().map((modSmithingRecipe) ->
+                findSlotMatchingIngredient(modSmithingRecipe, pStack)).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
     }
 
     private static Optional<Integer> findSlotMatchingIngredient(ModSmithingRecipe pRecipe, ItemStack pStack) {
@@ -134,8 +129,6 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public boolean canMoveIntoInputSlots(ItemStack pStack) {
-        return this.recipes.stream().map((smithingRecipe) -> {
-            return findSlotMatchingIngredient(smithingRecipe, pStack);
-        }).anyMatch(Optional::isPresent);
+        return this.recipes.stream().map((smithingRecipe) -> findSlotMatchingIngredient(smithingRecipe, pStack)).anyMatch(Optional::isPresent);
     }
 }

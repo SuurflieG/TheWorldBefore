@@ -1,6 +1,7 @@
 package com.suurflieg.theworldbefore.gui.screen;
 
 import com.suurflieg.theworldbefore.gui.menu.SmithingTablePlusMenu;
+import com.suurflieg.theworldbefore.item.smithingplus.SmithingPlusTemplateItem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.CyclingSlotBackground;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
@@ -70,18 +71,18 @@ public class SmithingTablePlusScreen extends ItemCombinerScreen<SmithingTablePlu
 
     public void containerTick() {
         super.containerTick();
-        Optional<SmithingTemplateItem> optional = this.getTemplateItem();
+        Optional<SmithingPlusTemplateItem> optional = this.getTemplateItem();
         this.templateIcon.tick(EMPTY_SLOT_SMITHING_TEMPLATES);
-        this.baseIcon.tick(optional.map(SmithingTemplateItem::getBaseSlotEmptyIcons).orElse(List.of()));
-        this.additionalIcon.tick(optional.map(SmithingTemplateItem::getAdditionalSlotEmptyIcons).orElse(List.of()));
+        this.baseIcon.tick(optional.map(SmithingPlusTemplateItem::getBaseSlotEmptyIcons).orElse(List.of()));
+        this.additionalIcon.tick(optional.map(SmithingPlusTemplateItem::getAdditionalSlotEmptyIcons).orElse(List.of()));
     }
 
-    private Optional<SmithingTemplateItem> getTemplateItem() {
+    private Optional<SmithingPlusTemplateItem> getTemplateItem() {
         ItemStack itemstack = this.menu.getSlot(0).getItem();
         if (!itemstack.isEmpty()) {
             Item item = itemstack.getItem();
-            if (item instanceof SmithingTemplateItem) {
-                SmithingTemplateItem smithingtemplateitem = (SmithingTemplateItem)item;
+            if (item instanceof SmithingPlusTemplateItem) {
+                SmithingPlusTemplateItem smithingtemplateitem = (SmithingPlusTemplateItem)item;
                 return Optional.of(smithingtemplateitem);
             }
         }
@@ -162,8 +163,8 @@ public class SmithingTablePlusScreen extends ItemCombinerScreen<SmithingTablePlu
                 }
             } else {
                 Item item = itemstack.getItem();
-                if (item instanceof SmithingTemplateItem) {
-                    SmithingTemplateItem smithingtemplateitem = (SmithingTemplateItem)item;
+                if (item instanceof SmithingPlusTemplateItem) {
+                    SmithingPlusTemplateItem smithingtemplateitem = (SmithingPlusTemplateItem)item;
                     if (itemstack1.isEmpty()) {
                         if (this.hoveredSlot.index == 1) {
                             optional = Optional.of(smithingtemplateitem.getBaseSlotDescription());

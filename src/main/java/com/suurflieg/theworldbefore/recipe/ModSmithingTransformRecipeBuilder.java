@@ -1,8 +1,6 @@
 package com.suurflieg.theworldbefore.recipe;
 
 import com.google.gson.JsonObject;
-import com.suurflieg.theworldbefore.registry.ModRecipeTypes;
-import com.suurflieg.theworldbefore.registry.ModRecipesSerializer;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
