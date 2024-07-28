@@ -22,7 +22,7 @@ public class ModSmithingRecipe implements IModSmithingRecipe {
     final Ingredient base;
     final Ingredient addition;
     final ItemStack result;
-    final ItemStack result2;
+    final ItemStack resultxp;
 
     private static final int INPUT_SLOT_A = 0;
     private static final int INPUT_SLOT_B = 1;
@@ -30,13 +30,13 @@ public class ModSmithingRecipe implements IModSmithingRecipe {
     private static final int OUTPUT_SLOT_A = 3;
     private static final int OUTPUT_SLOT_B = 4;
 
-    public ModSmithingRecipe(ResourceLocation pId, Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, ItemStack pResult, ItemStack result2) {
+    public ModSmithingRecipe(ResourceLocation pId, Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, ItemStack pResult, ItemStack resultxp) {
         this.id = pId;
         this.template = pTemplate;
         this.base = pBase;
         this.addition = pAddition;
         this.result = pResult;
-        this.result2 = result2;
+        this.resultxp = resultxp;
     }
 
     /**
@@ -93,7 +93,7 @@ public class ModSmithingRecipe implements IModSmithingRecipe {
             Ingredient ingredient1 = Ingredient.fromJson(GsonHelper.getNonNull(jsonObject, "base"));
             Ingredient ingredient2 = Ingredient.fromJson(GsonHelper.getNonNull(jsonObject, "addition"));
             ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "result"));
-            ItemStack itemstack2 = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "result2"));
+            ItemStack itemstack2 = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "resultxp"));
             return new ModSmithingRecipe(resourceLocation, ingredient, ingredient1, ingredient2, itemstack, itemstack2);
         }
 
@@ -112,7 +112,7 @@ public class ModSmithingRecipe implements IModSmithingRecipe {
             pRecipe.base.toNetwork(pBuffer);
             pRecipe.addition.toNetwork(pBuffer);
             pBuffer.writeItem(pRecipe.result);
-            pBuffer.writeItem(pRecipe.result2);
+            pBuffer.writeItem(pRecipe.resultxp);
         }
     }
 }

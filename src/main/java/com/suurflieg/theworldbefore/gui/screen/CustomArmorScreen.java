@@ -2,13 +2,11 @@ package com.suurflieg.theworldbefore.gui.screen;
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
 import com.suurflieg.theworldbefore.gui.widgets.ToggleButton;
-import com.suurflieg.theworldbefore.item.tool.CustomPickaxeItem;
-import com.suurflieg.theworldbefore.item.tool.CustomShovelItem;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeHelper;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
 import com.suurflieg.theworldbefore.network.PacketHandler;
-import com.suurflieg.theworldbefore.network.packets.PacketUpdateUpgrade;
+import com.suurflieg.theworldbefore.network.packets.PacketUpdateUpgradePickaxe;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -86,7 +84,7 @@ public class CustomArmorScreen extends Screen {
         // When the button is clicked we toggle
         if(update){
             updateButtons(upgrade, customArmorItem);
-            PacketHandler.sendToServer(new PacketUpdateUpgrade(upgrade.getName()));
+            PacketHandler.sendToServer(new PacketUpdateUpgradePickaxe(upgrade.getName()));
         }
         // When we're just init the gui, we check if it's on or off.
         return upgrade.isEnabled();

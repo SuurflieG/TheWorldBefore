@@ -1,12 +1,12 @@
 package com.suurflieg.theworldbefore.item.tool;
 
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeCardItem;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
-import com.suurflieg.theworldbefore.util.TheWorldBeforeKeyBinding;
 import com.suurflieg.theworldbefore.registry.ModScreens;
-import com.mojang.blaze3d.platform.InputConstants;
+import com.suurflieg.theworldbefore.util.ModKeyBindings;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -36,28 +36,59 @@ public class CustomPickaxeItem extends PickaxeItem implements ToolHelper {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
-    public static ItemStack getPickaxe(Player player) {
-        ItemStack heldItem = player.getMainHandItem();
-        if (!(heldItem.getItem() instanceof CustomPickaxeItem)) {
-            heldItem = player.getOffhandItem();
-            if (!(heldItem.getItem() instanceof CustomPickaxeItem)) {
-                return ItemStack.EMPTY;
+    public static ItemStack findItemStackInInventory(Player player) {
+
+        ItemStack foundCustomTool = ItemStack.EMPTY;
+
+        // Check the player's main inventory
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.getItem() instanceof CustomPickaxeItem) {
+                foundCustomTool = stack;
+                break;
             }
         }
 
-        return heldItem;
+        // Check the player's offhand
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().offhand) {
+                if (stack.getItem() instanceof CustomPickaxeItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+
+        // Check the player's armor slots
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().armor) {
+                if (stack.getItem() instanceof CustomPickaxeItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+        return foundCustomTool;
     }
 
     @Override
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
         super.mineBlock(pStack, pLevel, pState, pPos, pEntityLiving);
+        mineBlockWithPropagation(pLevel, pPos, pStack, pEntityLiving);
         miningSize(pStack, pLevel, pPos, pEntityLiving);
         return true;
     }
 
     @Override
-    public void miningSize(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
-        ToolHelper.super.miningSize(pStack, pLevel, pPos, pEntityLiving);
+    public void mineBlockWithPropagation(Level level, BlockPos pos, ItemStack pStack, LivingEntity player) {
+        ToolHelper.super.mineBlockWithPropagation(level, pos, pStack, player);
+    }
+
+    public static void changeSize(ItemStack pStack, int newSize){
+        ToolHelper.changeSize(pStack, newSize);
+    }
+
+    public static void changeDepth(ItemStack pStack, int newDepth){
+        ToolHelper.changeDepth(pStack, newDepth);
     }
 
     @Override
@@ -75,25 +106,7 @@ public class CustomPickaxeItem extends PickaxeItem implements ToolHelper {
         return false;
     }
 
-    public static void changeRange(ItemStack tool) {
-        int currentMiningSize = ToolProperties.getMiningSize(tool);
-        if (currentMiningSize <= 5) {
-            ToolProperties.setMiningSize(tool, currentMiningSize + 2);
-        }
-        else {
-            ToolProperties.setMiningSize(tool, 1);
-        }
-    }
 
-    public static void changeDepth(ItemStack tool) {
-        int currentMiningDepth = ToolProperties.getMiningDepth(tool);
-        if (currentMiningDepth <= 5) {
-            ToolProperties.setMiningDepth(tool, currentMiningDepth + 2);
-        }
-        else {
-            ToolProperties.setMiningDepth(tool, 1);
-        }
-    }
 
     public static void applyUpgrade(ItemStack tool, UpgradeCardItem upgradeCardItem) {
         if (UpgradeTools.containsActiveUpgrade(tool, upgradeCardItem.getCard()))
@@ -113,7 +126,7 @@ public class CustomPickaxeItem extends PickaxeItem implements ToolHelper {
             return InteractionResultHolder.fail(itemstack);
         }
         if (pPlayer.isShiftKeyDown()) {
-            if (TheWorldBeforeKeyBinding.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
+            if (ModKeyBindings.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
                 ModScreens.openToolSettingsScreen(itemstack);
                 return InteractionResultHolder.pass(itemstack);
             }
@@ -142,9 +155,10 @@ public class CustomPickaxeItem extends PickaxeItem implements ToolHelper {
             if (!(upgrades.isEmpty())) {
                 pTooltip.add(Component.translatable("theworldbefore.tooltip.item.upgrades").withStyle(ChatFormatting.AQUA));
                 for (Upgrade upgrade : upgrades) {
-                    pTooltip.add(Component.literal(" - " +
-                            I18n.get(upgrade.getLocal())
-                    ).withStyle(ChatFormatting.GREEN));
+                    pTooltip.add(Component.literal(" - " + I18n.get(upgrade.getLocal())).withStyle(ChatFormatting.GREEN));
+                }
+                if(upgrades.contains(Upgrade.AOE) || upgrades.contains(Upgrade.DEPTH)){
+                    pTooltip.add(Component.translatable("theworldbefore.tooltip.item.sneak").withStyle(ChatFormatting.RED));
                 }
             }
         }

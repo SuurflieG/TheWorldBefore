@@ -29,9 +29,22 @@ public class PacketHandler {
         int id = 0;
 
         HANDLER.registerMessage(id++, PacketExtractUpgrade.class,     PacketExtractUpgrade::encode,       PacketExtractUpgrade::decode,       PacketExtractUpgrade.Handler::handle);
-        HANDLER.registerMessage(id++, PacketUpdateUpgrade.class,      PacketUpdateUpgrade::encode,        PacketUpdateUpgrade::decode,        PacketUpdateUpgrade.Handler::handle);
-        HANDLER.registerMessage(id++, PacketChangeMiningSize.class,   PacketChangeMiningSize::encode,     PacketChangeMiningSize::decode,     PacketChangeMiningSize.Handler::handle);
-        HANDLER.registerMessage(id++, PacketChangeMiningDepth.class,   PacketChangeMiningDepth::encode,     PacketChangeMiningDepth::decode,     PacketChangeMiningDepth.Handler::handle);
+
+        HANDLER.registerMessage(id++, PacketUpdateUpgradePickaxe.class,      PacketUpdateUpgradePickaxe::encode,        PacketUpdateUpgradePickaxe::decode,        PacketUpdateUpgradePickaxe.Handler::handle);
+        HANDLER.registerMessage(id++, PacketUpdateUpgradeShovel.class,      PacketUpdateUpgradeShovel::encode,        PacketUpdateUpgradeShovel::decode,        PacketUpdateUpgradeShovel.Handler::handle);
+        HANDLER.registerMessage(id++, PacketUpdateUpgradeAxe.class,      PacketUpdateUpgradeAxe::encode,        PacketUpdateUpgradeAxe::decode,        PacketUpdateUpgradeAxe.Handler::handle);
+        HANDLER.registerMessage(id++, PacketUpdateUpgradeHoe.class,      PacketUpdateUpgradeHoe::encode,        PacketUpdateUpgradeHoe::decode,        PacketUpdateUpgradeHoe.Handler::handle);
+        HANDLER.registerMessage(id++, PacketUpdateUpgradeSword.class,      PacketUpdateUpgradeSword::encode,        PacketUpdateUpgradeSword::decode,        PacketUpdateUpgradeSword.Handler::handle);
+        HANDLER.registerMessage(id++, PacketUpdateUpgradeArmor.class,      PacketUpdateUpgradeArmor::encode,        PacketUpdateUpgradeArmor::decode,        PacketUpdateUpgradeArmor.Handler::handle);
+
+        HANDLER.registerMessage(id++, PacketChangeAOEPickaxe.class,   PacketChangeAOEPickaxe::encode,     PacketChangeAOEPickaxe::decode,     PacketChangeAOEPickaxe.Handler::handle);
+        HANDLER.registerMessage(id++, PacketChangeAOEShovel.class,   PacketChangeAOEShovel::encode,     PacketChangeAOEShovel::decode,     PacketChangeAOEShovel.Handler::handle);
+        HANDLER.registerMessage(id++, PacketChangeAOEHoe.class,   PacketChangeAOEHoe::encode,     PacketChangeAOEHoe::decode,     PacketChangeAOEHoe.Handler::handle);
+
+        HANDLER.registerMessage(id++, PacketChangeMiningDepthPickaxe.class,   PacketChangeMiningDepthPickaxe::encode,     PacketChangeMiningDepthPickaxe::decode,     PacketChangeMiningDepthPickaxe.Handler::handle);
+        HANDLER.registerMessage(id++, PacketChangeMiningDepthShovel.class,   PacketChangeMiningDepthShovel::encode,     PacketChangeMiningDepthShovel::decode,     PacketChangeMiningDepthShovel.Handler::handle);
+
+
         HANDLER.registerMessage(id++, PacketGhostSlot.class,          PacketGhostSlot::encode,            PacketGhostSlot::decode,            PacketGhostSlot.Handler::handle);
 
         HANDLER.registerMessage(id++, PacketInsertUpgrade.class,      PacketInsertUpgrade::encode,        PacketInsertUpgrade::decode,        PacketInsertUpgrade::handler);

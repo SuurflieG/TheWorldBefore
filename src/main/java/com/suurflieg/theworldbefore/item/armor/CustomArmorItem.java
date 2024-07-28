@@ -2,10 +2,11 @@ package com.suurflieg.theworldbefore.item.armor;
 
 
 import com.mojang.blaze3d.platform.InputConstants;
+import com.suurflieg.theworldbefore.item.tool.CustomPickaxeItem;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeCardItem;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
-import com.suurflieg.theworldbefore.util.TheWorldBeforeKeyBinding;
+import com.suurflieg.theworldbefore.util.ModKeyBindings;
 import com.suurflieg.theworldbefore.registry.ModScreens;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -35,16 +36,38 @@ public class CustomArmorItem extends ArmorItem {
         super(pMaterial, type, pProperties);
     }
 
-    public static ItemStack getArmor(Player player) {
-        ItemStack heldItem = player.getMainHandItem();
-        if (!(heldItem.getItem() instanceof CustomArmorItem)) {
-            heldItem = player.getOffhandItem();
-            if (!(heldItem.getItem() instanceof CustomArmorItem)) {
-                return ItemStack.EMPTY;
+    public static ItemStack findItemStackInInventory(Player player) {
+
+        ItemStack foundCustomTool = ItemStack.EMPTY;
+
+        // Check the player's main inventory
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.getItem() instanceof CustomArmorItem) {
+                foundCustomTool = stack;
+                break;
             }
         }
 
-        return heldItem;
+        // Check the player's offhand
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().offhand) {
+                if (stack.getItem() instanceof CustomArmorItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+
+        // Check the player's armor slots
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().armor) {
+                if (stack.getItem() instanceof CustomArmorItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+        return foundCustomTool;
     }
 
     @Override
@@ -81,7 +104,7 @@ public class CustomArmorItem extends ArmorItem {
         // Only perform the shift action
         if (pPlayer.isShiftKeyDown()) {
             if (pLevel.isClientSide) {
-                if (TheWorldBeforeKeyBinding.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
+                if (ModKeyBindings.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
                     ModScreens.openArmorSettingsScreen(itemstack);
                     return InteractionResultHolder.pass(itemstack);
                 }

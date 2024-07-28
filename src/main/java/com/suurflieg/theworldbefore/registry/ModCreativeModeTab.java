@@ -41,7 +41,7 @@ public class ModCreativeModeTab {
 
                         pOutput.accept(ModItems.BLANK.get());
                         pOutput.accept(ModItems.SILK.get());
-                        pOutput.accept(ModItems.EXPANDER.get());
+                        pOutput.accept(ModItems.AOE.get());
                         pOutput.accept(ModItems.DEPTH.get());
                         pOutput.accept(ModItems.MAGNET.get());
                         pOutput.accept(ModItems.MENDING.get());

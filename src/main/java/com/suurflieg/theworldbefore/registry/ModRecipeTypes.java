@@ -1,7 +1,7 @@
 package com.suurflieg.theworldbefore.registry;
 
 import com.suurflieg.theworldbefore.TheWorldBefore;
-import com.suurflieg.theworldbefore.recipe.ModSmithingRecipe;
+import com.suurflieg.theworldbefore.recipe.IModSmithingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,7 +13,7 @@ public class ModRecipeTypes {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES =
             DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, TheWorldBefore.MOD_ID);
 
-    public static final RegistryObject<RecipeType<ModSmithingRecipe>> MOD_SMITHING = RECIPE_TYPES.register("mod_smithing", () -> RecipeType.simple(TheWorldBefore.prefix("mod_smithing")));
+    public static final RegistryObject<RecipeType<IModSmithingRecipe>> MOD_SMITHING = RECIPE_TYPES.register("mod_smithing", () -> RecipeType.simple(TheWorldBefore.prefix("mod_smithing")));
 
 
     public static void register(IEventBus eventBus) {

@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-25T07:38:29.9608565	Item Models: theworldbefore
+// 1.20.1	2023-11-17T21:16:59.0372589	Item Models: theworldbefore
 bbc4cc4c9452cbd18e814dab1dabe78819bbead2 assets/theworldbefore/models/item/aventurine_block.json
 e0b319e14e870c69353c0fdb833efd65f94bced9 assets/theworldbefore/models/item/aventurine_ore.json
 9d869b8ded8df76ff1826d4be1f3ad14667bfb6c assets/theworldbefore/models/item/aventurine_shard.json
@@ -85,6 +85,7 @@ fb8337a8542cbf4654630ffc353835715dfa119b assets/theworldbefore/models/item/topaz
 6b1c9b1a73d1e3d2889cc9033621bbb40caadd47 assets/theworldbefore/models/item/unakite_block.json
 2cb919bc14d8d890edaf1d39cf2f17d834c9f060 assets/theworldbefore/models/item/unakite_ore.json
 8e8fb5aba15ac4abbf22a7375226770d0fc60c69 assets/theworldbefore/models/item/unakite_shard.json
+5b35c2147926287009e9bd591012db3c079503af assets/theworldbefore/models/item/upgrade_aoe.json
 082bcf947a97fa59366a7cd94790fdff34a02bc5 assets/theworldbefore/models/item/upgrade_aqua_affinity.json
 d10bf55e904e26e350fc40012c0a2c46dd3dd0f2 assets/theworldbefore/models/item/upgrade_bane_of_arthropods_1.json
 b0c49eb7ca48947cd872818e5ae85c9966c1d081 assets/theworldbefore/models/item/upgrade_bane_of_arthropods_2.json
@@ -106,7 +107,6 @@ f09a139cc7bb1bda30614c800e6b98424658f9cc assets/theworldbefore/models/item/upgra
 d80ae9afc76886fc931e347ff9fc0ac523f666d3 assets/theworldbefore/models/item/upgrade_efficiency_4.json
 9f6198a43936a75915ef2009f8a2d49c7dcf38de assets/theworldbefore/models/item/upgrade_efficiency_5.json
 35539ecf471e1804952de3345484a18321762fa4 assets/theworldbefore/models/item/upgrade_electric_element.json
-299513dc4c1f7c412bbfcca60a64d35b82368e68 assets/theworldbefore/models/item/upgrade_expander.json
 86162482978c31a173a125bb4e76a60c365a4be1 assets/theworldbefore/models/item/upgrade_feather_falling_1.json
 73d5fe68bc20bf5d2f9d0ecd2a45f3627a5d51eb assets/theworldbefore/models/item/upgrade_feather_falling_2.json
 dc49d22748e5fa83c3ead618f191616790f2aa61 assets/theworldbefore/models/item/upgrade_feather_falling_3.json
@@ -163,6 +163,7 @@ f5fe7d555321c578e6cb7019c132a7c05eedbafa assets/theworldbefore/models/item/upgra
 13e134da7c5afe1606b275fd678c0446f2531b73 assets/theworldbefore/models/item/upgrade_thorns_1.json
 aa717e41bc5fed3b1e3d432e68386336786115b3 assets/theworldbefore/models/item/upgrade_thorns_2.json
 380383b4fac0952618e563bb460814cd012a5592 assets/theworldbefore/models/item/upgrade_thorns_3.json
+709ea0c33f08e75680d68c422df84a98830758b2 assets/theworldbefore/models/item/upgrade_tree_felling.json
 59b5c2a582a546c90a4eaadd0d7440e672f950fb assets/theworldbefore/models/item/upgrade_unbreaking_1.json
 427ccc4002eeee92250a33bda95aa40fdf4793df assets/theworldbefore/models/item/upgrade_unbreaking_2.json
 cb89794ffcdfe17f1c342e72f1e19d9efa30e1c2 assets/theworldbefore/models/item/upgrade_unbreaking_3.json

@@ -24,22 +24,22 @@ public class ModSmithingTransformRecipeBuilder {
     private final Ingredient addition;
     private final RecipeCategory category;
     private final Item result;
-    private final Item result2;
+    private final Item resultXP;
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
     private final RecipeSerializer<?> type;
 
-    public ModSmithingTransformRecipeBuilder(RecipeSerializer<?> pType, Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, RecipeCategory pCategory, Item pResult, Item pResult2) {
+    public ModSmithingTransformRecipeBuilder(RecipeSerializer<?> pType, Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, RecipeCategory pCategory, Item pResult, Item pResultXP) {
         this.category = pCategory;
         this.type = pType;
         this.template = pTemplate;
         this.base = pBase;
         this.addition = pAddition;
         this.result = pResult;
-        this.result2 = pResult2;
+        this.resultXP = pResultXP;
     }
 
-    public static ModSmithingTransformRecipeBuilder smithing(Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, RecipeCategory pCategory, Item pResult, Item pResult2) {
-        return new ModSmithingTransformRecipeBuilder(ModSmithingRecipe.Serializer.INSTANCE, pTemplate, pBase, pAddition, pCategory, pResult, pResult2);
+    public static ModSmithingTransformRecipeBuilder smithing(Ingredient pTemplate, Ingredient pBase, Ingredient pAddition, RecipeCategory pCategory, Item pResult, Item pResultXP) {
+        return new ModSmithingTransformRecipeBuilder(ModSmithingRecipe.Serializer.INSTANCE, pTemplate, pBase, pAddition, pCategory, pResult, pResultXP);
     }
 
     public ModSmithingTransformRecipeBuilder unlocks(String pKey, CriterionTriggerInstance pCriterion) {
@@ -54,7 +54,7 @@ public class ModSmithingTransformRecipeBuilder {
     public void save(Consumer<FinishedRecipe> pRecipeConsumer, ResourceLocation pLocation) {
         this.ensureValid(pLocation);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pLocation)).rewards(AdvancementRewards.Builder.recipe(pLocation)).requirements(RequirementsStrategy.OR);
-        pRecipeConsumer.accept(new ModSmithingTransformRecipeBuilder.Result(pLocation, this.type, this.template, this.base, this.addition, this.result, this.result2, this.advancement, pLocation.withPrefix("recipes/" + this.category.getFolderName() + "/")));
+        pRecipeConsumer.accept(new ModSmithingTransformRecipeBuilder.Result(pLocation, this.type, this.template, this.base, this.addition, this.result, this.resultXP, this.advancement, pLocation.withPrefix("recipes/" + this.category.getFolderName() + "/")));
     }
 
     private void ensureValid(ResourceLocation pLocation) {
@@ -63,7 +63,7 @@ public class ModSmithingTransformRecipeBuilder {
         }
     }
 
-    public static record Result(ResourceLocation id, RecipeSerializer<?> type, Ingredient template, Ingredient base, Ingredient addition, Item result, Item pResult2, Advancement.Builder advancement, ResourceLocation advancementId) implements FinishedRecipe {
+    public record Result(ResourceLocation id, RecipeSerializer<?> type, Ingredient template, Ingredient base, Ingredient addition, Item result, Item pResultXP, Advancement.Builder advancement, ResourceLocation advancementId) implements FinishedRecipe {
         public void serializeRecipeData(JsonObject pJson) {
             pJson.add("template", this.template.toJson());
             pJson.add("base", this.base.toJson());
@@ -72,7 +72,7 @@ public class ModSmithingTransformRecipeBuilder {
             jsonobject.addProperty("item", BuiltInRegistries.ITEM.getKey(this.result).toString());
             pJson.add("result", jsonobject);
             JsonObject jsonobject2 = new JsonObject();
-            jsonobject2.addProperty("item", BuiltInRegistries.ITEM.getKey(this.pResult2).toString());
+            jsonobject2.addProperty("item", BuiltInRegistries.ITEM.getKey(this.pResultXP).toString());
             pJson.add("resultxp", jsonobject2);
         }
 

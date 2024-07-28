@@ -23,7 +23,7 @@ public class UpgradeCardItem extends Item {
                 case FORTUNE_1: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.fortune_1").withStyle(ChatFormatting.GREEN));break;
                 case FORTUNE_2: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.fortune_2").withStyle(ChatFormatting.BLUE));break;
                 case FORTUNE_3: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.fortune_3").withStyle(ChatFormatting.GOLD));break;
-                case EXPANDER: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.expander").withStyle(ChatFormatting.GREEN));break;
+                case AOE: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.expander").withStyle(ChatFormatting.GREEN));break;
                 case DEPTH: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.depth").withStyle(ChatFormatting.GREEN));break;
                 case MENDING:pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.mending").withStyle(ChatFormatting.GREEN));break;
                 case AQUA_AFFINITY: pTooltipComponents.add(Component.translatable("theworldbefore.tooltip.upgrades.aqua_affinity").withStyle(ChatFormatting.GREEN));break;

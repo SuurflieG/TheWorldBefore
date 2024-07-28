@@ -115,18 +115,23 @@
 
   "theworldbefore.text.empty_table_helper": "Insert upgrades by shift clicking \nor dropping into the screen.\n\nClick or shift click to remove them.",
   "theworldbefore.text.modification_table": "Upgrade Station",
-  "theworldbefore.text.open_gui": "Open Settings",
+  "theworldbefore.text.open_gui": "Open Equipment GUI",
   "theworldbefore.tooltip.item.show_upgrades": "Hold shift to show Upgrades",
   "theworldbefore.tooltip.item.upgrades": "Current Upgrades:",
+  "theworldbefore.tooltip.screen.tool_row": "Tools Armor Weapons",
   "theworldbefore.tooltip.screen.pickaxe_settings": "Pickaxe Settings",
+  "theworldbefore.tooltip.screen.pickaxe_aoe_settings": "Change Mining AOE",
+  "theworldbefore.tooltip.screen.pickaxe_depth_settings": "Change Mining Depth",
   "theworldbefore.tooltip.screen.shovel_settings": "Shovel Settings",
   "theworldbefore.tooltip.screen.axe_settings": "Axe Settings",
   "theworldbefore.tooltip.screen.hoe_settings": "Hoe Settings",
   "theworldbefore.tooltip.screen.sword_settings": "Sword Settings",
   "theworldbefore.tooltip.screen.armor_settings": "Armor Settings",
-  "theworldbefore.tooltip.screen.no_upgrades": "No Upgrades Available!",
-  "theworldbefore.tooltip.screen.size": "Size: %1$d x %1$d",
-  "theworldbefore.tooltip.screen.depth": "Depth %1$d",
+  "theworldbefore.tooltip.screen.no_upgrades": "No Upgrades Installed!",
+  "theworldbefore.tooltip.screen.size2": "Size: %1$d x %1$d",
+  "theworldbefore.tooltip.screen.size": "%1$d",
+  "theworldbefore.tooltip.screen.depth": "%1$d",
+  "theworldbefore.tooltip.screen.aoe": "%1$d",
   "theworldbefore.tooltip.screen.ticks": "ticks",
   "theworldbefore.tooltip.screen.toggle_upgrades": "Toggle Upgrades",
   "theworldbefore.tooltip.single.insert": "Insert",
@@ -134,6 +139,7 @@
 
   "key.category.theworldbefore.theworldbefore": "The World Before",
   "key.theworldbefore.open_gui": "Open Equipment Menu",
+  "key.theworldbefore.open_b_gui": "Open B Menu",
   "creativetab.theworldbefore_tab": "The World Before",
 
   "theworldbefore.tooltip.upgrades.fortune_1": "Gives you more for less",
@@ -158,6 +164,8 @@
   "theworldbefore.tooltip.upgrades.blast_protection_1": "Blast Protection 1",
   "theworldbefore.tooltip.upgrades.blast_protection_2": "Blast Protection 2",
   "theworldbefore.tooltip.upgrades.blast_protection_3": "Blast Protection 3",
-  "theworldbefore.tooltip.upgrades.blast_protection_4": "Blast Protection 4"
+  "theworldbefore.tooltip.upgrades.blast_protection_4": "Blast Protection 4",
+  "theworldbefore.tooltip.item.sneak": "Hold Sneak while mining to disable width and depth upgrades",
+  "Color Picker": "Cycle Outline Render Color"
 
 }

@@ -1,21 +1,18 @@
 package com.suurflieg.theworldbefore.item.tool;
 
 
-
 import com.mojang.blaze3d.platform.InputConstants;
 import com.suurflieg.theworldbefore.item.upgradecards.Upgrade;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeCardItem;
 import com.suurflieg.theworldbefore.item.upgradecards.UpgradeTools;
-import com.suurflieg.theworldbefore.util.TheWorldBeforeKeyBinding;
 import com.suurflieg.theworldbefore.registry.ModScreens;
+import com.suurflieg.theworldbefore.util.ModKeyBindings;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -25,35 +22,78 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class CustomAxeItem extends AxeItem {
+public class CustomAxeItem extends AxeItem implements ToolHelper {
 
 
     public CustomAxeItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
-    public static ItemStack getAxe(Player player) {
-        ItemStack heldItem = player.getMainHandItem();
-        if (!(heldItem.getItem() instanceof CustomAxeItem)) {
-            heldItem = player.getOffhandItem();
-            if (!(heldItem.getItem() instanceof CustomAxeItem)) {
-                return ItemStack.EMPTY;
+    public static ItemStack findItemStackInInventory(Player player) {
+
+        ItemStack foundCustomTool = ItemStack.EMPTY;
+
+        // Check the player's main inventory
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.getItem() instanceof CustomAxeItem) {
+                foundCustomTool = stack;
+                break;
             }
         }
 
-        return heldItem;
+        // Check the player's offhand
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().offhand) {
+                if (stack.getItem() instanceof CustomAxeItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+
+        // Check the player's armor slots
+        if (foundCustomTool.isEmpty()) {
+            for (ItemStack stack : player.getInventory().armor) {
+                if (stack.getItem() instanceof CustomAxeItem) {
+                    foundCustomTool = stack;
+                    break;
+                }
+            }
+        }
+        return foundCustomTool;
+    }
+
+    @Override
+    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos blockPos, LivingEntity pEntityLiving) {
+        super.mineBlock(pStack, pLevel, pState, blockPos, pEntityLiving);
+        miningSize(pStack, pLevel, blockPos, pEntityLiving);
+        mineConnectedLogs(pLevel, blockPos, ToolHelper.getConnectedLogs(blockPos));
+
+        return true;
+    }
+
+
+
+    @Override
+    public void miningSize(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
+        ToolHelper.super.miningSize(pStack, pLevel, pPos, pEntityLiving);
+    }
+
+    @Override
+    public List<BlockPos> mineConnectedLogs(Level level, BlockPos blockPos, List<BlockPos> logs) {
+        return ToolHelper.super.mineConnectedLogs(level, blockPos, logs);
+    }
+
+
+    public static void changeSize(ItemStack pStack, int newSize){
+        ToolHelper.changeSize(pStack, newSize);
     }
 
     @Override
@@ -71,26 +111,6 @@ public class CustomAxeItem extends AxeItem {
         return false;
     }
 
-    @Override
-    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
-        super.mineBlock(pStack, pLevel, pState, pPos, pEntityLiving);
-        treeExcavate(pStack, pLevel, pPos, pEntityLiving);
-        return true;
-    }
-
-    private void treeExcavate(ItemStack pStack, Level pLevel, BlockPos pPos, LivingEntity pEntityLiving) {
-
-        Player pPlayer = (Player) pEntityLiving;
-        int miningSize = ToolProperties.getMiningSize(pStack);
-        int blockX = pPos.getX();
-        int blockZ = pPos.getZ();
-        int blockY = pPos.getY();
-
-
-
-    }
-
-
     public static void applyUpgrade(ItemStack tool, UpgradeCardItem upgradeCardItem) {
         if (UpgradeTools.containsActiveUpgrade(tool, upgradeCardItem.getCard()))
             return;
@@ -105,7 +125,7 @@ public class CustomAxeItem extends AxeItem {
         // Only perform the shift action
         if (pPlayer.isShiftKeyDown()) {
             if (pLevel.isClientSide) {
-                if (TheWorldBeforeKeyBinding.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
+                if (ModKeyBindings.GUI_KEY_SHIFT_RIGHT_CLICK.getKey() == InputConstants.UNKNOWN) {
                     ModScreens.openToolSettingsScreen(itemstack);
                     return InteractionResultHolder.pass(itemstack);
                 }

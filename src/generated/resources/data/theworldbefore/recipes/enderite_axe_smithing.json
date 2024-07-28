@@ -1,5 +1,5 @@
 {
-  "type": "theworldbefore:smithing",
+  "type": "theworldbefore:smithing_transform",
   "addition": {
     "item": "theworldbefore:enderite_ingot"
   },

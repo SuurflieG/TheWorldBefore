@@ -1,6 +1,6 @@
 package com.suurflieg.theworldbefore.gui.menu;
 
-import com.suurflieg.theworldbefore.recipe.ModSmithingRecipe;
+import com.suurflieg.theworldbefore.recipe.IModSmithingRecipe;
 import com.suurflieg.theworldbefore.registry.ModBlocks;
 import com.suurflieg.theworldbefore.registry.ModMenuTypes;
 import com.suurflieg.theworldbefore.registry.ModRecipeTypes;
@@ -24,15 +24,17 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     public static final int BASE_SLOT = 1;
     public static final int ADDITIONAL_SLOT = 2;
     public static final int RESULT_SLOT = 3;
+    public static final int RESULT_SLOT_XP = 4;
     public static final int TEMPLATE_SLOT_X_PLACEMENT = 8;
     public static final int BASE_SLOT_X_PLACEMENT = 26;
     public static final int ADDITIONAL_SLOT_X_PLACEMENT = 44;
     private static final int RESULT_SLOT_X_PLACEMENT = 98;
     public static final int SLOT_Y_PLACEMENT = 48;
+    @Nullable
     private Level level;
     @Nullable
-    private ModSmithingRecipe selectedRecipe;
-    private List<ModSmithingRecipe> recipes;
+    private IModSmithingRecipe selectedRecipe;
+    private List<IModSmithingRecipe> recipes;
 
     public SmithingTablePlusMenu(int pContainerId, Inventory pPlayerInventory) {
         super(ModMenuTypes.SMITHING_TABLE_PLUS_MENU.get(), pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
@@ -50,14 +52,15 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
-        return ItemCombinerMenuSlotDefinition.create().withSlot(TEMPLATE_SLOT, 8, 48, (itemStack) ->
-                        this.recipes.stream().anyMatch((modSmithingRecipe) ->
-                modSmithingRecipe.isTemplateIngredient(itemStack))).withSlot(BASE_SLOT, 26, 48, (itemStack) ->
-                this.recipes.stream().anyMatch((modSmithingRecipe) ->
-                        modSmithingRecipe.isBaseIngredient(itemStack)))
-                .withSlot(ADDITIONAL_SLOT, 44, 48, (itemStack) ->
-                this.recipes.stream().anyMatch((modSmithingRecipe) ->
-                        modSmithingRecipe.isAdditionIngredient(itemStack))).withResultSlot(RESULT_SLOT, 98, 48).build();
+        return ItemCombinerMenuSlotDefinition.create()
+                .withSlot(TEMPLATE_SLOT, 8, 48, (itemStack) -> this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                modSmithingRecipe.isTemplateIngredient(itemStack)))
+                .withSlot(BASE_SLOT, 26, 48, (itemStack) -> this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                modSmithingRecipe.isBaseIngredient(itemStack)))
+                .withSlot(ADDITIONAL_SLOT, 44, 48, (itemStack) -> this.recipes.stream().anyMatch((modSmithingRecipe) ->
+                modSmithingRecipe.isAdditionIngredient(itemStack)))
+                .withResultSlot(RESULT_SLOT, 98, 48)
+                .withResultSlot(RESULT_SLOT_XP, 118, 48).build();
     }
 
     public boolean isValidBlock(BlockState pState) {
@@ -72,15 +75,15 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
         pStack.onCraftedBy(pPlayer.level(), pPlayer, pStack.getCount());
         this.resultSlots.awardUsedRecipes(pPlayer, this.getRelevantItems());
         this.shrinkStackInSlot(TEMPLATE_SLOT);
-        this.shrinkStackInSlot(1);
-        this.shrinkStackInSlot(2);
-        this.access.execute((p_40263_, p_40264_) -> {
-            p_40263_.levelEvent(1044, p_40264_, 0);
+        this.shrinkStackInSlot(BASE_SLOT);
+        this.shrinkStackInSlot(ADDITIONAL_SLOT);
+        this.access.execute((level, blockPos) -> {
+            level.levelEvent(1044, blockPos, 0);
         });
     }
 
     private List<ItemStack> getRelevantItems() {
-        return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1), this.inputSlots.getItem(2));
+        return List.of(this.inputSlots.getItem(TEMPLATE_SLOT), this.inputSlots.getItem(BASE_SLOT), this.inputSlots.getItem(ADDITIONAL_SLOT));
     }
 
     private void shrinkStackInSlot(int pIndex) {
@@ -93,12 +96,13 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public void createResult() {
-        List<ModSmithingRecipe> list;
-        list = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.MOD_SMITHING.get(), this.inputSlots, this.level);
+        List<IModSmithingRecipe> list;
+        assert this.level != null;
+        list = this.player.level().getRecipeManager().getRecipesFor(ModRecipeTypes.MOD_SMITHING.get(), this.inputSlots, this.level);
         if (list.isEmpty()) {
-            this.resultSlots.setItem(0, ItemStack.EMPTY);
+            this.resultSlots.setItem(TEMPLATE_SLOT, ItemStack.EMPTY);
         } else {
-            ModSmithingRecipe smithingrecipe = list.get(0);
+            IModSmithingRecipe smithingrecipe = list.get(0);
             ItemStack itemstack = smithingrecipe.assemble(this.inputSlots, this.level.registryAccess());
             if (itemstack.isItemEnabled(this.level.enabledFeatures())) {
                 this.selectedRecipe = smithingrecipe;
@@ -114,7 +118,7 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
                 findSlotMatchingIngredient(modSmithingRecipe, pStack)).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
     }
 
-    private static Optional<Integer> findSlotMatchingIngredient(ModSmithingRecipe pRecipe, ItemStack pStack) {
+    private static Optional<Integer> findSlotMatchingIngredient(IModSmithingRecipe pRecipe, ItemStack pStack) {
         if (pRecipe.isTemplateIngredient(pStack)) {
             return Optional.of(0);
         } else if (pRecipe.isBaseIngredient(pStack)) {
@@ -129,6 +133,7 @@ public class SmithingTablePlusMenu extends ItemCombinerMenu {
     }
 
     public boolean canMoveIntoInputSlots(ItemStack pStack) {
+
         return this.recipes.stream().map((smithingRecipe) -> findSlotMatchingIngredient(smithingRecipe, pStack)).anyMatch(Optional::isPresent);
     }
 }

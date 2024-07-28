@@ -99,8 +99,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BLANK);
         simpleItem(ModItems.MAGNET);
         simpleItem(ModItems.SILK);
-        simpleItem(ModItems.EXPANDER);
+        simpleItem(ModItems.AOE);
         simpleItem(ModItems.DEPTH);
+        simpleItem(ModItems.TREE_FELLING);
 
         simpleItem(ModItems.AQUA_AFFINITY);
 

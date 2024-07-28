@@ -1,7 +1,6 @@
 package com.suurflieg.theworldbefore.gui.widgets;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -29,10 +28,6 @@ public class ToggleButton extends AbstractWidget {
 
         this.enabled = this.onPress.test(false);
     }
-
-/*    public List<FormattedCharSequence> getTooltip() {
-        return Language.getInstance().getVisualOrder(Arrays.asList(this.getMessage(), new TextComponent("Enabled: " + this.enabled).withStyle(this.enabled ? ChatFormatting.GREEN : ChatFormatting.GRAY)));
-    }*/
 
     @Override
     protected void renderWidget(GuiGraphics guiGraphics, int pMouseX, int pMouseY, float pPartialTick) {

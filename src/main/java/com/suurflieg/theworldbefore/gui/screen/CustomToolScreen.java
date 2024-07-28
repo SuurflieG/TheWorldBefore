@@ -61,7 +61,12 @@ public class CustomToolScreen extends Screen {
         // Remove 6 from x to center it as the padding on the right pushes off center
         int index = 0, x = baseX + 13, y = baseY + 98;
         for (Upgrade upgrade : toggleableList) {
-            Btn = new ToggleButton(x + (index * 18), y, UpgradeTools.getName(upgrade), new ResourceLocation(TheWorldBefore.MOD_ID, "textures/item/upgrade_" + upgrade.getName() + ".png"), send -> this.toggleUpgrade(upgrade, send));
+            Btn = new ToggleButton(
+                    x + (index * 18),
+                    y,
+                    UpgradeTools.getName(upgrade),
+                    new ResourceLocation(TheWorldBefore.MOD_ID, "textures/item/upgrade_" + upgrade.getName() + ".png"),
+                    send -> this.toggleUpgrade(upgrade, send));
             addRenderableWidget(Btn);
             toggleButton.put(upgrade, Btn);
 
@@ -74,7 +79,7 @@ public class CustomToolScreen extends Screen {
         }
 
         // Top Row
-        currentSize = ToolProperties.getMiningSize(customToolItem);
+        currentSize = ToolProperties.getAOE(customToolItem);
         currentDepth = ToolProperties.getMiningDepth(customToolItem);
 
         Button sizeButton;
@@ -88,7 +93,7 @@ public class CustomToolScreen extends Screen {
                 default -> currentSize = 1;
             }
             button.setMessage(getTrans("tooltip.screen.size", currentSize));
-            PacketHandler.sendToServer(new PacketChangeMiningSize());
+            PacketHandler.sendToServer(new PacketChangeAOEPickaxe(currentSize));
         }).pos(baseX + 12, baseY + 20).size(60, 20).build());
 
         leftWidgets.add(depthButton = ImageButton.builder(Component.translatable("theworldbefore.tooltip.screen.depth", currentDepth), (button) -> {
@@ -99,11 +104,11 @@ public class CustomToolScreen extends Screen {
                 default -> currentDepth = 1;
             }
             button.setMessage(getTrans("tooltip.screen.depth", currentDepth));
-            PacketHandler.sendToServer(new PacketChangeMiningDepth());
+            PacketHandler.sendToServer(new PacketChangeMiningDepthPickaxe(currentDepth));
         }).pos(baseX + 12, baseY + 20).size(60, 20).build());
 
         // Button logic
-        if(!UpgradeTools.containsActiveUpgrade(customToolItem, Upgrade.EXPANDER))
+        if(!UpgradeTools.containsActiveUpgrade(customToolItem, Upgrade.AOE))
             sizeButton.active = false;
         if(!UpgradeTools.containsActiveUpgrade(customToolItem, Upgrade.DEPTH))
             depthButton.active = false;
@@ -120,7 +125,7 @@ public class CustomToolScreen extends Screen {
         // When the button is clicked we toggle
         if(update){
             updateButtons(upgrade, customToolItem);
-            PacketHandler.sendToServer(new PacketUpdateUpgrade(upgrade.getName()));
+            PacketHandler.sendToServer(new PacketUpdateUpgradePickaxe(upgrade.getName()));
         }
         // When we're just init the gui, we check if it's on or off.
         return upgrade.isEnabled();

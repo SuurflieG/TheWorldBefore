@@ -45,9 +45,10 @@ public class ModItems {
     public static final RegistryObject<Item> BLANK = ITEMS.register("upgrade_blank",() -> Upgrade.BLANK.getCard());
     public static final RegistryObject<Item> SILK = ITEMS.register("upgrade_silk", () -> Upgrade.SILK.getCard());
     public static final RegistryObject<Item> MAGNET = ITEMS.register("upgrade_magnet", () -> Upgrade.MAGNET.getCard());
-    public static final RegistryObject<Item> EXPANDER = ITEMS.register("upgrade_expander", () -> Upgrade.EXPANDER.getCard());
+    public static final RegistryObject<Item> AOE = ITEMS.register("upgrade_aoe", () -> Upgrade.AOE.getCard());
     public static final RegistryObject<Item> DEPTH = ITEMS.register("upgrade_depth", () -> Upgrade.DEPTH.getCard());
     public static final RegistryObject<Item> AQUA_AFFINITY = ITEMS.register("upgrade_aqua_affinity", () -> Upgrade.AQUA_AFFINITY.getCard());
+    public static final RegistryObject<Item> TREE_FELLING = ITEMS.register("upgrade_tree_felling", () -> Upgrade.TREE_FELLING.getCard());
 
     public static final RegistryObject<Item> FIRE_ELEMENT = ITEMS.register("upgrade_fire_element", () -> Upgrade.FIRE_ELEMENT.getCard());
     public static final RegistryObject<Item> ICE_ELEMENT = ITEMS.register("upgrade_ice_element", () -> Upgrade.ICE_ELEMENT.getCard());

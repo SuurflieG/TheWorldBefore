@@ -15,7 +15,7 @@ public class ModRecipesSerializer {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TheWorldBefore.MOD_ID);
 
     public static final RegistryObject<RecipeSerializer<CatalyzerRecipe>> CATALYZER_SERIALIZER = SERIALIZERS.register("catalyzing", () -> CatalyzerRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<ModSmithingRecipe>> SMITHING_SERIALIZER = SERIALIZERS.register("smithing", () -> ModSmithingRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<ModSmithingRecipe>> SMITHING_SERIALIZER = SERIALIZERS.register("smithing_transform", () -> ModSmithingRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
